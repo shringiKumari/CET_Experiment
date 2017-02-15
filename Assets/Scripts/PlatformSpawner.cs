@@ -16,6 +16,9 @@ public class PlatformSpawner : MonoBehaviour {
      public float riverY = -9.6f;
      public float riverBaseY = 5f;
      private GameObject latestPlatformLeft;
+     private GameObject latestRiverBase;
+     private GameObject latestRiver;
+
      private float platformLength;
      private float riverTopLength;
      private float riverMidLength;
@@ -49,6 +52,7 @@ public class PlatformSpawner : MonoBehaviour {
                latestPlatformLeft = tempLeft;
           }
 
+          // river base
           Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, riverY); 
           riverBase.transform.position = initialRiverBasePosition;
           riverBaseLength = riverBase.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
@@ -56,9 +60,9 @@ public class PlatformSpawner : MonoBehaviour {
           for (int i = 1; i <= 2; i++) {
                GameObject tempRiverBase = GameObject.Instantiate (riverBase); 
                tempRiverBase.transform.position = initialRiverBasePosition + new Vector3 (i * riverBaseLength, 0);
-               //latestPlatformLeft = tempLeft;
+               latestRiverBase = tempRiverBase;
           }
-          //initial river position
+          //initial river top and mid position
           Vector3 initialRiverPosition = new Vector3 (player.transform.position.x, riverBaseY); 
           riverTop.transform.position = initialRiverPosition;
           riverMid.transform.position = initialRiverPosition;
@@ -70,7 +74,7 @@ public class PlatformSpawner : MonoBehaviour {
                tempRiverTop.transform.position = initialRiverPosition + new Vector3 (i * riverTopLength, 0);
                GameObject tempRiverMid = GameObject.Instantiate (riverMid); 
                tempRiverMid.transform.position = initialRiverPosition + new Vector3 (i * riverMidLength, 0);
-               //latestPlatformLeft = tempLeft;
+               latestRiver = tempRiverMid;
           }
 
 
@@ -92,8 +96,21 @@ public class PlatformSpawner : MonoBehaviour {
                
                     
           }
+          if (player.transform.position.x > latestRiverBase.transform.position.x - (riverBaseLength / 2)) {
 
+               GameObject tempBase = GameObject.Instantiate (riverBase); 
+               tempBase.transform.position = latestRiverBase.transform.position + new Vector3 (riverBaseLength, 0);
+               latestRiverBase = tempBase;
+          }
 
+          if (player.transform.position.x > latestRiver.transform.position.x - (riverMidLength / 2)) {
+
+               GameObject tempRiverTop = GameObject.Instantiate (riverTop); 
+               tempRiverTop.transform.position = latestRiver.transform.position + new Vector3 (riverTopLength, 0);
+               GameObject tempRiverMid = GameObject.Instantiate (riverMid); 
+               tempRiverMid.transform.position = latestRiver.transform.position + new Vector3 (riverMidLength, 0);
+               latestRiver = tempRiverMid;
+          }
 		
 	}
 }
