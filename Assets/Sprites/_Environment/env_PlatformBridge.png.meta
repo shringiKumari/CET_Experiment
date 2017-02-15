@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 3d59a2915e1d2472caf9771deaedd5fc
+timeCreated: 1487196854
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: env_PlatformBridge
@@ -57,6 +59,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -64,13 +74,13 @@ TextureImporter:
       name: env_PlatformBridge
       rect:
         serializedVersion: 2
-        x: 93
-        y: 54
-        width: 801
-        height: 194
+        x: 193
+        y: 36
+        width: 665
+        height: 213
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     outline: []
