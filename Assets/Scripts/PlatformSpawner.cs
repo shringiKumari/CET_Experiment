@@ -23,6 +23,9 @@ public class PlatformSpawner : MonoBehaviour {
      private float riverTopLength;
      private float riverMidLength;
      private float riverBaseLength;
+
+     private int levelLength = 5; 
+     private int levelCount = 0; 
 	// Use this for initialization
 
 
@@ -85,31 +88,34 @@ public class PlatformSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-          if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
+          if (levelCount < levelLength) {
+               if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
 
-               GameObject tempLeft = GameObject.Instantiate (platformLeft); 
-               tempLeft.transform.position = latestPlatformLeft.transform.position + new Vector3 (2 * platformLength, 0);
-               GameObject tempRight = GameObject.Instantiate (platformRight); 
-               tempRight.transform.position = latestPlatformLeft.transform.position + new Vector3 (3 * platformLength, 0);
+                    GameObject tempLeft = GameObject.Instantiate (platformLeft); 
+                    tempLeft.transform.position = latestPlatformLeft.transform.position + new Vector3 (2 * platformLength, 0);
+                    GameObject tempRight = GameObject.Instantiate (platformRight); 
+                    tempRight.transform.position = latestPlatformLeft.transform.position + new Vector3 (3 * platformLength, 0);
 
-               latestPlatformLeft = tempLeft;
+                    latestPlatformLeft = tempLeft;
                
                     
-          }
-          if (player.transform.position.x > latestRiverBase.transform.position.x - (riverBaseLength / 2)) {
+               }
+               if (player.transform.position.x > latestRiverBase.transform.position.x - (riverBaseLength / 2)) {
 
-               GameObject tempBase = GameObject.Instantiate (riverBase); 
-               tempBase.transform.position = latestRiverBase.transform.position + new Vector3 (riverBaseLength, 0);
-               latestRiverBase = tempBase;
-          }
+                    GameObject tempBase = GameObject.Instantiate (riverBase); 
+                    tempBase.transform.position = latestRiverBase.transform.position + new Vector3 (riverBaseLength, 0);
+                    latestRiverBase = tempBase;
+               }
 
-          if (player.transform.position.x > latestRiver.transform.position.x - (riverMidLength / 2)) {
+               if (player.transform.position.x > latestRiver.transform.position.x - (riverMidLength / 2)) {
 
-               GameObject tempRiverTop = GameObject.Instantiate (riverTop); 
-               tempRiverTop.transform.position = latestRiver.transform.position + new Vector3 (riverTopLength, 0);
-               GameObject tempRiverMid = GameObject.Instantiate (riverMid); 
-               tempRiverMid.transform.position = latestRiver.transform.position + new Vector3 (riverMidLength, 0);
-               latestRiver = tempRiverMid;
+                    GameObject tempRiverTop = GameObject.Instantiate (riverTop); 
+                    tempRiverTop.transform.position = latestRiver.transform.position + new Vector3 (riverTopLength, 0);
+                    GameObject tempRiverMid = GameObject.Instantiate (riverMid); 
+                    tempRiverMid.transform.position = latestRiver.transform.position + new Vector3 (riverMidLength, 0);
+                    latestRiver = tempRiverMid;
+                    levelCount++;
+               }
           }
 		
 	}
