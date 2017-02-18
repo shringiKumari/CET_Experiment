@@ -46,7 +46,8 @@ public class WallSpawner : MonoBehaviour {
           //brickStackLimit should be a function of competence slider.
           float tempBrickStackLimit = brickStackLimit * competenceSlider.value;
           tempBrickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
-          brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y / 7;
+          brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y * brick.transform.localScale.y;
+
           Debug.Log (brickHeight);
           GameObject tempBrick = null;
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
