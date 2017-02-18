@@ -19,6 +19,7 @@ public class WallSpawner : MonoBehaviour {
      public GameObject brick;
      public GameObject top;
      public GameObject player;
+     public GameObject leftBound;
      public Slider competenceSlider;
      public Button apply;
 
@@ -37,53 +38,54 @@ public class WallSpawner : MonoBehaviour {
 	}
 
      void Awake () {
+          GenerateNewWalls();
+     }
 
+     void GenerateNewWalls ()
+     {
           //brickStackLimit should be a function of competence slider.
           float tempBrickStackLimit = brickStackLimit * competenceSlider.value;
-          lastProcessedCompetenceValue = competenceSlider.value;
-          brickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
-
-
-          brickHeight = brick.GetComponent<SpriteRenderer>().sprite.bounds.size.y/6;
+          tempBrickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
+          brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y / 7;
           Debug.Log (brickHeight);
-
-
           GameObject tempBrick = null;
-          brickX = UnityEngine.Random.Range (player.transform.position.x + 5f, player.transform.position.x + 25f);
-
+          brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
           //"i" limit should depend on competence
-          int iCount = Mathf.CeilToInt(competenceSlider.value * 30); 
-
-          for (int i =1; i<=iCount; i++) {
-
-               brickX = brickX + UnityEngine.Random.Range(5, 15);
-               int brickStackHeight = UnityEngine.Random.Range (0, brickStackLimit);
-
-               GameObject wall = new GameObject();
-               WallStruct W = new WallStruct(wall, brickStackHeight); 
-
+          int iCount = Mathf.CeilToInt (competenceSlider.value * 30);
+          for (int i = 1; i <= iCount; i++) {
+               brickX = brickX + UnityEngine.Random.Range (5, 15);
+               int brickStackHeight = UnityEngine.Random.Range (0, Mathf.CeilToInt (tempBrickStackLimit));
+               GameObject wall = new GameObject ();
+               WallStruct W = new WallStruct (wall, brickStackHeight);
                for (int j = 1; j <= brickStackHeight; j++) {
                     tempBrick = GameObject.Instantiate (brick);
-                    Vector3 initialPosition = new Vector3 (brickX, GlobalConstants.bankHeight + (j-1) * brickHeight); 
+                    Vector3 initialPosition = new Vector3 (brickX, GlobalConstants.bankHeight + (j - 1) * brickHeight);
                     tempBrick.transform.position = initialPosition;
                     tempBrick.transform.parent = W.wall.transform;
                }
-
                if (tempBrick != null) {
                     GameObject tempTop = GameObject.Instantiate (top);
-                    Vector3 initialTopPosition = new Vector3 (tempBrick.transform.position.x, tempBrick.transform.position.y + 0.7f); 
+                    Vector3 initialTopPosition = new Vector3 (tempBrick.transform.position.x, tempBrick.transform.position.y + brickHeight);
                     tempTop.transform.position = initialTopPosition;
                     tempTop.transform.parent = W.wall.transform;
                }
                wallStructList.Add (W);
           }
-
-
-
      }
 	
      public void OnClickApply() {
           if (lastProcessedCompetenceValue != competenceSlider.value) {
+               int w = 0;
+               while(w < wallStructList.Count){
+
+                    WallStruct W = wallStructList [w];
+                    Destroy (W.wall);
+                    w++;
+
+               }
+               wallStructList.Clear ();
+
+               GenerateNewWalls ();
                
                lastProcessedCompetenceValue = competenceSlider.value;
           }

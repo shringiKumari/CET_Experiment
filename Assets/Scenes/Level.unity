@@ -718,6 +718,49 @@ Transform:
   m_Father: {fileID: 2033762903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &362951543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 362951544}
+  - component: {fileID: 362951545}
+  m_Layer: 0
+  m_Name: RightBound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &362951544
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362951543}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 3.65, z: 0}
+  m_LocalScale: {x: 0.5, y: 17.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1834704504}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &362951545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362951543}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!1001 &373202862
 Prefab:
   m_ObjectHideFlags: 0
@@ -1049,6 +1092,7 @@ MonoBehaviour:
   brick: {fileID: 845009154}
   top: {fileID: 229494071}
   player: {fileID: 1665501271}
+  leftBound: {fileID: 895719146}
   competenceSlider: {fileID: 1298953595}
   apply: {fileID: 1281595651}
   brickStackLimit: 5
@@ -2682,7 +2726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: maxXAndY.x
-      value: 200
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: minXAndY.y
@@ -4185,7 +4229,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 18.6, y: -5.3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 362951544}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4201,6 +4246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundSpawner: {fileID: 1206930513}
+  player: {fileID: 1665501271}
 --- !u!1001 &1890440878
 Prefab:
   m_ObjectHideFlags: 0
