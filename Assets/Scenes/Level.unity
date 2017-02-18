@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 560757391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8a3599eb554c407f9067d2c699bb3a0, type: 3}
   m_Name: 
@@ -2739,6 +2739,10 @@ Prefab:
       propertyPath: maxXAndY.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
+      propertyPath: platformspawner
+      value: 
+      objectReference: {fileID: 1206930512}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
   m_IsPrefabParent: 0
@@ -4248,7 +4252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ef862b9699e4e7ea4b8926d7d4b914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSpawner: {fileID: 1206930513}
+  platformSpawner: {fileID: 1206930512}
   player: {fileID: 1665501271}
 --- !u!1001 &1890440878
 Prefab:

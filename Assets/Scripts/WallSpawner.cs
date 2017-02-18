@@ -48,7 +48,7 @@ public class WallSpawner : MonoBehaviour {
           float tempBrickStackLimit = brickStackLimit * competenceSlider.value;
           tempBrickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
           brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y * brick.transform.localScale.y;
-
+          float brickWidthExtent = brick.GetComponent<BoxCollider2D> ().bounds.extents.x;
           Debug.Log (brickHeight);
           GameObject tempBrick = null;
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
@@ -65,13 +65,14 @@ public class WallSpawner : MonoBehaviour {
                for (int g = 0; g < platformSpawner.platformEndsList.Count; g += 2) {
                     Transform currentTransform = platformSpawner.platformEndsList [g];
 
-                    float platformGapLeftBound = currentTransform.position.x - 2f;
-                    float platformGapRightBound = platformSpawner.platformEndsList [g + 1].position.x + 2f;
+                    float platformGapLeftBound = currentTransform.position.x;
+                    float platformGapRightBound = platformSpawner.platformEndsList [g + 1].position.x;
                     Debug.Log ("platfrom left index " + g + " gap left start " + platformGapLeftBound);
                     Debug.Log ("platfrom right index " + g + 1 + " gap right start " + platformGapRightBound);
                     //currentTransform.gameObject.GetComponent<BoxCollider2D>().bounds.extents.x
-                    if (brickX > platformGapLeftBound && brickX < platformGapRightBound) {
-                         Debug.Log ("wtf");
+                    if ((brickX > platformGapLeftBound && brickX < platformGapRightBound)||
+                         (brickX + brickWidthExtent > platformGapLeftBound && brickX + brickWidthExtent < platformGapRightBound)||
+                         (brickX - brickWidthExtent > platformGapLeftBound && brickX - brickWidthExtent < platformGapRightBound)) {
                          Debug.Log ("do not populate");
                          brickPopulationFlag = false;
                          break;

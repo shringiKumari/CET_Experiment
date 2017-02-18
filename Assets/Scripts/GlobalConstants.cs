@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlobalConstants {
 
      public static float riverHeight = -9.6f;
-     public static int levelLength = 4;
+     public static int levelLength = 6;
      public static float bankHeight = -8f;
 
 }

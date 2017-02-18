@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GoalPosition : MonoBehaviour {
 
-     public BackgroundSpawner backgroundSpawner;
+     public PlatformSpawner platformSpawner;
      public GameObject player;
      // Use this for initialization
 	void Start () {
-          Vector2 tempPosition = new Vector2((GlobalConstants.levelLength) * backgroundSpawner.GetBGLength (), GlobalConstants.bankHeight);
+          Vector2 tempPosition = new Vector2(platformSpawner.GetTotalLength(), GlobalConstants.bankHeight);
+               
           transform.position = tempPosition;		
 	}
 

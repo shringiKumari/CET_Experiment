@@ -33,11 +33,12 @@ public class PlatformSpawner : MonoBehaviour {
      private GameObject latestRiverBase;
      private GameObject latestRiver;
 
+
+     private float lastRightPlatformX;
      private float platformLength;
      private float riverTopLength;
      private float riverMidLength;
      private float riverBaseLength;
-     private List<PlatformGap> platformGaps = new List<PlatformGap> ();
 
      public List<Transform> platformEndsList = new List<Transform> ();
 
@@ -103,6 +104,7 @@ public class PlatformSpawner : MonoBehaviour {
                float gapWidthRandom = UnityEngine.Random.Range(0f, 10f);
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
+               lastRightPlatformX = tempRight.transform.position.x;
                latestPlatformLeft = tempLeft;
           }
      }
@@ -126,11 +128,19 @@ public class PlatformSpawner : MonoBehaviour {
                latestRiver = tempRiverMid;
           }
      }
-	
+
+     public float GetTotalLength() {
+          return lastRightPlatformX;
+     }
+
+     public float GetCameraMax() {
+          return lastRightPlatformX - platformLength;
+     }
+
 	// Update is called once per frame
 	void Update () {
-
-          /*if (levelCount < GlobalConstants.levelLength - 1) {
+          /*
+          if (levelCount < GlobalConstants.levelLength - 1) {
                if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
                     GeneratePlatform (latestPlatformLeft.transform.position, 1);
                     
@@ -144,7 +154,8 @@ public class PlatformSpawner : MonoBehaviour {
                     GenerateRiver (latestRiver.transform.position, 1);
                     levelCount++;
                }
-          }*/
+          }
+          */
 		
 	}
 }

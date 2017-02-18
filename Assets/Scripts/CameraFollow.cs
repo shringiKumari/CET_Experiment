@@ -13,11 +13,17 @@ public class CameraFollow : MonoBehaviour
 
 	private Transform player;		// Reference to the player's transform.
 
+     public PlatformSpawner platformspawner;
 
-	void Awake ()
+     void Start ()
+     {
+          maxXAndY.x = platformspawner.GetCameraMax (); 
+     }
+     void Awake ()
 	{
 		// Setting up the reference.
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+
 	}
 
 
