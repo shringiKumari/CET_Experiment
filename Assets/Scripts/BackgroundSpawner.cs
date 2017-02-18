@@ -8,7 +8,6 @@ public class BackgroundSpawner : MonoBehaviour {
      public GameObject background;
      public GameObject envBG;
      private GameObject latestBG;
-     private int levelLength = 5; 
      private int levelCount = 0; 
 
 
@@ -40,7 +39,7 @@ public class BackgroundSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
           
-          if (levelCount < levelLength) {
+          if (levelCount < GlobalConstants.levelLength) {
                if (player.transform.position.x > latestBG.transform.position.x - (backgroundLength / 2)) {
 
                     GameObject tempBase = GameObject.Instantiate (background); 

@@ -10,10 +10,6 @@ public class PlatformSpawner : MonoBehaviour {
      public GameObject riverMid;
      public GameObject riverBase;
      public GameObject player;
-     //private float platformX;
-     public float platformY = -9.6f;
-     //private float RiverX;
-     public float riverY = -9.6f;
      public float riverBaseY = 5f;
      private GameObject latestPlatformLeft;
      private GameObject latestRiverBase;
@@ -24,7 +20,7 @@ public class PlatformSpawner : MonoBehaviour {
      private float riverMidLength;
      private float riverBaseLength;
 
-     private int levelLength = 5; 
+
      private int levelCount = 0; 
 	// Use this for initialization
 
@@ -38,7 +34,7 @@ public class PlatformSpawner : MonoBehaviour {
      void Awake () {
           
           //initial platform positions
-          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - 0.2f, platformY); 
+          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.bankHeight); 
           platformLeft.transform.position = initialPlatformPosition;
           platformLength = platformLeft.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
           platformRight.transform.position = initialPlatformPosition + new Vector3 (platformLength, 0);
@@ -56,7 +52,7 @@ public class PlatformSpawner : MonoBehaviour {
           }
 
           // river base
-          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, riverY); 
+          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.bankHeight); 
           riverBase.transform.position = initialRiverBasePosition;
           riverBaseLength = riverBase.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
 
@@ -88,7 +84,7 @@ public class PlatformSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-          if (levelCount < levelLength) {
+          if (levelCount < GlobalConstants.levelLength) {
                if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
 
                     GameObject tempLeft = GameObject.Instantiate (platformLeft); 
