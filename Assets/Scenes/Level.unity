@@ -291,9 +291,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 3.1928635}
   serializedVersion: 2
-  m_Size: {x: 15, y: 6.175}
+  m_Size: {x: 15, y: 6.0264206}
 --- !u!1 &245176197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &560757392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a3599eb554c407f9067d2c699bb3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformSpawner: {fileID: 1206930512}
   brick: {fileID: 845009154}
   top: {fileID: 229494071}
   player: {fileID: 1665501271}
@@ -2209,9 +2210,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 5.865917}
   serializedVersion: 2
-  m_Size: {x: 11.85, y: 11.85}
+  m_Size: {x: 11.85, y: 11.701469}
 --- !u!4 &881603615 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: bc17612bc816d4f859110958e22d0a82, type: 2}
@@ -2669,7 +2670,9 @@ MonoBehaviour:
   riverMid: {fileID: 1171143962}
   riverBase: {fileID: 982502817}
   player: {fileID: 1665501271}
+  wallSpawner: {fileID: 560757391}
   riverBaseY: 3
+  platformEndsList: []
 --- !u!114 &1206930513
 MonoBehaviour:
   m_ObjectHideFlags: 0
