@@ -26,7 +26,6 @@ public class WallSpawner : MonoBehaviour {
      private List<WallStruct> wallStructList = new List<WallStruct> ();
 
      private float brickX;
-     private float brickY = -7f;
      private float brickHeight;
 
      public int brickStackLimit;
@@ -65,7 +64,7 @@ public class WallSpawner : MonoBehaviour {
 
                for (int j = 1; j <= brickStackHeight; j++) {
                     tempBrick = GameObject.Instantiate (brick);
-                    Vector3 initialPosition = new Vector3 (brickX, brickY + (j-1) * brickHeight); 
+                    Vector3 initialPosition = new Vector3 (brickX, GlobalConstants.bankHeight + (j-1) * brickHeight); 
                     tempBrick.transform.position = initialPosition;
                     tempBrick.transform.parent = W.wall.transform;
                }
@@ -90,6 +89,8 @@ public class WallSpawner : MonoBehaviour {
           }
           
      }
+
+
      // Update is called once per frame
 	void Update () {
 

@@ -4133,6 +4133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834704504}
   - component: {fileID: 1834704503}
+  - component: {fileID: 1834704505}
   m_Layer: 5
   m_Name: Goal
   m_TagString: Untagged
@@ -4188,6 +4189,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834704505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1834704502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ef862b9699e4e7ea4b8926d7d4b914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundSpawner: {fileID: 1206930513}
 --- !u!1001 &1890440878
 Prefab:
   m_ObjectHideFlags: 0

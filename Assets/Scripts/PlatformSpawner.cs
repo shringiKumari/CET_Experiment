@@ -34,7 +34,7 @@ public class PlatformSpawner : MonoBehaviour {
      void Awake () {
           
           //initial platform positions
-          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.bankHeight); 
+          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.riverHeight); 
           platformLeft.transform.position = initialPlatformPosition;
           platformLength = platformLeft.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
           platformRight.transform.position = initialPlatformPosition + new Vector3 (platformLength, 0);
@@ -52,7 +52,7 @@ public class PlatformSpawner : MonoBehaviour {
           }
 
           // river base
-          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.bankHeight); 
+          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.riverHeight); 
           riverBase.transform.position = initialRiverBasePosition;
           riverBaseLength = riverBase.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
 
@@ -84,7 +84,7 @@ public class PlatformSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-          if (levelCount < GlobalConstants.levelLength) {
+          if (levelCount < GlobalConstants.levelLength - 1) {
                if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
 
                     GameObject tempLeft = GameObject.Instantiate (platformLeft); 
