@@ -24,8 +24,10 @@ public class Spawner : MonoBehaviour
 	{
 		// Instantiate a random enemy.
 		int enemyIndex = Random.Range(0, enemies.Length);
-          Vector2 tempPosition = new Vector2 (player.transform.position.x, transform.position.y);
-          Instantiate(enemies[enemyIndex], tempPosition, transform.rotation);
+          if (player != null) {
+               Vector2 tempPosition = new Vector2 (player.transform.position.x, transform.position.y);
+               Instantiate (enemies [enemyIndex], tempPosition, transform.rotation);
+          }
 
 		// Play the spawning effect from all of the particle systems.
 		foreach(ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
