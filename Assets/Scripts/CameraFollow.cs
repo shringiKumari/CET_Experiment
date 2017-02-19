@@ -46,6 +46,10 @@ public class CameraFollow : MonoBehaviour
 		TrackPlayer();
 	}
 	
+     void Update ()
+     {
+          maxXAndY.x = platformspawner.GetCameraMax (); 
+     }
 	
 	void TrackPlayer ()
 	{

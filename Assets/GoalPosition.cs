@@ -30,9 +30,11 @@ public class GoalPosition : MonoBehaviour {
 
      void Update () {
 
-          if (player.transform.position.x >= transform.position.x) {
+          if (player != null) {
+               if (player.transform.position.x >= transform.position.x) {
 
-               Debug.Log ("Game Win");
+                    Debug.Log ("Game Win");
+               }
           }
 		
 	}

@@ -7,12 +7,16 @@ public class Spawner : MonoBehaviour
 	public float spawnDelay = 3f;		// The amount of time before spawning starts.
 	public GameObject[] enemies;		// Array of enemy prefabs.
      public GameObject player;
+     public NoiseGenerator noise;
 
 
 	void Start ()
 	{
 		// Start calling the Spawn function repeatedly after a delay .
-		InvokeRepeating("Spawn", spawnDelay, spawnTime);
+          float tempNoise = noise.GetNoise();  
+          spawnDelay = tempNoise * spawnDelay * 5;
+          spawnTime = tempNoise * spawnTime * 5;
+          InvokeRepeating("Spawn", spawnDelay, spawnTime);
 	}
 
 

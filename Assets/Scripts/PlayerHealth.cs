@@ -64,7 +64,9 @@ public class PlayerHealth : MonoBehaviour
 					GetComponent<PlayerControl>().enabled = false;
 
 					// ... disable the Gun script to stop a dead guy shooting a nonexistant bazooka
-					GetComponentInChildren<Gun>().enabled = false;
+                         if (GetComponentInChildren<Gun> () != null) {
+                              GetComponentInChildren<Gun> ().enabled = false;
+                         }
 
 					// ... Trigger the 'Die' animation state
 					anim.SetTrigger("Die");
