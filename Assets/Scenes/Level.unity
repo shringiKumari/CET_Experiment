@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 229494074}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,6 +904,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1665501271}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
   m_IsPrefabParent: 0
@@ -1095,7 +1099,6 @@ MonoBehaviour:
   player: {fileID: 1665501271}
   leftBound: {fileID: 895719146}
   competenceSlider: {fileID: 1298953595}
-  apply: {fileID: 1281595651}
   brickStackLimit: 5
 --- !u!4 &560757393
 Transform:
@@ -2146,7 +2149,7 @@ GameObject:
   - component: {fileID: 845009157}
   m_Layer: 0
   m_Name: Bricks
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2628,6 +2631,7 @@ GameObject:
   - component: {fileID: 1206930511}
   - component: {fileID: 1206930512}
   - component: {fileID: 1206930513}
+  - component: {fileID: 1206930514}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -2671,8 +2675,10 @@ MonoBehaviour:
   riverBase: {fileID: 982502817}
   player: {fileID: 1665501271}
   wallSpawner: {fileID: 560757391}
+  competenceSlider: {fileID: 1298953595}
   riverBaseY: 3
   platformEndsList: []
+  noiseGenerator: {fileID: 1206930514}
 --- !u!114 &1206930513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,6 +2694,47 @@ MonoBehaviour:
   background: {fileID: 1403839556}
   envBG: {fileID: 1998078760}
   backgroundY: 2
+--- !u!114 &1206930514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206930510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c5ceef84f0b4343a0b7baf61d6ef9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.27137965
+      value: 0.16000122
+      inSlope: 0.44953597
+      outSlope: 0.44953597
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6067866
+      value: 0.8638895
+      inSlope: 0.7582058
+      outSlope: 0.7582058
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: -0.19593024
+      outSlope: -0.19593024
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &1243540802
 Prefab:
   m_ObjectHideFlags: 0
@@ -2890,6 +2937,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1206930512}
+        m_MethodName: OnClickApply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 560757392}
         m_MethodName: OnClickApply
         m_Mode: 1
@@ -3410,6 +3468,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1665501271}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
   m_IsPrefabParent: 0
@@ -4172,6 +4234,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1665501271}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdd88e3de6e024ec1bacd58073808d06, type: 2}
   m_IsPrefabParent: 0
@@ -4341,11 +4407,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21200002, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}

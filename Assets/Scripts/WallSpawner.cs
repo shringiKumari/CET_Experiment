@@ -22,7 +22,6 @@ public class WallSpawner : MonoBehaviour {
      public GameObject player;
      public GameObject leftBound;
      public Slider competenceSlider;
-     public Button apply;
 
      //private List<GameObject> wallList = new List<GameObject> ();
      private List<WallStruct> wallStructList = new List<WallStruct> ();
@@ -49,7 +48,7 @@ public class WallSpawner : MonoBehaviour {
           tempBrickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
           brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y * brick.transform.localScale.y;
           float brickWidthExtent = brick.GetComponent<BoxCollider2D> ().bounds.extents.x;
-          Debug.Log (brickHeight);
+
           GameObject tempBrick = null;
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
 

@@ -1,22 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public struct PlatformGap
-{
-     private int platformLeft;
-     private int platformRight;
-     private float gapLeftX;
-     private float gapRightX;
-
-     public PlatformGap(int platformLeft, int platformRight, float gapLeftX, float gapRightX)
-     {
-          this.platformLeft = platformLeft;
-          this.platformRight = platformRight;
-          this.gapLeftX = gapLeftX;
-          this.gapRightX = gapRightX;
-     }
-}
 
 public class PlatformSpawner : MonoBehaviour {
 
@@ -27,11 +13,16 @@ public class PlatformSpawner : MonoBehaviour {
      public GameObject riverBase;
      public GameObject player;
      public GameObject wallSpawner;
+     public Slider competenceSlider;
 
      public float riverBaseY = 5f;
+
      private GameObject latestPlatformLeft;
      private GameObject latestRiverBase;
      private GameObject latestRiver;
+     private float lastProcessedCompetenceValue;
+     private List<GameObject> platformList = new List<GameObject> ();
+
 
 
      private float lastRightPlatformX;
@@ -41,9 +32,10 @@ public class PlatformSpawner : MonoBehaviour {
      private float riverBaseLength;
 
      public List<Transform> platformEndsList = new List<Transform> ();
+     [SerializeField] public NoiseGenerator noiseGenerator;
 
 
-     private int levelCount = 0; 
+ 
 	// Use this for initialization
 
 
@@ -71,7 +63,7 @@ public class PlatformSpawner : MonoBehaviour {
           riverBase.transform.position = initialRiverBasePosition;
           riverBaseLength = riverBase.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
 
-          //GenrateRiverBase (initialRiverBasePosition, 2);
+
 
           //initial river top and mid position
           Vector3 initialRiverPosition = new Vector3 (player.transform.position.x, riverBaseY); 
@@ -80,15 +72,12 @@ public class PlatformSpawner : MonoBehaviour {
           riverTopLength = riverTop.GetComponentInChildren<SpriteRenderer> ().sprite.bounds.size.x;
           riverMidLength = riverMid.GetComponentInChildren<SpriteRenderer> ().sprite.bounds.size.x;
 
-          //GenerateRiver (initialRiverPosition, 2);
-
-          //if (levelCount < GlobalConstants.levelLength) {
 
           GeneratePlatform (firstPlatformLeftPosition, GlobalConstants.levelLength);
           GenrateRiverBase (initialRiverBasePosition, GlobalConstants.levelLength);
           GenerateRiver (initialRiverPosition, GlobalConstants.levelLength);
 
-          //}
+
           wallSpawner.gameObject.SetActive (true);
 
      }
@@ -97,11 +86,15 @@ public class PlatformSpawner : MonoBehaviour {
      {
           for (int i = 1; i <= timesTorepeat; i++) {
                GameObject tempLeft = GameObject.Instantiate (platformLeft);
+               platformList.Add (tempLeft);
                platformEndsList.Add(tempLeft.transform.GetChild (0));
                tempLeft.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength, 0);
                GameObject tempRight = GameObject.Instantiate (platformRight);
+               platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
-               float gapWidthRandom = UnityEngine.Random.Range(0f, 10f);
+               float gapWidthRandom = noiseGenerator.GetNoise() * 10f * competenceSlider.value;
+               Debug.Log ("random noise" + gapWidthRandom);
+               //float gapWidthRandom = UnityEngine.Random.Range(5f, 10f) * competenceSlider.value;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;
@@ -136,26 +129,27 @@ public class PlatformSpawner : MonoBehaviour {
      public float GetCameraMax() {
           return lastRightPlatformX - platformLength;
      }
+     public void OnClickApply() {
+          if (lastProcessedCompetenceValue != competenceSlider.value) {
+               int w = 0;
+               while(w < platformList.Count){
 
+                    GameObject W = platformList [w];
+                    Destroy (platformList [w]);
+                    w++;
+
+               }
+               platformList.Clear ();
+               platformEndsList.Clear ();
+
+               GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength);
+
+               lastProcessedCompetenceValue = competenceSlider.value;
+          }
+
+     }
 	// Update is called once per frame
 	void Update () {
-          /*
-          if (levelCount < GlobalConstants.levelLength - 1) {
-               if (player.transform.position.x > latestPlatformLeft.transform.position.x - (platformLength / 2)) {
-                    GeneratePlatform (latestPlatformLeft.transform.position, 1);
-                    
-               }
-               if (player.transform.position.x > latestRiverBase.transform.position.x - (riverBaseLength / 2)) {
-                    GenrateRiverBase (latestRiverBase.transform.position, 1);
-               }
-
-               if (player.transform.position.x > latestRiver.transform.position.x - (riverMidLength / 2)) {
-
-                    GenerateRiver (latestRiver.transform.position, 1);
-                    levelCount++;
-               }
-          }
-          */
 		
 	}
 }
