@@ -10,6 +10,8 @@ public class SliderValue : MonoBehaviour {
      public WallSpawner wallspawner;
      public Spawner enemySpawner;
 
+     private float previousSliderValue = -1f;
+
     //public NoiseGenerator noise;
 
     // Use this for initialization
@@ -22,9 +24,14 @@ public class SliderValue : MonoBehaviour {
      }
 	
      public void OnClickApply () {
-          platformSpawner.OnClickApply ();
-          wallspawner.OnClickApply ();
-          enemySpawner.OnClickApply ();          
+          if (slider.value != previousSliderValue) {
+               
+               platformSpawner.OnClickApply (slider.value);
+               wallspawner.OnClickApply ();
+               enemySpawner.OnClickApply ();
+
+               previousSliderValue = slider.value;
+          }
      }
 
      // Update is called once per frame

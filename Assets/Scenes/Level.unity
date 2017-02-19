@@ -940,12 +940,12 @@ Prefab:
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}
       propertyPath: noiseCurve.m_Curve.Array.data[1].time
-      value: 0.5060246
+      value: 0.5035536
       objectReference: {fileID: 0}
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}
       propertyPath: noiseCurve.m_Curve.Array.data[1].value
-      value: 0.36558145
+      value: 0.4224148
       objectReference: {fileID: 0}
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}
@@ -970,12 +970,12 @@ Prefab:
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}
       propertyPath: noiseCurve.m_Curve.Array.data[2].time
-      value: 1.0049419
+      value: 1.002471
       objectReference: {fileID: 0}
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}
       propertyPath: noiseCurve.m_Curve.Array.data[2].value
-      value: 0.2969201
+      value: 0.42276537
       objectReference: {fileID: 0}
     - target: {fileID: 114631992770101172, guid: bdd88e3de6e024ec1bacd58073808d06,
         type: 2}

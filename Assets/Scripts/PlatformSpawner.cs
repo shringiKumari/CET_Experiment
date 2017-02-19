@@ -13,7 +13,7 @@ public class PlatformSpawner : MonoBehaviour {
      public GameObject riverBase;
      public GameObject player;
      public GameObject wallSpawner;
-     public Slider competenceSlider;
+
      public GoalPosition goalPosition;
     
 
@@ -75,7 +75,7 @@ public class PlatformSpawner : MonoBehaviour {
           riverMidLength = riverMid.GetComponentInChildren<SpriteRenderer> ().sprite.bounds.size.x;
 
 
-          GeneratePlatform (firstPlatformLeftPosition, GlobalConstants.levelLength);
+          //GeneratePlatform (firstPlatformLeftPosition, GlobalConstants.levelLength);
           GenrateRiverBase (initialRiverBasePosition, GlobalConstants.levelLength);
           GenerateRiver (initialRiverPosition, GlobalConstants.levelLength);
 
@@ -84,7 +84,7 @@ public class PlatformSpawner : MonoBehaviour {
 
      }
 
-     void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat)
+     void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat, float competenceValue)
      {
           for (int i = 1; i <= timesTorepeat; i++) {
                GameObject tempLeft = GameObject.Instantiate (platformLeft);
@@ -94,9 +94,9 @@ public class PlatformSpawner : MonoBehaviour {
                GameObject tempRight = GameObject.Instantiate (platformRight);
                platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
-               //float gapWidthRandom = noiseGenerator.GetNoise() * 10f * competenceSlider.value;
+               //float gapWidthRandom = noiseGenerator.GetNoise() * 10f * competenceValue;
                //Debug.Log ("random noise" + gapWidthRandom);
-               float gapWidthRandom = UnityEngine.Random.Range(10f, 10f) * competenceSlider.value;
+               float gapWidthRandom = UnityEngine.Random.Range(10f, 10f) * competenceValue;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;
@@ -133,24 +133,21 @@ public class PlatformSpawner : MonoBehaviour {
      }
          
 
-     public void OnClickApply() {
-          if (lastProcessedCompetenceValue != competenceSlider.value) {
-               int w = 0;
-               while(w < platformList.Count){
+     public void OnClickApply(float competenceValue) {
+          int w = 0;
+          while(w < platformList.Count){
 
-                    GameObject W = platformList [w];
-                    Destroy (platformList [w]);
-                    w++;
+               GameObject W = platformList [w];
+               Destroy (platformList [w]);
+               w++;
 
-               }
-               platformList.Clear ();
-               platformEndsList.Clear ();
-
-               GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength);
-               lastRightPlatformX = platformList [platformList.Count - 1].transform.position.x;
-               goalPosition.updateGoalPosition (lastRightPlatformX);
-               lastProcessedCompetenceValue = competenceSlider.value;
           }
+          platformList.Clear ();
+          platformEndsList.Clear ();
+
+          GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength, competenceValue);
+          lastRightPlatformX = platformList [platformList.Count - 1].transform.position.x;
+          goalPosition.updateGoalPosition (lastRightPlatformX);
 
      }
 	// Update is called once per frame
