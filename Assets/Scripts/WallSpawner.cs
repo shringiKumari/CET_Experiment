@@ -38,13 +38,13 @@ public class WallSpawner : MonoBehaviour {
 	}
 
      void Awake () {
-          GenerateNewWalls();
+          //GenerateNewWalls();
      }
 
-     void GenerateNewWalls ()
+     void GenerateNewWalls (float competenceValue)
      {
           //brickStackLimit should be a function of competence slider.
-          float tempBrickStackLimit = brickStackLimit * competenceSlider.value;
+          float tempBrickStackLimit = brickStackLimit * competenceValue;
           tempBrickStackLimit = Mathf.CeilToInt (tempBrickStackLimit);
           brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y * brick.transform.localScale.y;
           float brickWidthExtent = brick.GetComponent<BoxCollider2D> ().bounds.extents.x;
@@ -53,8 +53,8 @@ public class WallSpawner : MonoBehaviour {
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
 
           //"i" limit should depend on competence
-          int iCount = Mathf.CeilToInt (competenceSlider.value * 30);
-          Debug.Log (competenceSlider.value + " slider ");
+          int iCount = Mathf.CeilToInt (competenceValue * 30);
+          Debug.Log (competenceValue + " slider ");
           Debug.Log (iCount + " i Count");
           for (int i = 1; i <= iCount; i++) {
                brickX = brickX + UnityEngine.Random.Range (5, 15);
@@ -106,22 +106,20 @@ public class WallSpawner : MonoBehaviour {
           }
      }
 	
-     public void OnClickApply() {
-          if (lastProcessedCompetenceValue != competenceSlider.value) {
-               int w = 0;
-               while(w < wallStructList.Count){
+     public void OnClickApply (float competenceValue) {
 
-                    WallStruct W = wallStructList [w];
-                    Destroy (W.wall);
-                    w++;
+          int w = 0;
+          while(w < wallStructList.Count){
 
-               }
-               wallStructList.Clear ();
+               WallStruct W = wallStructList [w];
+               Destroy (W.wall);
+               w++;
 
-               GenerateNewWalls ();
-               
-               lastProcessedCompetenceValue = competenceSlider.value;
           }
+          wallStructList.Clear ();
+
+          GenerateNewWalls (competenceValue);
+
           
      }
 

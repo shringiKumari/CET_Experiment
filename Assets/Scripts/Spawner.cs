@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
 		}
 	}
 
-     public void OnClickApply() {
+     public void OnClickApply(float competenceValue) {
           
           
      }

@@ -27,8 +27,8 @@ public class SliderValue : MonoBehaviour {
           if (slider.value != previousSliderValue) {
                
                platformSpawner.OnClickApply (slider.value);
-               wallspawner.OnClickApply ();
-               enemySpawner.OnClickApply ();
+               wallspawner.OnClickApply (slider.value);
+               enemySpawner.OnClickApply (slider.value);
 
                previousSliderValue = slider.value;
           }
