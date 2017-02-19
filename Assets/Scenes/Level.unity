@@ -1155,6 +1155,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4905771727923580, guid: 23e4d4a0757104d19ad2040247ecda49,
     type: 2}
   m_PrefabInternal: {fileID: 1570560403}
+--- !u!114 &552475369 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: bdd88e3de6e024ec1bacd58073808d06,
+    type: 2}
+  m_PrefabInternal: {fileID: 504946598}
+  m_Script: {fileID: 11500000, guid: 26e8197b97b4a4fa2ab4c51e208a70f4, type: 3}
 --- !u!1 &560757391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,18 +3068,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1206930512}
-        m_MethodName: OnClickApply
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 560757392}
+      - m_Target: {fileID: 1298953596}
         m_MethodName: OnClickApply
         m_Mode: 1
         m_Arguments:
@@ -3217,6 +3212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1298953595}
+  platformSpawner: {fileID: 1206930512}
+  wallspawner: {fileID: 560757392}
+  enemySpawner: {fileID: 552475369}
 --- !u!1 &1319749706
 GameObject:
   m_ObjectHideFlags: 0

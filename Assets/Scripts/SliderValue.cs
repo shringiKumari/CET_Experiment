@@ -6,20 +6,28 @@ using UnityEngine.UI;
 public class SliderValue : MonoBehaviour {
 
      public Slider slider;
-    
+     public PlatformSpawner platformSpawner;
+     public WallSpawner wallspawner;
+     public Spawner enemySpawner;
 
-	// Use this for initialization
+    //public NoiseGenerator noise;
+
+    // Use this for initialization
 	void Start () {
-
-		
+          OnClickApply ();
 	}
 
      void Awake () {
           slider.value = UnityEngine.Random.Range (0f, 1f);
-
-
      }
-	// Update is called once per frame
+	
+     public void OnClickApply () {
+          platformSpawner.OnClickApply ();
+          wallspawner.OnClickApply ();
+          enemySpawner.OnClickApply ();          
+     }
+
+     // Update is called once per frame
 	void Update () {
 		
 	}
