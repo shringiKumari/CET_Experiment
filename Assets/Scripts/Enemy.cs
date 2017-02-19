@@ -58,7 +58,9 @@ public class Enemy : MonoBehaviour
 			Death ();
 	}
 	
-	public void Hurt()
+
+	
+     public void Hurt()
 	{
 		// Reduce the number of hit points by one.
 		HP--;
