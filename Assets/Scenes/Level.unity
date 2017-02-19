@@ -2676,6 +2676,7 @@ MonoBehaviour:
   player: {fileID: 1665501271}
   wallSpawner: {fileID: 560757391}
   competenceSlider: {fileID: 1298953595}
+  goalPosition: {fileID: 1834704505}
   riverBaseY: 3
   platformEndsList: []
   noiseGenerator: {fileID: 1206930514}

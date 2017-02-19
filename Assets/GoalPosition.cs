@@ -19,7 +19,16 @@ public class GoalPosition : MonoBehaviour {
      }
 	
 	// Update is called once per frame
-	void Update () {
+     public void updateGoalPosition( float goalPositionX) {
+
+          Vector2 tempPosition = new Vector2(goalPositionX, GlobalConstants.bankHeight);
+
+          transform.position = tempPosition;
+
+          
+     }
+
+     void Update () {
 
           if (player.transform.position.x >= transform.position.x) {
 
