@@ -7,8 +7,6 @@ public class Spawner : MonoBehaviour
 	public float spawnDelay = 0.3f;		// The amount of time before spawning starts.
 	public GameObject[] enemies;		// Array of enemy prefabs.
      public GameObject player;
-     public NoiseGenerator noise;
-
 
 	void Start ()
 	{

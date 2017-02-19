@@ -10,13 +10,13 @@ public class LayBombs : MonoBehaviour
 	public GameObject bomb;				// Prefab of the bomb.
 
 
-	private GUITexture bombHUD;			// Heads up display of whether the player has a bomb or not.
+	//private GUITexture bombHUD;			// Heads up display of whether the player has a bomb or not.
 
 
 	void Awake ()
 	{
 		// Setting up the reference.
-		bombHUD = GameObject.Find("ui_bombHUD").GetComponent<GUITexture>();
+		//bombHUD = GameObject.Find("ui_bombHUD").GetComponent<GUITexture>();
 	}
 
 
@@ -39,6 +39,6 @@ public class LayBombs : MonoBehaviour
 		}
 
 		// The bomb heads up display should be enabled if the player has bombs, other it should be disabled.
-		bombHUD.enabled = bombCount > 0;
+		//bombHUD.enabled = bombCount > 0;
 	}
 }
