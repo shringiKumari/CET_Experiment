@@ -21,7 +21,6 @@ public class WallSpawner : MonoBehaviour {
      public GameObject top;
      public GameObject player;
      public GameObject leftBound;
-     public Slider competenceSlider;
 
      //private List<GameObject> wallList = new List<GameObject> ();
      private List<WallStruct> wallStructList = new List<WallStruct> ();
@@ -41,7 +40,7 @@ public class WallSpawner : MonoBehaviour {
           //GenerateNewWalls();
      }
 
-     void GenerateNewWalls (float competenceValue)
+     void GenerateNewWalls (float noise, float competenceValue)
      {
           //brickStackLimit should be a function of competence slider.
           float tempBrickStackLimit = brickStackLimit * competenceValue;
@@ -58,7 +57,7 @@ public class WallSpawner : MonoBehaviour {
           Debug.Log (iCount + " i Count");
           for (int i = 1; i <= iCount; i++) {
                brickX = brickX + UnityEngine.Random.Range (5, 15);
-               Debug.Log ("platorm end count"+platformSpawner.platformEndsList.Count);
+               //Debug.Log ("platorm end count"+platformSpawner.platformEndsList.Count);
                bool brickPopulationFlag = true;
 
                for (int g = 0; g < platformSpawner.platformEndsList.Count; g += 2) {
@@ -66,13 +65,13 @@ public class WallSpawner : MonoBehaviour {
 
                     float platformGapLeftBound = currentTransform.position.x;
                     float platformGapRightBound = platformSpawner.platformEndsList [g + 1].position.x;
-                    Debug.Log ("platfrom left index " + g + " gap left start " + platformGapLeftBound);
-                    Debug.Log ("platfrom right index " + g + 1 + " gap right start " + platformGapRightBound);
+                    //Debug.Log ("platfrom left index " + g + " gap left start " + platformGapLeftBound);
+                    //Debug.Log ("platfrom right index " + g + 1 + " gap right start " + platformGapRightBound);
                     //currentTransform.gameObject.GetComponent<BoxCollider2D>().bounds.extents.x
                     if ((brickX > platformGapLeftBound && brickX < platformGapRightBound)||
                          (brickX + brickWidthExtent > platformGapLeftBound && brickX + brickWidthExtent < platformGapRightBound)||
                          (brickX - brickWidthExtent > platformGapLeftBound && brickX - brickWidthExtent < platformGapRightBound)) {
-                         Debug.Log ("do not populate");
+                        //Debug.Log ("do not populate");
                          brickPopulationFlag = false;
                          break;
                          //do not populate
@@ -106,7 +105,7 @@ public class WallSpawner : MonoBehaviour {
           }
      }
 	
-     public void OnClickApply (float competenceValue) {
+     public void OnClickApply (float noise, float competenceValue) {
 
           int w = 0;
           while(w < wallStructList.Count){
@@ -118,7 +117,7 @@ public class WallSpawner : MonoBehaviour {
           }
           wallStructList.Clear ();
 
-          GenerateNewWalls (competenceValue);
+          GenerateNewWalls (noise, competenceValue);
 
           
      }

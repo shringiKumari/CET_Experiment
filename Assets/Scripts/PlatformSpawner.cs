@@ -84,7 +84,7 @@ public class PlatformSpawner : MonoBehaviour {
 
      }
 
-     void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat, float competenceValue)
+     void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat, float noise, float competenceValue)
      {
           for (int i = 1; i <= timesTorepeat; i++) {
                GameObject tempLeft = GameObject.Instantiate (platformLeft);
@@ -94,9 +94,9 @@ public class PlatformSpawner : MonoBehaviour {
                GameObject tempRight = GameObject.Instantiate (platformRight);
                platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
-               //float gapWidthRandom = noiseGenerator.GetNoise() * 10f * competenceValue;
+               //float gapWidthRandom = noise * 10f * competenceValue;
                //Debug.Log ("random noise" + gapWidthRandom);
-               float gapWidthRandom = UnityEngine.Random.Range(10f, 10f) * competenceValue;
+               float gapWidthRandom = UnityEngine.Random.Range(0f, 10f) * competenceValue;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;
@@ -133,7 +133,7 @@ public class PlatformSpawner : MonoBehaviour {
      }
          
 
-     public void OnClickApply(float competenceValue) {
+     public void OnClickApply(float noise, float competenceValue) {
           int w = 0;
           while(w < platformList.Count){
 
@@ -145,7 +145,7 @@ public class PlatformSpawner : MonoBehaviour {
           platformList.Clear ();
           platformEndsList.Clear ();
 
-          GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength, competenceValue);
+          GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength, noise, competenceValue);
           lastRightPlatformX = platformList [platformList.Count - 1].transform.position.x;
           goalPosition.updateGoalPosition (lastRightPlatformX);
 

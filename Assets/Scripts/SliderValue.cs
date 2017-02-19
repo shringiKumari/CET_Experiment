@@ -12,7 +12,10 @@ public class SliderValue : MonoBehaviour {
 
      private float previousSliderValue = -1f;
 
-    //public NoiseGenerator noise;
+     public NoiseGenerator platformNoise;
+     public NoiseGenerator wallNoise;
+     public NoiseGenerator enemyNoise;
+    
 
     // Use this for initialization
 	void Start () {
@@ -23,12 +26,37 @@ public class SliderValue : MonoBehaviour {
           slider.value = UnityEngine.Random.Range (0f, 1f);
      }
 	
+     public float GetPlatformNoise() {
+          if (platformNoise.enabled) {
+               return platformNoise.GetNoise ();
+          } else
+               return 0;
+     }
+
+     public float GetWallNoise() {
+          if (wallNoise.enabled) {
+               return wallNoise.GetNoise ();
+          } else
+               return 0;
+
+     }
+
+     public float GetEnemyNoise() {
+          if (enemyNoise.enabled) {
+               return enemyNoise.GetNoise ();
+          } else
+               return 0;
+          
+     }
+
      public void OnClickApply () {
+
+
           if (slider.value != previousSliderValue) {
                
-               platformSpawner.OnClickApply (slider.value);
-               wallspawner.OnClickApply (slider.value);
-               enemySpawner.OnClickApply (slider.value);
+               platformSpawner.OnClickApply (GetPlatformNoise(), slider.value);
+               wallspawner.OnClickApply (GetWallNoise(), slider.value);
+               enemySpawner.OnClickApply (GetEnemyNoise(), slider.value);
 
                previousSliderValue = slider.value;
           }

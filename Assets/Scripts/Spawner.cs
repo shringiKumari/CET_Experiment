@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-	public float spawnTime = 5f;		// The amount of time between each spawn.
-	public float spawnDelay = 3f;		// The amount of time before spawning starts.
+	public float spawnTime = 0.5f;		// The amount of time between each spawn.
+	public float spawnDelay = 0.3f;		// The amount of time before spawning starts.
 	public GameObject[] enemies;		// Array of enemy prefabs.
      public GameObject player;
      public NoiseGenerator noise;
@@ -13,10 +13,7 @@ public class Spawner : MonoBehaviour
 	void Start ()
 	{
 		// Start calling the Spawn function repeatedly after a delay .
-          float tempNoise = noise.GetNoise();  
-          spawnDelay = tempNoise * spawnDelay * 5;
-          spawnTime = tempNoise * spawnTime * 5;
-          InvokeRepeating("Spawn", spawnDelay, spawnTime);
+
 	}
 
 
@@ -36,7 +33,20 @@ public class Spawner : MonoBehaviour
 		}
 	}
 
-     public void OnClickApply(float competenceValue) {
+     public void GenerateNewEnemies (float noise, float competenceValue) {
+          
+          //float tempNoise = noise.GetNoise(); 
+          float tempNoise = UnityEngine.Random.Range(1f, 1f) * (1/competenceValue);
+          CancelInvoke("Spawn");
+          InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
+          Debug.Log (" Spawn Delay " + spawnDelay * tempNoise);
+          
+     }
+     public void OnClickApply(float noise, float competenceValue) {
+
+
+          GenerateNewEnemies (noise, competenceValue);
+          
           
           
      }
