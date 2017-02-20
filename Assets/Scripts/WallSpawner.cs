@@ -49,14 +49,15 @@ public class WallSpawner : MonoBehaviour {
           float brickWidthExtent = brick.GetComponent<BoxCollider2D> ().bounds.extents.x;
 
           GameObject tempBrick = null;
-          brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 15f);
+          brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 10f);
 
           //"i" limit should depend on competence
           int iCount = Mathf.CeilToInt (competenceValue * 30);
           Debug.Log (competenceValue + " slider ");
           Debug.Log (iCount + " i Count");
           for (int i = 1; i <= iCount; i++) {
-               brickX = brickX + UnityEngine.Random.Range (5, 15);
+               //brickX = brickX + UnityEngine.Random.Range (5, 15);
+               brickX = brickX + noise * 10f;
                //Debug.Log ("platorm end count"+platformSpawner.platformEndsList.Count);
                bool brickPopulationFlag = true;
 
