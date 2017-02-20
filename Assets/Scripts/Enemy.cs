@@ -36,10 +36,12 @@ public class Enemy : MonoBehaviour
 		foreach(Collider2D c in frontHits)
 		{
 			// If any of the colliders is an Obstacle...
-			if(c.tag == "Obstacle")
+			//if(c.tag == "Obstacle")
+               if((c.tag == "Obstacle") || (c.gameObject.tag == "Player"))
 			{
 				// ... Flip the enemy and stop checking the other colliders.
-				Flip ();
+                    Debug.Log("flip flip flip");
+                    Flip ();
 				break;
 			}
 		}

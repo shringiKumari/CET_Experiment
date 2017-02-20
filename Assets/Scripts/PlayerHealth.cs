@@ -83,10 +83,10 @@ public class PlayerHealth : MonoBehaviour
           //playerControl.jump = true;
 
 		// Create a vector that's from the enemy to the player with an upwards boost.
-		Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
+		//Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
 
 		// Add a force to the player in the direction of the vector and multiply by the hurtForce.
-		GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
+		//GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
 
 		// Reduce the player's health by 10.
 		health -= damageAmount;
