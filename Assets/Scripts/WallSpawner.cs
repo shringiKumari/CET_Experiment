@@ -82,6 +82,7 @@ public class WallSpawner : MonoBehaviour {
                          
 
                          int brickStackHeight = UnityEngine.Random.Range (0, Mathf.CeilToInt (tempBrickStackLimit));
+
                          GameObject wall = new GameObject ();
                          WallStruct W = new WallStruct (wall, brickStackHeight);
                          for (int j = 1; j <= brickStackHeight; j++) {

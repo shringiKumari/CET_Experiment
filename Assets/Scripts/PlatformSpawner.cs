@@ -94,9 +94,9 @@ public class PlatformSpawner : MonoBehaviour {
                GameObject tempRight = GameObject.Instantiate (platformRight);
                platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
-               //float gapWidthRandom = noise * 10f * competenceValue;
-               //Debug.Log ("random noise" + gapWidthRandom);
-               float gapWidthRandom = UnityEngine.Random.Range(0f, 10f) * competenceValue;
+               float gapWidthRandom = noise * 10f * competenceValue;
+               Debug.Log ("random noise" + gapWidthRandom);
+               //float gapWidthRandom = UnityEngine.Random.Range(0f, 10f) * competenceValue;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;

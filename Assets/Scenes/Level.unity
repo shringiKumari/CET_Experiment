@@ -1223,9 +1223,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 5.865917}
+  m_Offset: {x: 0, y: 2.5822067}
   serializedVersion: 2
-  m_Size: {x: 11.85, y: 11.701469}
+  m_Size: {x: 11.85, y: 5.134027}
 --- !u!1 &895719146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,27 +1598,33 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 0.12149383
+      value: 0.12149383
+      inSlope: 0.37017134
+      outSlope: 0.37017134
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.27137965
-      value: 0.16000122
-      inSlope: 0.44953597
-      outSlope: 0.44953597
+      time: 0.14171177
+      value: 0.47711697
+      inSlope: 0.5308268
+      outSlope: 0.5308268
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.6067866
-      value: 0.8638895
-      inSlope: 0.7582058
-      outSlope: 0.7582058
+      time: 0.8688364
+      value: 0.6974676
+      inSlope: 0.6338954
+      outSlope: 0.6338954
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: -0.19593024
-      outSlope: -0.19593024
-      tangentMode: 0
+      time: 1.0024753
+      value: 1.0250001
+      inSlope: 2.4508774
+      outSlope: 2.4508774
+      tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
