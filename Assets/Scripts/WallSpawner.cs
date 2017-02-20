@@ -52,7 +52,7 @@ public class WallSpawner : MonoBehaviour {
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 10f);
 
           //"i" limit should depend on competence
-          int iCount = Mathf.CeilToInt (competenceValue * 30);
+          int iCount = Mathf.CeilToInt (competenceValue * 5) * GlobalConstants.levelLength;
           Debug.Log (competenceValue + " slider ");
           Debug.Log (iCount + " i Count");
           for (int i = 1; i <= iCount; i++) {

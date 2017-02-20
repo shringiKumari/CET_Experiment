@@ -6,6 +6,8 @@ public class GoalPosition : MonoBehaviour {
 
      public PlatformSpawner platformSpawner;
      public GameObject player;
+     public Pauser pauser;
+     private bool gameWon = false;
      // Use this for initialization
 	void Start () {
           Vector2 tempPosition = new Vector2(platformSpawner.GetTotalLength(), GlobalConstants.bankHeight);
@@ -32,8 +34,11 @@ public class GoalPosition : MonoBehaviour {
 
           if (player != null) {
                if (player.transform.position.x >= transform.position.x) {
-
                     Debug.Log ("Game Win");
+                    if (!gameWon) {
+                         pauser.Pause (true);
+                         gameWon = true;
+                    }
                }
           }
 		

@@ -36,6 +36,9 @@ public class Spawner : MonoBehaviour
           //float tempNoise = noise.GetNoise(); 
           //float tempNoise = UnityEngine.Random.Range(1f, 1f) * (1/competenceValue);
           //float tempNoise = UnityEngine.Random.Range(20f, 20f) * (1 - competenceValue);
+          Debug.Log("Perlin" + Mathf.PerlinNoise(Time.time, 0));
+          Debug.Log("Perlin Delay" + (1 - competenceValue) * Mathf.PerlinNoise(Time.time, 0));
+
           float tempNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
           CancelInvoke("Spawn");
           //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
