@@ -34,10 +34,13 @@ public class Spawner : MonoBehaviour
      public void GenerateNewEnemies (float noise, float competenceValue) {
           
           //float tempNoise = noise.GetNoise(); 
-          float tempNoise = UnityEngine.Random.Range(1f, 1f) * (1/competenceValue);
+          //float tempNoise = UnityEngine.Random.Range(1f, 1f) * (1/competenceValue);
+          //float tempNoise = UnityEngine.Random.Range(20f, 20f) * (1 - competenceValue);
+          float tempNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
           CancelInvoke("Spawn");
-          InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
-          Debug.Log (" Spawn Delay " + spawnDelay * tempNoise);
+          //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
+          InvokeRepeating("Spawn", tempNoise, tempNoise);
+          Debug.Log (" Spawn Delay " + tempNoise);
           
      }
      public void OnClickApply(float noise, float competenceValue) {
