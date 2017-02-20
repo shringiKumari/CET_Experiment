@@ -108,6 +108,11 @@ public class Enemy : MonoBehaviour
 
 		// Instantiate the 100 points prefab at this point.
 		//Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
+          Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+          for (int colliderCount = 0; colliderCount < colliders.Length; colliderCount++) 
+          {
+               colliders [colliderCount].isTrigger = true;
+          }
 	}
 
 
