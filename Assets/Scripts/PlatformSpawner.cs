@@ -13,6 +13,7 @@ public class PlatformSpawner : MonoBehaviour {
      public GameObject riverBase;
      public GameObject player;
      public GameObject wallSpawner;
+     public Remover remover;
 
      public GoalPosition goalPosition;
     
@@ -147,7 +148,10 @@ public class PlatformSpawner : MonoBehaviour {
 
           GeneratePlatform (platformLeft.transform.position , GlobalConstants.levelLength, noise, competenceValue);
           lastRightPlatformX = platformList [platformList.Count - 1].transform.position.x;
+
+
           goalPosition.updateGoalPosition (lastRightPlatformX);
+          remover.updateKillTrigger (lastRightPlatformX);
 
      }
 	// Update is called once per frame

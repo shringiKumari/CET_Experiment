@@ -45,4 +45,10 @@ public class Remover : MonoBehaviour
 		// ... and then reload the level.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 	}
+
+     public void updateKillTrigger(float killTriggerSize)
+     {
+          BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D> ();
+          boxCollider2D.size = new Vector2 (killTriggerSize, boxCollider2D.size.y);
+     }
 }
