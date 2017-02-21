@@ -74,7 +74,7 @@ public class PlayerControl : MonoBehaviour
 		if(jump)
 		{
 			
-               Debug.Log ("jump jump jump");
+               //Debug.Log ("jump jump jump");
                // Set the Jump animator trigger parameter.
 			anim.SetTrigger("Jump");
 

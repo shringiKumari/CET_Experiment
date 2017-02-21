@@ -15,7 +15,16 @@ public class SliderValue : MonoBehaviour {
      public NoiseGenerator platformNoise;
      public NoiseGenerator wallNoise;
      public NoiseGenerator enemyNoise;
+
+     /*public enum competenceLevel{
+          LOW,
+          MEDIUM,
+          HIGH
+     }
+
+     public competenceLevel competence; */ 
     
+     public int c;
 
     // Use this for initialization
 	void Start () {
@@ -23,7 +32,19 @@ public class SliderValue : MonoBehaviour {
 	}
 
      void Awake () {
-          slider.value = UnityEngine.Random.Range (0f, 1f);
+          slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
+          if (slider.value <= 0.25) {
+               //competence = competenceLevel.LOW;
+               c = 0;
+          } else if (slider.value <= 0.65) {
+               //competence = competenceLevel.MEDIUM;
+               c = 1;
+          } else {
+               //competence = competenceLevel.HIGH;
+               c = 2;
+          }
+
+
      }
 	
      public float GetPlatformNoise() {
@@ -50,8 +71,8 @@ public class SliderValue : MonoBehaviour {
      }
 
      public void OnClickApply () {
-
-
+          
+          Debug.Log ("competence value" + slider.value);
           if (slider.value != previousSliderValue) {
                
                platformSpawner.OnClickApply (GetPlatformNoise(), slider.value);

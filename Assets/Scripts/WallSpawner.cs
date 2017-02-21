@@ -48,13 +48,15 @@ public class WallSpawner : MonoBehaviour {
           brickHeight = brick.GetComponent<SpriteRenderer> ().sprite.bounds.size.y * brick.transform.localScale.y;
           float brickWidthExtent = brick.GetComponent<BoxCollider2D> ().bounds.extents.x;
 
+          float totalBrickHeight = 0f;
+
           GameObject tempBrick = null;
           brickX = UnityEngine.Random.Range (leftBound.transform.position.x + 5f, leftBound.transform.position.x + 10f);
 
           //"i" limit should depend on competence
           int iCount = Mathf.CeilToInt (competenceValue * 5) * GlobalConstants.levelLength;
-          Debug.Log (competenceValue + " slider ");
-          Debug.Log (iCount + " i Count");
+          //Debug.Log (competenceValue + " slider ");
+          //Debug.Log (iCount + " i Count");
           for (int i = 1; i <= iCount; i++) {
                //brickX = brickX + UnityEngine.Random.Range (5, 15);
                brickX = brickX + noise * 10f;
@@ -81,30 +83,32 @@ public class WallSpawner : MonoBehaviour {
    
                if (brickPopulationFlag) {
                          
+                    int brickStackHeight = UnityEngine.Random.Range (0, Mathf.CeilToInt (tempBrickStackLimit));
 
-                         int brickStackHeight = UnityEngine.Random.Range (0, Mathf.CeilToInt (tempBrickStackLimit));
+                    GameObject wall = new GameObject ();
+                    WallStruct W = new WallStruct (wall, brickStackHeight);
+                    for (int j = 1; j <= brickStackHeight; j++) {
+                         tempBrick = GameObject.Instantiate (brick);
+                         Vector3 initialPosition = new Vector3 (brickX, GlobalConstants.bankHeight + (j - 1) * brickHeight);
+                         tempBrick.transform.position = initialPosition;
+                         tempBrick.transform.parent = W.wall.transform;
+                         totalBrickHeight = totalBrickHeight + brickHeight;
+                    }
+                    if (tempBrick != null) {
+                         GameObject tempTop = GameObject.Instantiate (top);
+                         Vector3 initialTopPosition = new Vector3 (tempBrick.transform.position.x, tempBrick.transform.position.y + brickHeight);
+                         tempTop.transform.position = initialTopPosition;
+                         tempTop.transform.parent = W.wall.transform;
+                    }
 
-                         GameObject wall = new GameObject ();
-                         WallStruct W = new WallStruct (wall, brickStackHeight);
-                         for (int j = 1; j <= brickStackHeight; j++) {
-                              tempBrick = GameObject.Instantiate (brick);
-                              Vector3 initialPosition = new Vector3 (brickX, GlobalConstants.bankHeight + (j - 1) * brickHeight);
-                              tempBrick.transform.position = initialPosition;
-                              tempBrick.transform.parent = W.wall.transform;
-                         }
-                         if (tempBrick != null) {
-                              GameObject tempTop = GameObject.Instantiate (top);
-                              Vector3 initialTopPosition = new Vector3 (tempBrick.transform.position.x, tempBrick.transform.position.y + brickHeight);
-                              tempTop.transform.position = initialTopPosition;
-                              tempTop.transform.parent = W.wall.transform;
-                         }
-
-                         wallStructList.Add (W);
-                         brickPopulationFlag = true;
+                    wallStructList.Add (W);
+                    brickPopulationFlag = true;
                     }
 
 
+
           }
+          Debug.Log ("total brick Height" + totalBrickHeight);
      }
 	
      public void OnClickApply (float noise, float competenceValue) {

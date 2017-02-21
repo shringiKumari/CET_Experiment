@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
                if((c.tag == "Obstacle") || (c.gameObject.tag == "Player"))
 			{
 				// ... Flip the enemy and stop checking the other colliders.
-                    Debug.Log("flip flip flip");
+                    //Debug.Log("flip flip flip");
                     Flip ();
 				break;
 			}

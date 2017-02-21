@@ -87,6 +87,7 @@ public class PlatformSpawner : MonoBehaviour {
 
      void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat, float noise, float competenceValue)
      {
+          float totalGapWidth = 0f;
           for (int i = 1; i <= timesTorepeat; i++) {
                GameObject tempLeft = GameObject.Instantiate (platformLeft);
                platformList.Add (tempLeft);
@@ -96,13 +97,15 @@ public class PlatformSpawner : MonoBehaviour {
                platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
                float gapWidthRandom = noise * 10f * competenceValue;
-               Debug.Log ("random noise" + gapWidthRandom);
+               //Debug.Log ("random noise" + gapWidthRandom);
                //float gapWidthRandom = UnityEngine.Random.Range(0f, 10f) * competenceValue;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;
                latestPlatformLeft = tempLeft;
+               totalGapWidth = totalGapWidth + gapWidthRandom;
           }
+          Debug.Log (totalGapWidth + "totalGapWidth");
      }
 
      void GenrateRiverBase (Vector3 initialRiverBasePosition, int timesTorepeat)
