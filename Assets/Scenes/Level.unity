@@ -1527,6 +1527,7 @@ GameObject:
   - component: {fileID: 743439345}
   - component: {fileID: 743439344}
   - component: {fileID: 743439346}
+  - component: {fileID: 743439347}
   m_Layer: 5
   m_Name: PlayerData
   m_TagString: Untagged
@@ -1575,9 +1576,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remover: {fileID: 1894919839}
+  playerDistance: {fileID: 1665501281}
   storeAttempt: {fileID: 743439344}
-  startTime: 0
-  endTime: 0
+  previousCompetenceValue: {fileID: 1298953595}
+--- !u!114 &743439347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743439343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb19ebf61b1e1458c9f2a31c21d9282d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  store: {fileID: 743439344}
 --- !u!1001 &774434000
 Prefab:
   m_ObjectHideFlags: 0
@@ -2638,7 +2651,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.46
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2662,6 +2675,7 @@ MonoBehaviour:
   platformNoise: {fileID: 1253751994}
   wallNoise: {fileID: 1864020383}
   enemyNoise: {fileID: 1630090464}
+  optimalExperience: {fileID: 743439347}
   fitness: {fileID: 83366675}
   competence: 0
 --- !u!1 &1403839556 stripped
@@ -3154,6 +3168,17 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100020, guid: 6aa187bc6339843479c03fdfd71404a3, type: 2}
   m_PrefabInternal: {fileID: 441222720}
+--- !u!114 &1665501281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665501271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf501db2b94b14660acfec4ac3623b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1698172449
 Prefab:
   m_ObjectHideFlags: 0
@@ -3431,6 +3456,7 @@ MonoBehaviour:
   platformSpawner: {fileID: 1206930512}
   player: {fileID: 1665501271}
   pauser: {fileID: 644203107}
+  remover: {fileID: 1894919839}
 --- !u!1 &1864020382
 GameObject:
   m_ObjectHideFlags: 0

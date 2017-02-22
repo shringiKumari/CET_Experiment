@@ -105,7 +105,7 @@ public class PlatformSpawner : MonoBehaviour {
                latestPlatformLeft = tempLeft;
                totalGapWidth = totalGapWidth + gapWidthRandom;
           }
-          Debug.Log (totalGapWidth + "totalGapWidth");
+          //Debug.Log (totalGapWidth + "totalGapWidth");
      }
 
      void GenrateRiverBase (Vector3 initialRiverBasePosition, int timesTorepeat)

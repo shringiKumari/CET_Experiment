@@ -9,13 +9,12 @@ public class StoreAttempt : MonoBehaviour {
 
      public static string dataFileName = "attempts.json";
 
-     public void OnAttempt(bool win, float timeOfDeath, float distanceTravelled) {
-          Attempts.AttemptModel attempt = new Attempts.AttemptModel (win, timeOfDeath, distanceTravelled);
+     public void OnAttempt(bool win, float timeOfDeath, float distanceTravelled, float previousCompetenceValue) {
+          Attempts.AttemptModel attempt = new Attempts.AttemptModel (win, timeOfDeath, distanceTravelled, previousCompetenceValue);
 
           FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.OpenOrCreate);
           StreamReader reader = new StreamReader (stream);
           string json = reader.ReadToEnd ();
-          Debug.Log (json.Length);
           stream.Close ();
           stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
 
@@ -31,6 +30,21 @@ public class StoreAttempt : MonoBehaviour {
           writer.Flush ();
           stream.Close ();
      }
+
+     public List<Attempts.AttemptModel> GetCurrentAttemptData(){
+          if (File.Exists (Application.persistentDataPath + "/" + dataFileName)) {
+               FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Open);
+               StreamReader reader = new StreamReader (stream);
+               string json = reader.ReadToEnd ();
+
+               if (!string.IsNullOrEmpty (json)) {
+                    Attempts attempts = JsonUtility.FromJson<Attempts> (json);
+                    return attempts.attempts;
+               }
+          }
+          return null;
+     }
+
 
 
      private void OnApplicationQuit(){

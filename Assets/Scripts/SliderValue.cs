@@ -21,6 +21,7 @@ public class SliderValue : MonoBehaviour {
      public NoiseGenerator platformNoise;
      public NoiseGenerator wallNoise;
      public NoiseGenerator enemyNoise;
+     public OptimalExperience optimalExperience;
 
      public Fitness fitness;
 
@@ -40,8 +41,11 @@ public class SliderValue : MonoBehaviour {
      }
 
      void Awake () {
-          slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
-          //UpdateCompetenceLevel ();
+          // do it only once in game start 
+          //slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
+          slider.value = optimalExperience.OptimizeExperience(); 
+          Debug.Log (" competence " + slider.value);
+
      }
 
      private void UpdateCompetenceLevel ()

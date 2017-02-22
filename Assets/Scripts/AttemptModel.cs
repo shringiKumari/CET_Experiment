@@ -10,11 +10,13 @@ public struct Attempts {
           public bool  win;
           public float timeOfDeath;
           public float distanceTravelled;
+          public float previousCompetenceValue;
 
-          public AttemptModel(bool win, float timeOfDeath, float distanceTravelled) {
+          public AttemptModel(bool win, float timeOfDeath, float distanceTravelled, float previousCompetenceValue) {
                this.win = win;
                this.timeOfDeath = timeOfDeath;
                this.distanceTravelled = distanceTravelled;
+               this.previousCompetenceValue = previousCompetenceValue;
           }
      }
      public List<AttemptModel> attempts;

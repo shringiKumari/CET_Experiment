@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
 		int enemyIndex = Random.Range(0, enemies.Length);
           if (player != null) {
                Vector2 tempPosition = new Vector2 (player.transform.position.x + ((1 - competence)* 5), transform.position.y);
-               Debug.Log ("spawn position" + tempPosition.x);
+               //Debug.Log ("spawn position" + tempPosition.x);
                Instantiate (enemies [enemyIndex], tempPosition, transform.rotation);
           }
 
@@ -49,7 +49,7 @@ public class Spawner : MonoBehaviour
           CancelInvoke("Spawn");
           //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
           InvokeRepeating("Spawn", spawnNoise, spawnNoise);
-          Debug.Log (" Spawn Delay " + spawnNoise);
+          //Debug.Log (" Spawn Delay " + spawnNoise);
           
      }
      public void OnClickApply(float noise, float competenceValue) {

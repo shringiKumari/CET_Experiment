@@ -21,8 +21,8 @@ public class Fitness : MonoBehaviour {
      public bool FitnessCheck( competenceLevel competence) {
 
           float d = platformSpawner.totalGapWidth + wallSpawner.totalBrickHeight - enemySpawner.spawnNoise;
-          Debug.Log ("difficulty" + d);
-          Debug.Log ("competence level" + competence);
+          //Debug.Log ("difficulty" + d);
+          //Debug.Log ("competence level" + competence);
           switch (competence) {
           case competenceLevel.LOW:
                if (d < 0)

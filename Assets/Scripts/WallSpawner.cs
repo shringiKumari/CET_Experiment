@@ -111,7 +111,7 @@ public class WallSpawner : MonoBehaviour {
 
 
           }
-          Debug.Log ("total brick Height" + totalBrickHeight);
+          //Debug.Log ("total brick Height" + totalBrickHeight);
      }
 	
      public void OnClickApply (float noise, float competenceValue) {
