@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPosition : MonoBehaviour {
 
@@ -36,11 +37,20 @@ public class GoalPosition : MonoBehaviour {
                if (player.transform.position.x >= transform.position.x) {
                     Debug.Log ("Game Win");
                     if (!gameWon) {
-                         pauser.Pause (true);
+                         
+                         StartCoroutine (ReloadGame());
                          gameWon = true;
                     }
                }
           }
 		
 	}
+
+     IEnumerator ReloadGame()
+     {
+          // ... pause briefly
+          yield return new WaitForSeconds(0.7f);
+          // ... and then reload the level.
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+     }
 }

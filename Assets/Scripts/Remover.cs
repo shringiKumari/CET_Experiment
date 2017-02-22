@@ -26,7 +26,7 @@ public class Remover : MonoBehaviour
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.
-			StartCoroutine("ReloadGame");
+               StartCoroutine(ReloadGame());
 		}
 		else
 		{
