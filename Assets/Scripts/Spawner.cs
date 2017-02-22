@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 	public GameObject[] enemies;		// Array of enemy prefabs.
      public GameObject player;
 
+     private float competence;
+
      public float spawnNoise;
 
 	void Start ()
@@ -17,12 +19,13 @@ public class Spawner : MonoBehaviour
 	}
 
 
-	void Spawn ()
+     void Spawn ()
 	{
 		// Instantiate a random enemy.
 		int enemyIndex = Random.Range(0, enemies.Length);
           if (player != null) {
-               Vector2 tempPosition = new Vector2 (player.transform.position.x, transform.position.y);
+               Vector2 tempPosition = new Vector2 (player.transform.position.x + ((1 - competence)* 5), transform.position.y);
+               Debug.Log ("spawn position" + tempPosition.x);
                Instantiate (enemies [enemyIndex], tempPosition, transform.rotation);
           }
 
@@ -41,6 +44,7 @@ public class Spawner : MonoBehaviour
           //Debug.Log("Perlin" + Mathf.PerlinNoise(Time.time, 0));
           //Debug.Log("Perlin Delay" + (1 - competenceValue) * Mathf.PerlinNoise(Time.time, 0));
 
+          competence = competenceValue;
           spawnNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
           CancelInvoke("Spawn");
           //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
