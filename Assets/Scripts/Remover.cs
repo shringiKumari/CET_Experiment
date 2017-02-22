@@ -5,6 +5,7 @@ using System.Collections;
 public class Remover : MonoBehaviour
 {
 	public GameObject splash;
+     public GameEndEvent gameEndEvent = new GameEndEvent();
 
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -26,6 +27,7 @@ public class Remover : MonoBehaviour
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.
+               gameEndEvent.Invoke();
                StartCoroutine(ReloadGame());
 		}
 		else
@@ -40,10 +42,11 @@ public class Remover : MonoBehaviour
 
 	IEnumerator ReloadGame()
 	{			
-		// ... pause briefly
-		yield return new WaitForSeconds(2);
-		// ... and then reload the level.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+          // ... pause briefly
+          yield return new WaitForSeconds(2);
+          // ... and then reload the level.
+
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 	}
 
      public void updateKillTrigger(float killTriggerSize)
