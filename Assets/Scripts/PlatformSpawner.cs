@@ -37,7 +37,7 @@ public class PlatformSpawner : MonoBehaviour {
      public List<Transform> platformEndsList = new List<Transform> ();
      [SerializeField] public NoiseGenerator noiseGenerator;
 
-
+     public float totalGapWidth = 0f;
  
 	// Use this for initialization
 
@@ -87,7 +87,7 @@ public class PlatformSpawner : MonoBehaviour {
 
      void GeneratePlatform (Vector3 firstPlatformLeftPosition, int timesTorepeat, float noise, float competenceValue)
      {
-          float totalGapWidth = 0f;
+          totalGapWidth = 0;
           for (int i = 1; i <= timesTorepeat; i++) {
                GameObject tempLeft = GameObject.Instantiate (platformLeft);
                platformList.Add (tempLeft);

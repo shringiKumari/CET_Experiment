@@ -91,6 +91,54 @@ NavMeshSettings:
     cellSize: 0.16666666
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &83366674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 83366676}
+  - component: {fileID: 83366675}
+  m_Layer: 5
+  m_Name: Fitness
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &83366675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83366674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966d967506cc14b368e5373b989516d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformSpawner: {fileID: 1206930512}
+  wallSpawner: {fileID: 560757392}
+  enemySpawner: {fileID: 552475369}
+--- !u!224 &83366676
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83366674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &133817295
 Prefab:
   m_ObjectHideFlags: 0
@@ -1118,6 +1166,7 @@ MonoBehaviour:
   top: {fileID: 229494071}
   player: {fileID: 1665501271}
   leftBound: {fileID: 895719146}
+  totalBrickHeight: 0
   brickStackLimit: 5
 --- !u!4 &560757393
 Transform:
@@ -2008,6 +2057,7 @@ MonoBehaviour:
   riverBaseY: 3
   platformEndsList: []
   noiseGenerator: {fileID: 0}
+  totalGapWidth: 0
 --- !u!114 &1206930513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2547,7 +2597,8 @@ MonoBehaviour:
   platformNoise: {fileID: 1253751994}
   wallNoise: {fileID: 1864020383}
   enemyNoise: {fileID: 1630090464}
-  c: 0
+  fitness: {fileID: 83366675}
+  competence: 0
 --- !u!1 &1403839556 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1267086568549124, guid: 940b751b3367045cb86a952e53e4daf2,

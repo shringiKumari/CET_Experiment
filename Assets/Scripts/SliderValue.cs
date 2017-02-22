@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum competenceLevel{
+     LOW,
+     MEDIUM,
+     HIGH
+}
+
 public class SliderValue : MonoBehaviour {
 
      public Slider slider;
@@ -16,37 +22,41 @@ public class SliderValue : MonoBehaviour {
      public NoiseGenerator wallNoise;
      public NoiseGenerator enemyNoise;
 
-     /*public enum competenceLevel{
-          LOW,
-          MEDIUM,
-          HIGH
+     public Fitness fitness;
+
+     public competenceLevel competence;  
+
+     public enum competenceChange
+     {
+          SYSTEM_CHANGE,
+          PLAYER_CHANGE
      }
-
-     public competenceLevel competence; */ 
     
-     public int c;
+     private int fitnessCheckCounter = 0;
 
-    // Use this for initialization
-	void Start () {
-          OnClickApply ();
-	}
+     // Use this for initialization
+     void Start () {
+          GenerateLevel ();
+     }
 
      void Awake () {
           slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
-          if (slider.value <= 0.25) {
-               //competence = competenceLevel.LOW;
-               c = 0;
-          } else if (slider.value <= 0.65) {
-               //competence = competenceLevel.MEDIUM;
-               c = 1;
-          } else {
-               //competence = competenceLevel.HIGH;
-               c = 2;
-          }
-
-
+          //UpdateCompetenceLevel ();
      }
-	
+
+     private void UpdateCompetenceLevel ()
+     {
+          if (slider.value <= 0.25) {
+          competence = competenceLevel.LOW;
+          }
+          else if (slider.value <= 0.65) {
+               competence = competenceLevel.MEDIUM;
+          }
+          else {
+               competence = competenceLevel.HIGH;
+          }
+     }
+     
      public float GetPlatformNoise() {
           if (platformNoise.enabled) {
                return platformNoise.GetNoise ();
@@ -74,14 +84,29 @@ public class SliderValue : MonoBehaviour {
           
           Debug.Log ("competence value" + slider.value);
           if (slider.value != previousSliderValue) {
-               
-               platformSpawner.OnClickApply (GetPlatformNoise(), slider.value);
-               wallspawner.OnClickApply (GetWallNoise(), slider.value);
-               enemySpawner.OnClickApply (GetEnemyNoise(), slider.value);
-
+               GenerateLevel ();
                previousSliderValue = slider.value;
           }
      }
+
+     public void GenerateLevel () {
+          UpdateCompetenceLevel ();
+          platformSpawner.OnClickApply (GetPlatformNoise(), slider.value);
+          wallspawner.OnClickApply (GetWallNoise(), slider.value);
+          enemySpawner.OnClickApply (GetEnemyNoise(), slider.value);
+
+          if (!fitness.FitnessCheck (competence)) {
+               fitnessCheckCounter++;
+               if (fitnessCheckCounter > 5) {
+                    Debug.Log ("Cannot find level with proper fitness");
+                    slider.value = slider.value + UnityEngine.Random.Range (-0.1f, 0.1f);
+                    fitnessCheckCounter = 0;
+               }
+               GenerateLevel ();
+          }
+          fitnessCheckCounter = 0;
+     }
+
 
      // Update is called once per frame
 	void Update () {

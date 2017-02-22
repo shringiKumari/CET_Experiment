@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 	public GameObject[] enemies;		// Array of enemy prefabs.
      public GameObject player;
 
+     public float spawnNoise;
+
 	void Start ()
 	{
 		// Start calling the Spawn function repeatedly after a delay .
@@ -39,11 +41,11 @@ public class Spawner : MonoBehaviour
           //Debug.Log("Perlin" + Mathf.PerlinNoise(Time.time, 0));
           //Debug.Log("Perlin Delay" + (1 - competenceValue) * Mathf.PerlinNoise(Time.time, 0));
 
-          float tempNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
+          spawnNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
           CancelInvoke("Spawn");
           //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
-          InvokeRepeating("Spawn", tempNoise, tempNoise);
-          Debug.Log (" Spawn Delay " + tempNoise);
+          InvokeRepeating("Spawn", spawnNoise, spawnNoise);
+          Debug.Log (" Spawn Delay " + spawnNoise);
           
      }
      public void OnClickApply(float noise, float competenceValue) {
