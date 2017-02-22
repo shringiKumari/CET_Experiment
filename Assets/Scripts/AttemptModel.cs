@@ -7,14 +7,14 @@ public struct Attempts {
 
      [System.Serializable]
      public struct AttemptModel {
-          public float timeToReachGoal;
+          public bool  win;
           public float timeOfDeath;
-          public int deathOnPlatform;
+          public float distanceTravelled;
 
-          public AttemptModel(float timeToReachGoal, float timeOfDeath, int deathOnPlatform) {
-               this.timeToReachGoal = timeToReachGoal;
+          public AttemptModel(bool win, float timeOfDeath, float distanceTravelled) {
+               this.win = win;
                this.timeOfDeath = timeOfDeath;
-               this.deathOnPlatform = deathOnPlatform;
+               this.distanceTravelled = distanceTravelled;
           }
      }
      public List<AttemptModel> attempts;

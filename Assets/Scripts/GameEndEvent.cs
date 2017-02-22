@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEndEvent : UnityEvent{
+public class GameEndEvent : UnityEvent<bool>{
 
 }

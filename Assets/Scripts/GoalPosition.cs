@@ -8,6 +8,8 @@ public class GoalPosition : MonoBehaviour {
      public PlatformSpawner platformSpawner;
      public GameObject player;
      public Pauser pauser;
+     public Remover remover;
+
      private bool gameWon = false;
      // Use this for initialization
 	void Start () {
@@ -35,22 +37,15 @@ public class GoalPosition : MonoBehaviour {
 
           if (player != null) {
                if (player.transform.position.x >= transform.position.x) {
-                    Debug.Log ("Game Win");
+                    
                     if (!gameWon) {
-                         
-                         StartCoroutine (ReloadGame());
+                         Debug.Log ("Game Win");
+                         StartCoroutine (remover.ReloadGame(true));
                          gameWon = true;
                     }
                }
           }
 		
 	}
-
-     IEnumerator ReloadGame()
-     {
-          // ... pause briefly
-          yield return new WaitForSeconds(0.7f);
-          // ... and then reload the level.
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-     }
+         
 }

@@ -27,8 +27,8 @@ public class Remover : MonoBehaviour
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.
-               gameEndEvent.Invoke();
-               StartCoroutine(ReloadGame());
+               //gameEndEvent.Invoke();
+               StartCoroutine(ReloadGame(false));
 		}
 		else
 		{
@@ -40,12 +40,12 @@ public class Remover : MonoBehaviour
 		}
 	}
 
-	IEnumerator ReloadGame()
+     public IEnumerator ReloadGame(bool win)
 	{			
+          gameEndEvent.Invoke(win);
           // ... pause briefly
-          yield return new WaitForSeconds(2);
+          yield return new WaitForSeconds(0.5f);
           // ... and then reload the level.
-
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 	}
 

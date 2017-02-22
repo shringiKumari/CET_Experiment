@@ -7,15 +7,17 @@ using System;
 
 public class StoreAttempt : MonoBehaviour {
 
-     public void OnAttempt(float timeToReachGoal, float timeOfDeath, int deathOnPlatform) {
-          Attempts.AttemptModel attempt = new Attempts.AttemptModel (timeToReachGoal, timeOfDeath, deathOnPlatform);
+     public static string dataFileName = "attempts.json";
 
-          FileStream stream = new FileStream (Application.persistentDataPath + "/attempts.json", FileMode.OpenOrCreate);
+     public void OnAttempt(bool win, float timeOfDeath, float distanceTravelled) {
+          Attempts.AttemptModel attempt = new Attempts.AttemptModel (win, timeOfDeath, distanceTravelled);
+
+          FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.OpenOrCreate);
           StreamReader reader = new StreamReader (stream);
           string json = reader.ReadToEnd ();
           Debug.Log (json.Length);
           stream.Close ();
-          stream = new FileStream (Application.persistentDataPath + "/attempts.json", FileMode.Truncate);
+          stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
 
           Attempts attempts = new Attempts ();
           if (!string.IsNullOrEmpty (json)) {
@@ -27,6 +29,12 @@ public class StoreAttempt : MonoBehaviour {
           StreamWriter writer = new StreamWriter (stream);
           writer.Write (json);
           writer.Flush ();
+          stream.Close ();
+     }
+
+
+     private void OnApplicationQuit(){
+          FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
           stream.Close ();
      }
 }

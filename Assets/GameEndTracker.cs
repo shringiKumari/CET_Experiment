@@ -6,6 +6,7 @@ public class GameEndTracker : MonoBehaviour {
 
 	// Use this for initialization
      public Remover remover;
+     public PlayerDistance playerDistance;
      public StoreAttempt storeAttempt;
 
      public float startTime;
@@ -25,17 +26,21 @@ public class GameEndTracker : MonoBehaviour {
 		
 	}
 
-     private void GameEnd() {
+     private void GameEnd(bool win) {
           // all deaths should come via killTrigger(Remover)
 
-          //record platform of death
+
           //how many times has the game ended so far
 
           //record time from start to death
           endTime = Time.time - startTime;
           Debug.Log (" End Time " + endTime);
           Debug.Log ("Game has ended"); 
-          storeAttempt.OnAttempt (0, endTime, 2);
+
+          //record platform of death or distance travelled before death
+          float tempDistance = playerDistance.DistanceTravelled ();
+          Debug.Log (" Distance Travelled " + tempDistance);
+          storeAttempt.OnAttempt (win, endTime, tempDistance);
 
 
      }
