@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// PCG platform and gaps
 public class PlatformSpawner : MonoBehaviour {
 
      public GameObject platformLeft;
@@ -33,6 +33,8 @@ public class PlatformSpawner : MonoBehaviour {
      private float riverTopLength;
      private float riverMidLength;
      private float riverBaseLength;
+     private float initialRefPosition = 0.2f; //set in inspector
+     private float noiseAmplifier = 10f;
 
      public List<Transform> platformEndsList = new List<Transform> ();
      [SerializeField] public NoiseGenerator noiseGenerator;
@@ -51,7 +53,7 @@ public class PlatformSpawner : MonoBehaviour {
      void Awake () {
           
           //initial platform positions
-          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.riverHeight); 
+          Vector3 initialPlatformPosition = new Vector3 (player.transform.position.x - initialRefPosition, GlobalConstants.riverHeight); 
           platformLeft.transform.position = initialPlatformPosition;
           platformLength = platformLeft.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
           platformRight.transform.position = initialPlatformPosition + new Vector3 (platformLength, 0);
@@ -62,7 +64,7 @@ public class PlatformSpawner : MonoBehaviour {
 
 
           // river base
-          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - 0.2f, GlobalConstants.riverHeight); 
+          Vector3 initialRiverBasePosition = new Vector3 (player.transform.position.x - initialRefPosition, GlobalConstants.riverHeight); 
           riverBase.transform.position = initialRiverBasePosition;
           riverBaseLength = riverBase.GetComponent<SpriteRenderer> ().sprite.bounds.size.x;
 
@@ -96,9 +98,7 @@ public class PlatformSpawner : MonoBehaviour {
                GameObject tempRight = GameObject.Instantiate (platformRight);
                platformList.Add (tempRight);
                platformEndsList.Add(tempRight.transform.GetChild (0));
-               float gapWidthRandom = noise * 10f * competenceValue;
-               //Debug.Log ("random noise" + gapWidthRandom);
-               //float gapWidthRandom = UnityEngine.Random.Range(0f, 10f) * competenceValue;
+               float gapWidthRandom = noise * noiseAmplifier * competenceValue;
                tempRight.transform.position = firstPlatformLeftPosition + new Vector3 (2 * i * platformLength + platformLength + gapWidthRandom, 0);
                firstPlatformLeftPosition.x += gapWidthRandom;
                lastRightPlatformX = tempRight.transform.position.x;

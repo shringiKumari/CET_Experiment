@@ -12,6 +12,7 @@ public class BackgroundSpawner : MonoBehaviour {
 
 
      public float backgroundY = 0f;
+     public float initialBGReference = -0.2f;
 
      private float backgroundLength;
 
@@ -23,7 +24,7 @@ public class BackgroundSpawner : MonoBehaviour {
      void Awake () {
 
           //initial platform positions
-          Vector3 initialBackgroundPosition = new Vector3 (player.transform.position.x - 0.2f, backgroundY); 
+          Vector3 initialBackgroundPosition = new Vector3 (player.transform.position.x + initialBGReference, backgroundY); 
           background.transform.position = initialBackgroundPosition;
           backgroundLength = envBG.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
 

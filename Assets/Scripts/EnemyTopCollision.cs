@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//checks for collision when player jumps on enemy
 public class EnemyTopCollision : MonoBehaviour {
 
      public Enemy enemy;

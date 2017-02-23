@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+// used for data collection when player dies
 public class Remover : MonoBehaviour
 {
 	public GameObject splash;

@@ -7,13 +7,19 @@ public class OptimalExperience : MonoBehaviour {
 
      public StoreAttempt store;
 
-     // Make this a function of level length
      // Make this a behaviour tree
 
-     private float totalDistanceToGoal = 198;
-     private float minimumTime = 24;
+     private float totalDistanceToGoal = 198; //TO DO: read this value from goal position
+     private float minimumTime = 24; // TO DO: read as totalDistance/ Player speed. 
      private float deltaCompetence = 0f;
-     private int maxAttempts = 7;
+     private int maxAttempts = 7; // caliberation limit for playtests else run it for higher numbers and see what happens.
+     private float timeBuffer = 10f;
+
+     private float competenceStep = 0.2f;
+     private float minCompetence = 0.1f;
+     private float maxCompetence = 0.9f;
+     private float respectableDistanceFactor = 0.7f; // 70% there! Just 30% of the distance away from goal. It increases with each attempt by a factor of 1/20;
+    
 
      public float OptimizeExperience(){
           List<Attempts.AttemptModel> allAttempts = store.GetCurrentAttemptData ();
@@ -33,31 +39,31 @@ public class OptimalExperience : MonoBehaviour {
                     if (allAttempts [currentAttempt].win) {
                          Debug.Log ("too easy");
                          //make more branches
-                         if (timeToReachGoal <= minimumTime + 10) {
+                         if (timeToReachGoal <= minimumTime + timeBuffer) {
                               Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = 0.4f * (1 - currentAttempt / maxAttempts);
+                              deltaCompetence = (2f * competenceStep) * (1 - currentAttempt / maxAttempts);
                          } else {
                               Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = 0.2f * (1 - currentAttempt / maxAttempts);
+                              deltaCompetence = competenceStep * (1 - currentAttempt / maxAttempts);
                          }
 
                     } else {
                          Debug.Log ("failed in this attempt : good");
-                         if (distanceTravelled <= (0.7 + currentAttempt/20) * totalDistanceToGoal) {
+                         if (distanceTravelled <= (respectableDistanceFactor + currentAttempt/20) * totalDistanceToGoal) {
                               Debug.Log ("decrease competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = -0.2f * (1 - currentAttempt / maxAttempts); 
+                              deltaCompetence =  (-1f * competenceStep) * (1 - currentAttempt / maxAttempts); 
                          } else {
                               Debug.Log ("increase competence by" + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = 0.1f * (1 - currentAttempt / maxAttempts);
+                              deltaCompetence = (0.5f * competenceStep) * (1 - currentAttempt / maxAttempts);
                          }
                    
                     }
-                    return Mathf.Clamp(previousCompetence + deltaCompetence, 0.1f, 0.9f);
+                    return Mathf.Clamp(previousCompetence + deltaCompetence, minCompetence, maxCompetence);
 
                } else {
                     float tempCompetence = 0f;
                     for (int i = 0; i <= maxAttempts; i++) {
-                         if (allAttempts [i].distanceTravelled >= 0.6 * totalDistanceToGoal) {
+                         if (allAttempts [i].distanceTravelled >= respectableDistanceFactor * totalDistanceToGoal) {
                               if(tempCompetence < allAttempts [i].previousCompetenceValue){
                                    tempCompetence = allAttempts [i].previousCompetenceValue;
                               }
@@ -74,7 +80,7 @@ public class OptimalExperience : MonoBehaviour {
 
           }
           //set initial slider value
-          return UnityEngine.Random.Range (0.1f, 0.9f);
+          return UnityEngine.Random.Range (minCompetence, maxCompetence);
           }
 
      }

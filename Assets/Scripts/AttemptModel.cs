@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//model of the data being stored in json.
 [System.Serializable]
 public struct Attempts {
 

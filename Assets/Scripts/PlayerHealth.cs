@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//unity code
 public class PlayerHealth : MonoBehaviour
 {	
 	public float health = 100f;					// The player's health.

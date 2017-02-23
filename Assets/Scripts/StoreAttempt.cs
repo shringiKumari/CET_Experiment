@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
+//data read and write
 public class StoreAttempt : MonoBehaviour {
 
      public static string dataFileName = "attempts.json";

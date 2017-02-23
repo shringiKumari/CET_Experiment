@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//picked unity code and changed <pretty much rewritten> for the game
 public class PlayerControl : MonoBehaviour
 {
 	[HideInInspector]
