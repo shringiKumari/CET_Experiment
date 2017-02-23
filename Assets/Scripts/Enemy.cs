@@ -81,8 +81,6 @@ public class Enemy : MonoBehaviour
 		ren.enabled = true;
 		ren.sprite = deadEnemy;
 
-		// Increase the score by 100 points
-		//score.score += 100;
 
 		// Set dead to true.
 		dead = true;
@@ -101,13 +99,6 @@ public class Enemy : MonoBehaviour
 		int i = Random.Range(0, deathClips.Length);
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);
 
-		// Create a vector that is just above the enemy.
-		//Vector3 scorePos;
-		//scorePos = transform.position;
-		//scorePos.y += 1.5f;
-
-		// Instantiate the 100 points prefab at this point.
-		//Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
           Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
           for (int colliderCount = 0; colliderCount < colliders.Length; colliderCount++) 
           {
