@@ -36,29 +36,39 @@ public class OptimalExperience : MonoBehaviour {
                          if (timeToReachGoal <= minimumTime + 10) {
                               Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
                               deltaCompetence = 0.4f * (1 - currentAttempt / maxAttempts);
-                              return previousCompetence + deltaCompetence;
                          } else {
                               Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
                               deltaCompetence = 0.2f * (1 - currentAttempt / maxAttempts);
-                              return previousCompetence + deltaCompetence;
                          }
 
                     } else {
                          Debug.Log ("failed in first attempt : good");
-                         if (distanceTravelled <= 0.6 * totalDistanceToGoal) {
+                         if (distanceTravelled <= (0.6 + currentAttempt/20) * totalDistanceToGoal) {
                               Debug.Log ("decrease competence by " + (1 - (currentAttempt / maxAttempts)));
                               deltaCompetence = -0.2f * (1 - currentAttempt / maxAttempts); 
-                              return previousCompetence + deltaCompetence;
                          } else {
                               Debug.Log ("increase competence by" + (1 - (currentAttempt / maxAttempts)));
                               deltaCompetence = 0.1f * (1 - currentAttempt / maxAttempts);
-                              return previousCompetence + deltaCompetence;
+                         }
+                   
+                    }
+                    return Mathf.Clamp(previousCompetence + deltaCompetence, 0.1f, 0.9f);
+
+               } else {
+                    float tempCompetence = 0f;
+                    for (int i = 0; i <= currentAttempt; i++) {
+                         if (allAttempts [i].distanceTravelled >= 0.7 * totalDistanceToGoal) {
+                              if(tempCompetence < allAttempts [i].previousCompetenceValue){
+                                   tempCompetence = allAttempts [i].previousCompetenceValue;
+                              }
+                         }
+                         if (tempCompetence > 0) {
+                              return UnityEngine.Random.Range (tempCompetence + 0.05f, tempCompetence - 0.05f);
+                         } else {
+                              return UnityEngine.Random.Range (previousCompetence + 0.05f, previousCompetence - 0.05f);
                          }
 
                     }
-
-               } else {
-                    return UnityEngine.Random.Range (previousCompetence + 0.05f, previousCompetence - 0.05f);
                }
 
 
