@@ -42,8 +42,8 @@ public class OptimalExperience : MonoBehaviour {
                          }
 
                     } else {
-                         Debug.Log ("failed in first attempt : good");
-                         if (distanceTravelled <= (0.6 + currentAttempt/20) * totalDistanceToGoal) {
+                         Debug.Log ("failed in this attempt : good");
+                         if (distanceTravelled <= (0.7 + currentAttempt/20) * totalDistanceToGoal) {
                               Debug.Log ("decrease competence by " + (1 - (currentAttempt / maxAttempts)));
                               deltaCompetence = -0.2f * (1 - currentAttempt / maxAttempts); 
                          } else {
@@ -56,16 +56,16 @@ public class OptimalExperience : MonoBehaviour {
 
                } else {
                     float tempCompetence = 0f;
-                    for (int i = 0; i <= currentAttempt; i++) {
-                         if (allAttempts [i].distanceTravelled >= 0.7 * totalDistanceToGoal) {
+                    for (int i = 0; i <= maxAttempts; i++) {
+                         if (allAttempts [i].distanceTravelled >= 0.6 * totalDistanceToGoal) {
                               if(tempCompetence < allAttempts [i].previousCompetenceValue){
                                    tempCompetence = allAttempts [i].previousCompetenceValue;
                               }
                          }
                          if (tempCompetence > 0) {
-                              return UnityEngine.Random.Range (tempCompetence + 0.05f, tempCompetence - 0.05f);
+                              return UnityEngine.Random.Range (tempCompetence + 0.05f, tempCompetence - 0.02f);
                          } else {
-                              return UnityEngine.Random.Range (previousCompetence + 0.05f, previousCompetence - 0.05f);
+                              return UnityEngine.Random.Range (previousCompetence + 0.05f, previousCompetence - 0.02f);
                          }
 
                     }
