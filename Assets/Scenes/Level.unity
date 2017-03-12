@@ -762,6 +762,10 @@ Prefab:
       propertyPath: m_Mass
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 6aa187bc6339843479c03fdfd71404a3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6aa187bc6339843479c03fdfd71404a3, type: 2}
   m_IsPrefabParent: 0
@@ -2314,7 +2318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1527219562
 RectTransform:
   m_ObjectHideFlags: 0

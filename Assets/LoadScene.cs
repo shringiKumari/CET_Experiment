@@ -8,12 +8,12 @@ using System.IO;
 public class LoadScene : MonoBehaviour {
 
 	[SerializeField] private GameObject levelStart;
-	[SerializeField] private GameObject enemySpawner;
-	[SerializeField] private GameObject gameUI;
+     public Pauser pause;
 
      public StoreAttempt store;
 	// Use this for initialization
 	void Start () {
+
 
           List<Attempts.AttemptModel> allAttempts = store.GetCurrentAttemptData ();
           if (allAttempts != null) {
@@ -21,11 +21,12 @@ public class LoadScene : MonoBehaviour {
                bool gameWin = allAttempts [currentAttempt].win;
                if (gameWin) {
                     levelStart.SetActive (true);
+                    pause.Pause (true);
                } else {
                     levelStart.SetActive (false);
-                    gameUI.SetActive(true);
-                    enemySpawner.SetActive(true);
                }
+          } else {
+               pause.Pause (true);
           }
 
 
@@ -37,8 +38,8 @@ public class LoadScene : MonoBehaviour {
 	}
 
      public void OnClick () {
-            gameUI.SetActive(true);
-		  enemySpawner.SetActive(true);
+
+            pause.Pause (false);
 		  levelStart.SetActive(false);
 
      }
