@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimeHUD : MonoBehaviour {
 
      public Text timeText;
-     private float timeFromStart;
+     public float timeFromStart;
      private int timeInMin;
      private float timeInSec;
      private string timeGap;
