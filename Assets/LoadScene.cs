@@ -9,17 +9,20 @@ public class LoadScene : MonoBehaviour {
 
 	[SerializeField] private GameObject levelStart;
      public Pauser pause;
+     public LevelNumberText levelNumberText;
+     private GlobalData globalData;
 
      public StoreAttempt store;
 	// Use this for initialization
 	void Start () {
 
-
+          globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           List<Attempts.AttemptModel> allAttempts = store.GetCurrentAttemptData ();
           if (allAttempts != null) {
                int currentAttempt = allAttempts.Count - 1;
                bool gameWin = allAttempts [currentAttempt].win;
                if (gameWin) {
+                    levelNumberText.SetLevelNumber (++globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
                } else {
@@ -27,6 +30,8 @@ public class LoadScene : MonoBehaviour {
                }
           } else {
                pause.Pause (true);
+               levelNumberText.SetLevelNumber (globalData.levelNumber);
+
           }
 
 
