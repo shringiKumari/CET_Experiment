@@ -7,6 +7,7 @@ public class GlobalData : MonoBehaviour {
      public int levelNumber = 1;
      public int levelTimeScore;
      public int levelHealthScore;
+     public int totalCoinsEarned = 0;
      // Use this for initialization
 	void Start () {
 		

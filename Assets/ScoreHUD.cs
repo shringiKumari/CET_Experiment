@@ -19,7 +19,10 @@ public class ScoreHUD : MonoBehaviour {
           scoreText.text = " Time Score " + globalData.levelTimeScore.ToString () + "\n" 
                + " Health Score " + globalData.levelHealthScore.ToString () + "\n"
                + " Total Score " + totalScore.ToString ();		
-          coins.setCoins(totalScore * 4);
+          int totalCoins = totalScore * 4;
+          coins.setCoins(totalCoins + globalData.totalCoinsEarned);
+          globalData.totalCoinsEarned += totalCoins;
+
 	}
 	
 	// Update is called once per frame
