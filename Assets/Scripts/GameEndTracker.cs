@@ -10,9 +10,12 @@ public class GameEndTracker : MonoBehaviour {
      public PlayerDistance playerDistance;
      public StoreAttempt storeAttempt;
      public Slider previousCompetenceValue;
+     public PlayerHealth playerHealth;
+     private GlobalData globalData;
 
      private float startTime;
      private float endTime;
+
 
 
      void Awake () {
@@ -21,6 +24,8 @@ public class GameEndTracker : MonoBehaviour {
      }
 
      void Start () {
+
+          globalData = GameObject.FindGameObjectWithTag ("GlobalData").GetComponent<GlobalData> ();
           remover.gameEndEvent.AddListener (GameEnd);
      }
 	// Update is called once per frame
@@ -44,10 +49,15 @@ public class GameEndTracker : MonoBehaviour {
           Debug.Log (" Distance Travelled " + tempDistance);
           storeAttempt.OnAttempt (win, endTime, tempDistance, previousCompetenceValue.value);
 
+          globalData.levelTimeScore = Mathf.FloorToInt(1000 - endTime);
+          globalData.levelHealthScore = Mathf.FloorToInt (playerHealth.health);
+
 
      }
 
      private void OnDestroy(){
           remover.gameEndEvent.RemoveListener (GameEnd);
      }
+
+
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class GlobalData : MonoBehaviour {
 
      public int levelNumber = 1;
+     public int levelTimeScore;
+     public int levelHealthScore;
      // Use this for initialization
 	void Start () {
 		

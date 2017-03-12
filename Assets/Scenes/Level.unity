@@ -507,6 +507,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114536059057022478, guid: f444699b78ff648748bb1a8d2f795abf,
+        type: 2}
+      propertyPath: m_Text
+      value: PLAY
+      objectReference: {fileID: 0}
+    - target: {fileID: 224964040286291974, guid: f444699b78ff648748bb1a8d2f795abf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f444699b78ff648748bb1a8d2f795abf, type: 2}
   m_IsPrefabParent: 0
@@ -1373,6 +1383,7 @@ MonoBehaviour:
   playerDistance: {fileID: 1665501281}
   storeAttempt: {fileID: 743439344}
   previousCompetenceValue: {fileID: 1298953595}
+  playerHealth: {fileID: 1665501274}
 --- !u!114 &743439347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,6 +2926,12 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100020, guid: 6aa187bc6339843479c03fdfd71404a3, type: 2}
   m_PrefabInternal: {fileID: 441222720}
+--- !u!114 &1665501274 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400004, guid: 6aa187bc6339843479c03fdfd71404a3,
+    type: 2}
+  m_PrefabInternal: {fileID: 441222720}
+  m_Script: {fileID: 11500000, guid: 52121b47a452546fb88cf2e9a9352f56, type: 3}
 --- !u!114 &1665501281
 MonoBehaviour:
   m_ObjectHideFlags: 0
