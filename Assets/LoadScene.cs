@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
 
+	[SerializeField] private GameObject levelStart;
+	[SerializeField] private GameObject enemySpawner;
+	[SerializeField] private GameObject gameUI;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +20,9 @@ public class LoadScene : MonoBehaviour {
 	}
 
      public void OnClick () {
-          SceneManager.LoadScene("Level", LoadSceneMode.Single);
+          gameUI.SetActive(true);
+		  enemySpawner.SetActive(true);
+		  levelStart.SetActive(false);
+
      }
 }
