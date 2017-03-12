@@ -49,7 +49,7 @@ public class GameEndTracker : MonoBehaviour {
           Debug.Log (" Distance Travelled " + tempDistance);
           storeAttempt.OnAttempt (win, endTime, tempDistance, previousCompetenceValue.value);
 
-          globalData.levelTimeScore = Mathf.FloorToInt(1000 - endTime);
+          globalData.levelTimeScore = Mathf.FloorToInt(100 - endTime);
           globalData.levelHealthScore = Mathf.FloorToInt (playerHealth.health);
 
 
