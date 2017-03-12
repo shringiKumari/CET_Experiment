@@ -42,8 +42,8 @@ public class SliderValue : MonoBehaviour {
 
      void Awake () {
           // do it only once in game start 
-          //slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
-          slider.value = optimalExperience.OptimizeExperience(); 
+          slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
+          //slider.value = optimalExperience.OptimizeExperience(); 
           Debug.Log (" competence " + slider.value);
 
      }
