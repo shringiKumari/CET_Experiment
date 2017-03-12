@@ -7,10 +7,12 @@ using System.IO;
 
 public class LoadScene : MonoBehaviour {
 
-	[SerializeField] private GameObject levelStart;
      public Pauser pause;
      public LevelNumberText levelNumberText;
+	[SerializeField] private GameObject levelStart;
+    [SerializeField] private GameObject score;
      private GlobalData globalData;
+
 
      public StoreAttempt store;
 	// Use this for initialization
@@ -25,6 +27,7 @@ public class LoadScene : MonoBehaviour {
                     levelNumberText.SetLevelNumber (++globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
+                    score.SetActive(true);
                } else {
                     levelStart.SetActive (false);
                }
