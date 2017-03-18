@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f8e07152cc5d346a9983777e012ba853
+timeCreated: 1489684087
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MTF Toast
+  fontNames:
+  - MTF Toast
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

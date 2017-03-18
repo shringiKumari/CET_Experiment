@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b8b0de6513c334e198cc05d20a660058
+timeCreated: 1489684286
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Germania Shadow
+  fontNames:
+  - Germania Shadow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

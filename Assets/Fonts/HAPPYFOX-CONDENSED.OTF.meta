@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fa05042941c0e40bca3fef28484b7488
+timeCreated: 1489684563
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Happy Fox
+  fontNames:
+  - Happy Fox
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

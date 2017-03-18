@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5e2aec5aefe16434899d18882b0a68da
+timeCreated: 1489684563
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Home School
+  fontNames:
+  - Home School
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
