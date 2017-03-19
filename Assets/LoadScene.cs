@@ -9,8 +9,9 @@ public class LoadScene : MonoBehaviour {
 
      public Pauser pause;
      public LevelNumberText levelNumberText;
-	[SerializeField] private GameObject levelStart;
+     [SerializeField] private GameObject levelStart;
     [SerializeField] private GameObject score;
+     [SerializeField] private GameObject coins;
      private GlobalData globalData;
 
 
@@ -28,7 +29,21 @@ public class LoadScene : MonoBehaviour {
                     globalData.levelNumber++;
                     levelStart.SetActive (true);
                     pause.Pause (true);
-                    score.SetActive(true);
+                    if (globalData.coins_condition) {
+                         coins.SetActive (true);
+                    } else {
+                         coins.SetActive (false);
+                    }
+                    switch (globalData.feedbackCondition) {
+                    case Feedback_Condition.FEEDBACK_ON:
+                         Debug.Log ("Feedback On"); break;
+                    case Feedback_Condition.FEEDBACK_OFF:
+                         Debug.Log ("Feedback Off"); break;
+                    case Feedback_Condition.FEEDBACK_NEUTRAL:
+                         Debug.Log ("Feedback Neutral"); break;
+                    }
+
+
                } else {
                     levelStart.SetActive (false);
                }

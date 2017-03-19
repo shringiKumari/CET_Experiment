@@ -228,6 +228,8 @@ MonoBehaviour:
   levelTimeScore: 0
   levelHealthScore: 0
   totalCoinsEarned: 0
+  coins_condition: 1
+  feedbackCondition: 0
 --- !u!1 &776823737
 GameObject:
   m_ObjectHideFlags: 0

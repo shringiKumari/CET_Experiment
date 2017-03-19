@@ -8,7 +8,7 @@ using System;
 //data read and write
 public class StoreAttempt : MonoBehaviour {
 
-     public static string dataFileName = "attempts.json";
+     public static string dataFileName = "attempt.json";
 
      public void OnAttempt(bool win, float timeOfDeath, float distanceTravelled, float previousCompetenceValue) {
           Attempts.AttemptModel attempt = new Attempts.AttemptModel (win, timeOfDeath, distanceTravelled, previousCompetenceValue);
