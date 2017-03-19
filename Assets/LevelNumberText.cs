@@ -19,7 +19,7 @@ public class LevelNumberText : MonoBehaviour {
 
      public void SetLevelNumber (int levelNumber) {
 
-          levelText.text = " LEVEL " + levelNumber.ToString();
+          levelText.text = " LEVEL " + levelNumber.ToString() + " complete ";
           
      }
 	

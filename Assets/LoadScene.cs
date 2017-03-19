@@ -24,7 +24,8 @@ public class LoadScene : MonoBehaviour {
                int currentAttempt = allAttempts.Count - 1;
                bool gameWin = allAttempts [currentAttempt].win;
                if (gameWin) {
-                    levelNumberText.SetLevelNumber (++globalData.levelNumber);
+                    levelNumberText.SetLevelNumber (globalData.levelNumber);
+                    globalData.levelNumber++;
                     levelStart.SetActive (true);
                     pause.Pause (true);
                     score.SetActive(true);
