@@ -17,6 +17,7 @@ public class StartGame : MonoBehaviour {
 
      public void Onclick () {
           
+          Debug.Log("on clickmmmmmmmmmmmmmmm");
           gameStartScreen.SetActive(false);
      }
 
