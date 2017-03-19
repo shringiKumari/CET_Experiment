@@ -41,6 +41,8 @@ public class StoreAttempt : MonoBehaviour {
 
                if (!string.IsNullOrEmpty (json)) {
                     Attempts attempts = JsonUtility.FromJson<Attempts> (json);
+                    stream.Close ();
+                    reader.Close ();
                     return attempts.attempts;
                }
             stream.Close ();
