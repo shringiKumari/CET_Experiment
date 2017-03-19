@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 1332426956}
   - component: {fileID: 1332426955}
   - component: {fileID: 1332426958}
+  - component: {fileID: 1332426959}
   m_Layer: 0
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -507,6 +508,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartScreen: {fileID: 776823737}
+  pauser: {fileID: 1332426959}
+--- !u!114 &1332426959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332426953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53064c304626b46fbad99cda68f94795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1761156901
 GameObject:
   m_ObjectHideFlags: 0
