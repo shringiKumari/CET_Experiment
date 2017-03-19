@@ -16,9 +16,10 @@ public class ScoreHUD : MonoBehaviour {
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           totalScore = globalData.levelTimeScore + globalData.levelHealthScore;
-          scoreText.text = " Time Score " + globalData.levelTimeScore.ToString () + "\n" 
+          scoreText.text = "  Time Score  " + globalData.levelTimeScore.ToString () + "\n" 
                + " Health Score " + globalData.levelHealthScore.ToString () + "\n"
-               + " Total Score " + totalScore.ToString ();		
+               + "-------------------" + "\n"
+               + "  Total Score " + totalScore.ToString ();		
           int totalCoins = totalScore * 4;
           coins.setCoins(totalCoins + globalData.totalCoinsEarned);
           globalData.totalCoinsEarned += totalCoins;

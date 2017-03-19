@@ -21,6 +21,6 @@ public class Coins_HUD : MonoBehaviour {
 	}
 
      public void setCoins(int coinsEarned){
-          coinsText.text = "Coins Earned" + coinsEarned.ToString ();
+          coinsText.text = "Coins Earned  " + coinsEarned.ToString ();
      }
 }
