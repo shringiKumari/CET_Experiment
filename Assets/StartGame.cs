@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class StartGame : MonoBehaviour {
@@ -16,8 +17,7 @@ public class StartGame : MonoBehaviour {
 	}
 
      public void Onclick () {
-          
-          Debug.Log("on clickmmmmmmmmmmmmmmm");
+         
           gameStartScreen.SetActive(false);
      }
 

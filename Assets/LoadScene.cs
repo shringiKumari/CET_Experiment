@@ -32,8 +32,10 @@ public class LoadScene : MonoBehaviour {
                     levelStart.SetActive (false);
                }
           } else {
-               pause.Pause (true);
+               levelStart.SetActive (false);
+               //pause.Pause (true);
                levelNumberText.SetLevelNumber (globalData.levelNumber);
+
 
           }
 

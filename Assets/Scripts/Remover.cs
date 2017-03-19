@@ -47,7 +47,7 @@ public class Remover : MonoBehaviour
           // ... pause briefly
           yield return new WaitForSeconds(0.5f);
           // ... and then reload the level.
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+          SceneManager.LoadScene("Level", LoadSceneMode.Single);
 	}
 
      public void updateKillTrigger(float killTriggerSize)
