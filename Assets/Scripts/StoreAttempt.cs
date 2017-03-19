@@ -17,6 +17,7 @@ public class StoreAttempt : MonoBehaviour {
           StreamReader reader = new StreamReader (stream);
           string json = reader.ReadToEnd ();
           stream.Close ();
+          reader.Close();
           stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
 
           Attempts attempts = new Attempts ();
@@ -40,10 +41,10 @@ public class StoreAttempt : MonoBehaviour {
 
                if (!string.IsNullOrEmpty (json)) {
                     Attempts attempts = JsonUtility.FromJson<Attempts> (json);
-                    stream.Close ();
-                    reader.Close ();
                     return attempts.attempts;
                }
+            stream.Close ();
+            reader.Close ();
           }
           return null;
      }
