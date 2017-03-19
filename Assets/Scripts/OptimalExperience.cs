@@ -34,53 +34,16 @@ public class OptimalExperience : MonoBehaviour {
                distanceTravelled = allAttempts [currentAttempt].distanceTravelled; 
                previousCompetence = allAttempts [currentAttempt].previousCompetenceValue;
 
-                    
-               if (currentAttempt < maxAttempts) {
-                    if (allAttempts [currentAttempt].win) {
-                         Debug.Log ("too easy");
-                         //make more branches
-                         if (timeToReachGoal <= minimumTime + timeBuffer) {
-                              Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = (2f * competenceStep) * (1 - currentAttempt / maxAttempts);
-                         } else {
-                              Debug.Log ("increase competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = competenceStep * (1 - currentAttempt / maxAttempts);
-                         }
-
-                    } else {
-                         Debug.Log ("failed in this attempt : good");
-                         if (distanceTravelled <= (respectableDistanceFactor + currentAttempt/20) * totalDistanceToGoal) {
-                              Debug.Log ("decrease competence by " + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence =  (-1f * competenceStep) * (1 - currentAttempt / maxAttempts); 
-                         } else {
-                              Debug.Log ("increase competence by" + (1 - (currentAttempt / maxAttempts)));
-                              deltaCompetence = (0.5f * competenceStep) * (1 - currentAttempt / maxAttempts);
-                         }
-                   
-                    }
-                    return Mathf.Clamp(previousCompetence + deltaCompetence, minCompetence, maxCompetence);
-
-               } else {
-                    float tempCompetence = 0f;
-                    for (int i = 0; i <= maxAttempts; i++) {
-                         if (allAttempts [i].distanceTravelled >= respectableDistanceFactor * totalDistanceToGoal) {
-                              if(tempCompetence < allAttempts [i].previousCompetenceValue){
-                                   tempCompetence = allAttempts [i].previousCompetenceValue;
-                              }
-                         }
-                         if (tempCompetence > 0) {
-                              return UnityEngine.Random.Range (tempCompetence + 0.05f, tempCompetence - 0.02f);
-                         } else {
-                              return UnityEngine.Random.Range (previousCompetence + 0.05f, previousCompetence - 0.02f);
-                         }
-
-                    }
+               Attempts.AttemptModel currentModel = allAttempts[currentAttempt];
+               if(currentModel.win){
+                    return previousCompetence + 0.1f;
                }
-
-
+               else{
+                   return previousCompetence;
+               }
           }
           //set initial slider value
-          return UnityEngine.Random.Range (minCompetence, maxCompetence);
-          }
+        return UnityEngine.Random.Range (minCompetence, maxCompetence);
+        }
 
      }
