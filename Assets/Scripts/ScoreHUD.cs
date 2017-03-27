@@ -20,6 +20,7 @@ public class ScoreHUD : MonoBehaviour {
                + " Health Score " + globalData.levelHealthScore.ToString () + "\n"
                + "-------------------" + "\n"
                + "  Total Score " + totalScore.ToString ();		
+          //scoreText.text = "Your Score" + totalScore.ToString ();
           int totalCoins = totalScore * 4;
           coins.setCoins(totalCoins + globalData.totalCoinsEarned);
           globalData.totalCoinsEarned += totalCoins;
