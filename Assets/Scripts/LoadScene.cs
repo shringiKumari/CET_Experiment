@@ -70,8 +70,13 @@ public class LoadScene : MonoBehaviour {
 
      public void OnClick () {
 
-            pause.Pause (false);
-		  levelStart.SetActive(false);
+          pause.Pause (false);
+          if (globalData.levelNumber > maxLevel) {
+          Debug.Log ("Application Quit");
+          Application.Quit ();
+          }
+
+          levelStart.SetActive(false);
 
      }
 }
