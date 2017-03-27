@@ -9,6 +9,7 @@ public class LoadScene : MonoBehaviour {
 
      public Pauser pause;
      public LevelNumberText levelNumberText;
+     public ButtonText buttonText;
      [SerializeField] private GameObject levelStart;
     [SerializeField] private GameObject score;
      [SerializeField] private GameObject coins;
@@ -26,6 +27,7 @@ public class LoadScene : MonoBehaviour {
                bool gameWin = allAttempts [currentAttempt].win;
                if (gameWin) {
                     levelNumberText.SetLevelNumber (globalData.levelNumber);
+                    buttonText.SetButtonText (globalData.levelNumber);
                     globalData.levelNumber++;
                     levelStart.SetActive (true);
                     pause.Pause (true);
