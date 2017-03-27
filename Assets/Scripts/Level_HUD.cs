@@ -7,11 +7,18 @@ public class Level_HUD : MonoBehaviour {
 
      private GlobalData globalData;
      public Text levelText; 
+     private bool once = true;
      // Use this for initialization
 	void Start () {
 
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
-          levelText.text = "Level " + globalData.levelNumber;
+
+          if (once) {
+               int levelNumber = globalData.levelNumber;
+               levelText.text = "Level " + levelNumber;
+               once = false;
+          }
+
 
 		
 	}
@@ -20,4 +27,12 @@ public class Level_HUD : MonoBehaviour {
 	void Update () {
 		
 	}
+
+     public void SetLevelHUDNumber (int levelNumber){
+
+          levelText.text = "Level " + levelNumber;
+
+
+     }
+
 }

@@ -10,9 +10,11 @@ public class LoadScene : MonoBehaviour {
      public Pauser pause;
      public LevelNumberText levelNumberText;
      public ButtonText buttonText;
+     public Level_HUD levelHUDText;
      [SerializeField] private GameObject levelStart;
     [SerializeField] private GameObject score;
      [SerializeField] private GameObject coins;
+     public int maxLevel;
      private GlobalData globalData;
 
 
@@ -26,9 +28,10 @@ public class LoadScene : MonoBehaviour {
                int currentAttempt = allAttempts.Count - 1;
                bool gameWin = allAttempts [currentAttempt].win;
                if (gameWin) {
-                    levelNumberText.SetLevelNumber (globalData.levelNumber);
-                    buttonText.SetButtonText (globalData.levelNumber);
+                    levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
+                    buttonText.SetButtonText (globalData.levelNumber, maxLevel);
                     globalData.levelNumber++;
+                    levelHUDText.SetLevelHUDNumber (globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
                     if (globalData.coins_condition) {
@@ -52,7 +55,7 @@ public class LoadScene : MonoBehaviour {
           } else {
                levelStart.SetActive (false);
                //pause.Pause (true);
-               levelNumberText.SetLevelNumber (globalData.levelNumber);
+               levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
 
 
           }

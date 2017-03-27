@@ -17,9 +17,13 @@ public class LevelNumberText : MonoBehaviour {
 		
 	}
 
-     public void SetLevelNumber (int levelNumber) {
+     public void SetLevelNumber (int levelNumber, int maxLevel) {
 
-          levelText.text = " LEVEL " + levelNumber.ToString() + " complete ";
+          if (levelNumber < maxLevel) {
+               levelText.text = " LEVEL " + levelNumber.ToString () + " complete ";
+          } else {
+               levelText.text = " GAME COMPLETE ";
+          }
           
      }
 	

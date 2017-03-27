@@ -11,7 +11,7 @@ public enum Feedback_Condition{
 
 public class GlobalData : MonoBehaviour {
 
-     public int levelNumber = 1;
+     public int levelNumber = 0;
      public int levelTimeScore;
      public int levelHealthScore;
      public int totalCoinsEarned = 0;

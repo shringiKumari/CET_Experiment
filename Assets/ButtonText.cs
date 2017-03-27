@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ButtonText : MonoBehaviour {
 
      public Text buttonText;
+
      // Use this for initialization
 	void Start () {
 
@@ -18,10 +19,14 @@ public class ButtonText : MonoBehaviour {
 		
 	}
 
-     public void SetButtonText (int levelNumber) {
+     public void SetButtonText (int levelNumber, int maxLevel) {
 
 
-          buttonText.text = " NEXT LEVEL ";
+          if (levelNumber < maxLevel) {
+               buttonText.text = " NEXT LEVEL ";
+          } else {
+               buttonText.text = " THANK YOU ";
+          }
 
      }
 }
