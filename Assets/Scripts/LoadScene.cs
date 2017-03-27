@@ -39,6 +39,12 @@ public class LoadScene : MonoBehaviour {
                     } else {
                          coins.SetActive (false);
                     }
+                    if (globalData.levelNumber > maxLevel) {
+                         Transform upgrade = coins.transform.FindChild ("Upgrade");
+                         if (upgrade != null) {
+                              upgrade.gameObject.SetActive (false);
+                         }
+                    }
                     switch (globalData.feedbackCondition) {
                     case Feedback_Condition.FEEDBACK_ON:
                          Debug.Log ("Feedback On"); break;
