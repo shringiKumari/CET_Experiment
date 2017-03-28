@@ -11,6 +11,7 @@ public class LoadScene : MonoBehaviour {
      public LevelNumberText levelNumberText;
      public ButtonText buttonText;
      public Level_HUD levelHUDText;
+     public Text feedbackText;
      [SerializeField] private GameObject levelStart;
     [SerializeField] private GameObject score;
      [SerializeField] private GameObject coins;
@@ -38,6 +39,7 @@ public class LoadScene : MonoBehaviour {
                          coins.SetActive (true);
                     } else {
                          coins.SetActive (false);
+
                     }
                     if (globalData.levelNumber > maxLevel) {
                          Transform upgrade = coins.transform.FindChild ("Upgrade");
@@ -47,11 +49,14 @@ public class LoadScene : MonoBehaviour {
                     }
                     switch (globalData.feedbackCondition) {
                     case Feedback_Condition.FEEDBACK_ON:
-                         Debug.Log ("Feedback On"); break;
+                         feedbackText.text = "WELL DONE!"; 
+                         break;
                     case Feedback_Condition.FEEDBACK_OFF:
-                         Debug.Log ("Feedback Off"); break;
+                         feedbackText.text = ""; 
+                         break;
                     case Feedback_Condition.FEEDBACK_NEUTRAL:
-                         Debug.Log ("Feedback Neutral"); break;
+                         feedbackText.text = "LEVEL COMPLETE"; 
+                         break;
                     }
 
 
