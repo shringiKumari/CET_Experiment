@@ -72,10 +72,11 @@ public class LoadScene : MonoBehaviour {
           } else {
                if (globalData.coins_experiment) {
                     noRewardsPopup.SetActive (true);
+                    pause.Pause (true);
                } else {
                     levelStart.SetActive (false);
                }
-               pause.Pause (true);
+
                levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
 
 
