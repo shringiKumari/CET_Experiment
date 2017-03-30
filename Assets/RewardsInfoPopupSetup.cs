@@ -11,23 +11,24 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      public GameObject backButton;
      public Text infoText;
      public Text playButtonText;
+
+     private float startTime = 0;
+     private float timeNeededToGetCoins = 30;
+     private float timeRemaining;
+     private int timeInMin;
+     private float timeInSec;
+     private string timeGap;
      // Use this for initialization
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
-               //coin image set active
                noRewardsImage.SetActive(true);
-               //back button set active
                backButton.SetActive(true);
-               // text = no more rewards
-               infoText.text = "Come Later";
+               timeRemaining = timeNeededToGetCoins;
                playButtonText.text = "Play anyway";
           } else {
-               //coin image set inactive
                noRewardsImage.SetActive(false);
-               //back button set inactive
                backButton.SetActive(false);
-               // text = rewards  
                if (globalData.coins_condition) {
                     infoText.text = "Play the game, get coins";
                } else {
@@ -40,6 +41,20 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+          if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
+
+               if (timeRemaining > 0) {
+                    timeInMin = Mathf.FloorToInt (timeRemaining / 60);
+                    timeInSec = Mathf.FloorToInt (timeRemaining % 60);
+                    timeRemaining -= Time.unscaledDeltaTime;
+               }
+
+               infoText.text = "Come Later" + " " + timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+          }
 		
 	}
+     public void SetTime() {
+
+     }
 }

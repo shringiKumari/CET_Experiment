@@ -75,7 +75,7 @@ public class LoadScene : MonoBehaviour {
                } else {
                     levelStart.SetActive (false);
                }
-               //pause.Pause (true);
+               pause.Pause (true);
                levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
 
 
