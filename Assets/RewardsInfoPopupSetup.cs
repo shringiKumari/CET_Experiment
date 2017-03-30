@@ -9,6 +9,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      public int firstNoRewardLevel;
      public GameObject noRewardsImage;
      public GameObject backButton;
+     public GameObject thankYouPopup;
      public Text infoText;
      public Text playButtonText;
 
@@ -48,13 +49,15 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     timeInMin = Mathf.FloorToInt (timeRemaining / 60);
                     timeInSec = Mathf.FloorToInt (timeRemaining % 60);
                     timeRemaining -= Time.unscaledDeltaTime;
+               } else {
+                    SetThankYouPopup ();
                }
 
                infoText.text = "Come Later" + " " + timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
           }
 		
 	}
-     public void SetTime() {
-
+     public void SetThankYouPopup() {
+          thankYouPopup.SetActive (true);
      }
 }

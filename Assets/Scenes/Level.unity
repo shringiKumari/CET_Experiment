@@ -3679,6 +3679,7 @@ MonoBehaviour:
   firstNoRewardLevel: 1
   noRewardsImage: {fileID: 1662194763}
   backButton: {fileID: 1569500211}
+  thankYouPopup: {fileID: 1378885699}
   infoText: {fileID: 1882819820}
   playButtonText: {fileID: 489369349}
 --- !u!1 &1378885699
