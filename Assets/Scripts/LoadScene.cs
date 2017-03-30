@@ -12,10 +12,14 @@ public class LoadScene : MonoBehaviour {
      public ButtonText buttonText;
      public Level_HUD levelHUDText;
      public Text feedbackText;
+
      [SerializeField] private GameObject levelStart;
-    [SerializeField] private GameObject score;
+     [SerializeField] private GameObject score;
      [SerializeField] private GameObject coins;
+     [SerializeField] private GameObject noRewardsPopup;
+
      public int maxLevel;
+     public int firstNoRewardLevel;
      private GlobalData globalData;
 
 
@@ -60,6 +64,7 @@ public class LoadScene : MonoBehaviour {
                     }
 
 
+
                } else {
                     levelStart.SetActive (false);
                }
@@ -87,7 +92,13 @@ public class LoadScene : MonoBehaviour {
           Application.Quit ();
           }
 
-          levelStart.SetActive(false);
+          if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
+               pause.Pause (true);
+               noRewardsPopup.SetActive (true);
+          } else {
+
+               levelStart.SetActive (false);
+          }
 
      }
 }

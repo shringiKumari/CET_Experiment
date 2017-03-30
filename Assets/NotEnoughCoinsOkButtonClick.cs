@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class NotEnoughCoinsOkButtonClick : MonoBehaviour {
 
+
      public GameObject notEnoughCoinsPopup;
      // Use this for initialization
 	void Start () {
+          
 		
 	}
 	
