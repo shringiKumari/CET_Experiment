@@ -25,7 +25,7 @@ public class ButtonText : MonoBehaviour {
           if (levelNumber < maxLevel) {
                buttonText.text = " NEXT LEVEL ";
           } else {
-               buttonText.text = " THANK YOU ";
+               buttonText.text = " OK ";
           }
 
      }

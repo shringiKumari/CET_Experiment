@@ -17,9 +17,9 @@ public class LoadScene : MonoBehaviour {
      [SerializeField] private GameObject score;
      [SerializeField] private GameObject coins;
      [SerializeField] private GameObject noRewardsPopup;
+     [SerializeField] private GameObject thankYouPopup;
 
      public int maxLevel;
-     public int firstNoRewardLevel;
      private GlobalData globalData;
 
 
@@ -93,8 +93,8 @@ public class LoadScene : MonoBehaviour {
 
           pause.Pause (false);
           if (globalData.levelNumber > maxLevel) {
-          Debug.Log ("Application Quit");
-          Application.Quit ();
+          // show thank you popup
+               thankYouPopup.SetActive(true);
           }
 
           if (globalData.coins_experiment) {

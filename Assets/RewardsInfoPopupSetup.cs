@@ -22,7 +22,6 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                // text = no more rewards
                infoText.text = "Come Later";
                playButtonText.text = "Play anyway";
-               Debug.Log("no rewards");
           } else {
                //coin image set inactive
                noRewardsImage.SetActive(false);
@@ -35,7 +34,6 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     infoText.text = "Play the game";
                }
                playButtonText.text = "Play";
-               Debug.Log("rewards");
           }
 		
 	}
