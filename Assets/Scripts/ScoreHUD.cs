@@ -24,6 +24,11 @@ public class ScoreHUD : MonoBehaviour {
           int totalCoins = totalScore * 4;
           coins.setCoins(totalCoins + globalData.totalCoinsEarned);
           globalData.totalCoinsEarned += totalCoins;
+          if (globalData.coins_condition) {
+               gameObject.transform.localPosition = new Vector2 (0, 60);
+          } else {
+               gameObject.transform.localPosition = new Vector2 (0, 0);
+          }
 
 	}
 	
