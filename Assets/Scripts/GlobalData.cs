@@ -17,6 +17,7 @@ public class GlobalData : MonoBehaviour {
      public int totalCoinsEarned = 0;
 
      public bool coins_condition;
+     public bool coins_experiment;
      public Feedback_Condition feedbackCondition;
 
      // Use this for initialization

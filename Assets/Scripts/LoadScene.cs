@@ -70,7 +70,7 @@ public class LoadScene : MonoBehaviour {
                     levelStart.SetActive (false);
                }
           } else {
-               if (globalData.coins_condition) {
+               if (globalData.coins_experiment) {
                     noRewardsPopup.SetActive (true);
                } else {
                     levelStart.SetActive (false);
@@ -97,7 +97,7 @@ public class LoadScene : MonoBehaviour {
           Application.Quit ();
           }
 
-          if (globalData.coins_condition) {
+          if (globalData.coins_experiment) {
                pause.Pause (true);
                noRewardsPopup.SetActive (true);
           } else {
