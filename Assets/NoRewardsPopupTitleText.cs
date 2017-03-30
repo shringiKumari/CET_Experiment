@@ -7,11 +7,13 @@ public class NoRewardsPopupTitleText : MonoBehaviour {
 
      private GlobalData globalData;
      public Text noRewardsTitleText;
+
      // Use this for initialization
 	
      void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           noRewardsTitleText.text = "LEVEL" + globalData.levelNumber.ToString ();
+
 
 		
 	}

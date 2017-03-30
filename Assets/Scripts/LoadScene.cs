@@ -32,6 +32,7 @@ public class LoadScene : MonoBehaviour {
           if (allAttempts != null) {
                int currentAttempt = allAttempts.Count - 1;
                bool gameWin = allAttempts [currentAttempt].win;
+
                if (gameWin) {
                     levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
                     buttonText.SetButtonText (globalData.levelNumber, maxLevel);
@@ -69,7 +70,8 @@ public class LoadScene : MonoBehaviour {
                     levelStart.SetActive (false);
                }
           } else {
-               levelStart.SetActive (false);
+               //levelStart.SetActive (false);
+               noRewardsPopup.SetActive (true);
                //pause.Pause (true);
                levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
 
@@ -92,7 +94,7 @@ public class LoadScene : MonoBehaviour {
           Application.Quit ();
           }
 
-          if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
+          if (globalData.coins_condition == true) {
                pause.Pause (true);
                noRewardsPopup.SetActive (true);
           } else {

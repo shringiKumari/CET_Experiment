@@ -761,7 +761,7 @@ Prefab:
     - target: {fileID: 114144158048635604, guid: f444699b78ff648748bb1a8d2f795abf,
         type: 2}
       propertyPath: firstNoRewardLevel
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114144158048635604, guid: f444699b78ff648748bb1a8d2f795abf,
         type: 2}
@@ -3517,10 +3517,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1359878150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3257f2b0e671849a6b764abafcb2c91a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a7ac1b853a0e45f58c318800cbd699f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notEnoughCoinsPopup: {fileID: 0}
+  firstNoRewardLevel: 2
+  noRewardsImage: {fileID: 1662194763}
+  backButton: {fileID: 1569500211}
+  infoText: {fileID: 1882819820}
+  playButtonText: {fileID: 489369349}
 --- !u!1 &1397720517
 GameObject:
   m_ObjectHideFlags: 0
