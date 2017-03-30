@@ -31,8 +31,6 @@ public class TimeHUD : MonoBehaviour {
 
           timeText.text = " Time " + timeInMin.ToString() + ":" + timeGap + timeInSec.ToString();
 
-          Debug.Log (Time.deltaTime);
-
 		
 	}
 }
