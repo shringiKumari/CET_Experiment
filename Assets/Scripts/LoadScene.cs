@@ -70,8 +70,11 @@ public class LoadScene : MonoBehaviour {
                     levelStart.SetActive (false);
                }
           } else {
-               //levelStart.SetActive (false);
-               noRewardsPopup.SetActive (true);
+               if (globalData.coins_condition) {
+                    noRewardsPopup.SetActive (true);
+               } else {
+                    levelStart.SetActive (false);
+               }
                //pause.Pause (true);
                levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
 
@@ -94,7 +97,7 @@ public class LoadScene : MonoBehaviour {
           Application.Quit ();
           }
 
-          if (globalData.coins_condition == true) {
+          if (globalData.coins_condition) {
                pause.Pause (true);
                noRewardsPopup.SetActive (true);
           } else {
