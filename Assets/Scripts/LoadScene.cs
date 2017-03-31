@@ -19,6 +19,8 @@ public class LoadScene : MonoBehaviour {
      [SerializeField] private GameObject noRewardsPopup;
      [SerializeField] private GameObject thankYouPopup;
 
+     string[] positiveFeedback = new string[] {"Well Don!", "Good Job!", "Sweeet Score!"};
+     string[] neutralFeedback = new string[] {"You Scored", "You Scored", "Complete"};
      private GlobalData globalData;
 
 
@@ -54,13 +56,14 @@ public class LoadScene : MonoBehaviour {
                     if (!globalData.coins_experiment) {
                          switch (globalData.feedbackCondition) {
                          case Feedback_Condition.FEEDBACK_ON:
-                              feedbackText.text = "WELL DONE!"; 
+                              //feedbackText.text = "WELL DONE!"; 
+                              feedbackText.text = positiveFeedback[Random.Range(0,2)]; 
                               break;
                          case Feedback_Condition.FEEDBACK_OFF:
                               feedbackText.text = ""; 
                               break;
                          case Feedback_Condition.FEEDBACK_NEUTRAL:
-                              feedbackText.text = "LEVEL COMPLETE"; 
+                              feedbackText.text = neutralFeedback[Random.Range(0,2)]; 
                               break;
                          }
                     }

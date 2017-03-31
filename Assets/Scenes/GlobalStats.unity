@@ -232,8 +232,8 @@ MonoBehaviour:
   firstNoRewardLevel: 3
   maxLevel: 4
   coins_condition: 0
-  coins_experiment: 1
-  feedbackCondition: 0
+  coins_experiment: 0
+  feedbackCondition: 2
 --- !u!1 &776823737
 GameObject:
   m_ObjectHideFlags: 0
