@@ -230,7 +230,7 @@ MonoBehaviour:
   totalCoinsEarned: 0
   coins_condition: 0
   coins_experiment: 0
-  feedbackCondition: 0
+  feedbackCondition: 1
 --- !u!1 &776823737
 GameObject:
   m_ObjectHideFlags: 0
