@@ -3677,7 +3677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7ac1b853a0e45f58c318800cbd699f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstNoRewardLevel: 1
   noRewardsImage: {fileID: 1662194763}
   backButton: {fileID: 1569500211}
   thankYouPopup: {fileID: 1378885699}
@@ -5857,7 +5856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You will get no coins for this level now. Come back in 24 hours.
+  m_Text: Text
 --- !u!222 &1882819821
 CanvasRenderer:
   m_ObjectHideFlags: 0

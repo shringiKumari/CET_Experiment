@@ -42,7 +42,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-          if ((globalData.levelNumber > globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
+          if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
 
                if (timeRemaining > 0) {
                     timeInMin = Mathf.FloorToInt (timeRemaining / 60);
