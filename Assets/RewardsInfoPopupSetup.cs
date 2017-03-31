@@ -20,6 +20,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      // Use this for initialization
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
+
           if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
                noRewardsImage.SetActive(true);
                backButton.SetActive(true);

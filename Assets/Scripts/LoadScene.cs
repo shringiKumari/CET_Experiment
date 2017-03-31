@@ -51,18 +51,19 @@ public class LoadScene : MonoBehaviour {
                               upgrade.gameObject.SetActive (false);
                          }
                     }
-                    switch (globalData.feedbackCondition) {
-                    case Feedback_Condition.FEEDBACK_ON:
-                         feedbackText.text = "WELL DONE!"; 
-                         break;
-                    case Feedback_Condition.FEEDBACK_OFF:
-                         feedbackText.text = ""; 
-                         break;
-                    case Feedback_Condition.FEEDBACK_NEUTRAL:
-                         feedbackText.text = "LEVEL COMPLETE"; 
-                         break;
+                    if (!globalData.coins_experiment) {
+                         switch (globalData.feedbackCondition) {
+                         case Feedback_Condition.FEEDBACK_ON:
+                              feedbackText.text = "WELL DONE!"; 
+                              break;
+                         case Feedback_Condition.FEEDBACK_OFF:
+                              feedbackText.text = ""; 
+                              break;
+                         case Feedback_Condition.FEEDBACK_NEUTRAL:
+                              feedbackText.text = "LEVEL COMPLETE"; 
+                              break;
+                         }
                     }
-
 
 
                } else {
@@ -70,6 +71,7 @@ public class LoadScene : MonoBehaviour {
                }
           } else {
                if (globalData.coins_experiment) {
+                    Debug.Log ("coins experiment");
                     noRewardsPopup.SetActive (true);
                     pause.Pause (true);
                } else {

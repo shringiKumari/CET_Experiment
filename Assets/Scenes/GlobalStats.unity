@@ -229,11 +229,11 @@ MonoBehaviour:
   levelHealthScore: 0
   totalCoinsEarned: 0
   timeNeededToGetCoins: 120
-  firstNoRewardLevel: 2
+  firstNoRewardLevel: 3
   maxLevel: 4
-  coins_condition: 1
+  coins_condition: 0
   coins_experiment: 1
-  feedbackCondition: 1
+  feedbackCondition: 0
 --- !u!1 &776823737
 GameObject:
   m_ObjectHideFlags: 0
