@@ -13,7 +13,6 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      public Text playButtonText;
 
      private float startTime = 0;
-     private float timeNeededToGetCoins = 30;
      private float timeRemaining;
      private int timeInMin;
      private float timeInSec;
@@ -24,7 +23,8 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
           if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
                noRewardsImage.SetActive(true);
                backButton.SetActive(true);
-               timeRemaining = timeNeededToGetCoins;
+               timeRemaining = globalData.timeNeededToGetCoins;
+
                playButtonText.text = "Play anyway";
           } else {
                noRewardsImage.SetActive(false);

@@ -15,6 +15,9 @@ public class GlobalData : MonoBehaviour {
      public int levelTimeScore;
      public int levelHealthScore;
      public int totalCoinsEarned = 0;
+
+     public float timeNeededToGetCoins;
+
      public int firstNoRewardLevel;
      public int maxLevel;
 
