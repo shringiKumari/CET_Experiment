@@ -6,7 +6,6 @@ using UnityEngine;
 public class RewardsInfoPopupSetup : MonoBehaviour {
 
      private GlobalData globalData;
-     public int firstNoRewardLevel;
      public GameObject noRewardsImage;
      public GameObject backButton;
      public GameObject thankYouPopup;
@@ -22,7 +21,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      // Use this for initialization
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
-          if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
+          if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
                noRewardsImage.SetActive(true);
                backButton.SetActive(true);
                timeRemaining = timeNeededToGetCoins;
@@ -43,7 +42,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-          if ((globalData.levelNumber > firstNoRewardLevel) && (globalData.coins_condition == true)) {
+          if ((globalData.levelNumber > globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
 
                if (timeRemaining > 0) {
                     timeInMin = Mathf.FloorToInt (timeRemaining / 60);

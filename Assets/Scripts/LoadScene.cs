@@ -19,7 +19,6 @@ public class LoadScene : MonoBehaviour {
      [SerializeField] private GameObject noRewardsPopup;
      [SerializeField] private GameObject thankYouPopup;
 
-     public int maxLevel;
      private GlobalData globalData;
 
 
@@ -34,19 +33,19 @@ public class LoadScene : MonoBehaviour {
                bool gameWin = allAttempts [currentAttempt].win;
 
                if (gameWin) {
-                    levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
-                    buttonText.SetButtonText (globalData.levelNumber, maxLevel);
+                    levelNumberText.SetLevelNumber (globalData.levelNumber, globalData.maxLevel);
+                    buttonText.SetButtonText (globalData.levelNumber, globalData.maxLevel);
                     globalData.levelNumber++;
                     levelHUDText.SetLevelHUDNumber (globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
-                    if (globalData.coins_condition) {
+                    if ((globalData.coins_condition) && (globalData.levelNumber <= globalData.firstNoRewardLevel) ) {
                          coins.SetActive (true);
                     } else {
                          coins.SetActive (false);
 
                     }
-                    if (globalData.levelNumber > maxLevel) {
+                    if (globalData.levelNumber > globalData.maxLevel) {
                          Transform upgrade = coins.transform.FindChild ("Upgrade");
                          if (upgrade != null) {
                               upgrade.gameObject.SetActive (false);
@@ -77,7 +76,7 @@ public class LoadScene : MonoBehaviour {
                     levelStart.SetActive (false);
                }
 
-               levelNumberText.SetLevelNumber (globalData.levelNumber, maxLevel);
+               levelNumberText.SetLevelNumber (globalData.levelNumber, globalData.maxLevel);
 
 
           }
@@ -93,7 +92,7 @@ public class LoadScene : MonoBehaviour {
      public void OnClick () {
 
           pause.Pause (false);
-          if (globalData.levelNumber > maxLevel) {
+          if (globalData.levelNumber > globalData.maxLevel) {
           // show thank you popup
                thankYouPopup.SetActive(true);
           }
