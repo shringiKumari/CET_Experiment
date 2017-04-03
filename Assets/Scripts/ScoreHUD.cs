@@ -21,7 +21,7 @@ public class ScoreHUD : MonoBehaviour {
                + "-------------------" + "\n"
                + "  Total Score " + totalScore.ToString ();		
           //scoreText.text = "Your Score" + totalScore.ToString ();
-          int totalCoins = totalScore * 4;
+          int totalCoins = totalScore * 2;
           coins.setCoins(totalCoins + globalData.totalCoinsEarned);
           globalData.totalCoinsEarned += totalCoins;
           if (globalData.coins_experiment) {

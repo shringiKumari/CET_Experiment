@@ -21,6 +21,7 @@ public class StartGame : MonoBehaviour {
 
      public void Onclick () {
          
+          SceneManager.LoadScene("Level", LoadSceneMode.Single);
           gameStartScreen.SetActive(false);
           pauser.Pause (false);
      }
