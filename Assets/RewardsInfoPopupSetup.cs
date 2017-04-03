@@ -21,6 +21,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
 
+
           if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
                noRewardsImage.SetActive(true);
                backButton.SetActive(true);
@@ -58,7 +59,9 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     SetThankYouPopup ();
                }
 
-               infoText.text = "No coins for this level now" + "\n" + "To get coins come back in" + "\n" + timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+               infoText.text = "No coins for this level now," + "\n" + "To get coins wait for";
+               GameObject timerText = infoText.transform.FindChild ("TimerText").gameObject;
+               timerText.GetComponent<Text>().text = timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
           }
 		
 	}
