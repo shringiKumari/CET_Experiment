@@ -29,11 +29,16 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                playButtonText.text = "Play anyway";
           } else {
                noRewardsImage.SetActive(false);
-               backButton.SetActive(false);
-               if (globalData.coins_condition) {
-                    infoText.text = "Play the game, get coins";
+               if (globalData.levelNumber == 1) {
+                    backButton.SetActive (false);
                } else {
-                    infoText.text = "Play the game";
+                    backButton.SetActive (true);
+               }
+
+               if (globalData.coins_condition) {
+                    infoText.text = "Win coins" + "\n" +  "by reaching the goal speedily and avoiding enemies !";
+               } else {
+                    infoText.text = "Reach the goal as fast you can avoiding wacky enemies on your way !";
                }
                playButtonText.text = "Play";
           }
@@ -53,7 +58,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     SetThankYouPopup ();
                }
 
-               infoText.text = "Come Later" + " " + timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+               infoText.text = "No coins for this level now" + "\n" + "To get coins come back in" + "\n" + timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
           }
 		
 	}
