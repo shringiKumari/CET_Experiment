@@ -53,7 +53,7 @@ public class LoadScene : MonoBehaviour {
                               upgrade.gameObject.SetActive (false);
                          }
                     }
-                    if (!globalData.coins_experiment) {
+                    /*if (!globalData.coins_experiment) {
                          switch (globalData.feedbackCondition) {
                          case Feedback_Condition.FEEDBACK_ON:
                               //feedbackText.text = "WELL DONE!"; 
@@ -66,7 +66,7 @@ public class LoadScene : MonoBehaviour {
                               feedbackText.text = neutralFeedback[Random.Range(0,2)]; 
                               break;
                          }
-                    }
+                    }*/
 
 
                } else {

@@ -20,6 +20,7 @@ public class BackOnClick : MonoBehaviour {
      public void OnClick() {
 
           Debug.Log ("back click");
+
           thankYouPopup.SetActive(true);
      }
 }
