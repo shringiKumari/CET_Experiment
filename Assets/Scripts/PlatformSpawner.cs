@@ -34,8 +34,8 @@ public class PlatformSpawner : MonoBehaviour {
      private float riverMidLength;
      private float riverBaseLength;
      private float initialRefPosition = 0.2f; //set in inspector
-     private float noiseAmplifier = 10f;
-
+     private float noiseAmplifier = 10f; // from 10
+      
      public List<Transform> platformEndsList = new List<Transform> ();
      [SerializeField] public NoiseGenerator noiseGenerator;
 

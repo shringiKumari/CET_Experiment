@@ -45,7 +45,8 @@ public class Spawner : MonoBehaviour
           //Debug.Log("Perlin Delay" + (1 - competenceValue) * Mathf.PerlinNoise(Time.time, 0));
 
           competence = competenceValue;
-          spawnNoise = noise * 2 * Mathf.Sqrt(2) * (1 - competenceValue);
+          spawnNoise = noise * 1.5f * Mathf.Sqrt(2) * (1 - competenceValue);
+          spawnNoise = Mathf.Max (noise * 1.5f * Mathf.Sqrt (2) * (1 - competenceValue), noise * 1.5f * Mathf.Sqrt (2) * (1 - 0.75f));
           CancelInvoke("Spawn");
           //InvokeRepeating("Spawn", tempNoise * spawnDelay, tempNoise * spawnTime);
           InvokeRepeating("Spawn", spawnNoise, spawnNoise);
