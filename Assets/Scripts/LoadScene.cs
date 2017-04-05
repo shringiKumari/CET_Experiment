@@ -105,6 +105,7 @@ public class LoadScene : MonoBehaviour {
           pause.Pause (false);
           if (globalData.levelNumber > globalData.maxLevel) {
           // show thank you popup
+               pause.Pause (true);
                thankYouPopup.SetActive(true);
           }
 

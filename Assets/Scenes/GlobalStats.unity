@@ -230,9 +230,9 @@ MonoBehaviour:
   totalCoinsEarned: 0
   timeNeededToGetCoins: 60
   firstNoRewardLevel: 2
-  maxLevel: 5
-  coins_condition: 1
-  coins_experiment: 1
+  maxLevel: 2
+  coins_condition: 0
+  coins_experiment: 0
   feedbackCondition: 2
   rewards_expected: 0
 --- !u!1 &776823737
