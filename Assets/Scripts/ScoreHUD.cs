@@ -28,7 +28,7 @@ public class ScoreHUD : MonoBehaviour {
                if ((globalData.coins_condition) && (globalData.levelNumber < globalData.firstNoRewardLevel)) {
                     gameObject.transform.localPosition = new Vector2 (0, 60);
                } else {
-                    gameObject.transform.localPosition = new Vector2 (0, 0);
+                    gameObject.transform.localPosition = new Vector2 (0, -75);
                }
           } else {
                gameObject.transform.localPosition = new Vector2 (0, -20);

@@ -18,11 +18,11 @@ public class LoadScene : MonoBehaviour {
      [SerializeField] private GameObject coins;
      [SerializeField] private GameObject noRewardsPopup;
      [SerializeField] private GameObject thankYouPopup;
+     [SerializeField] private GameObject noCoinsImage;
 
      string[] positiveFeedback = new string[] {"Well Don!", "Good Job!", "Sweeet Score!"};
      string[] neutralFeedback = new string[] {"You Scored", "You Scored", "Complete"};
      private GlobalData globalData;
-
 
      public StoreAttempt store;
 	// Use this for initialization
@@ -41,12 +41,18 @@ public class LoadScene : MonoBehaviour {
                     levelHUDText.SetLevelHUDNumber (globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
-                    if ((globalData.coins_condition) && (globalData.levelNumber <= globalData.firstNoRewardLevel) ) {
-                         coins.SetActive (true);
+                    if (globalData.coins_condition) {
+                         if (globalData.levelNumber <= globalData.firstNoRewardLevel) {
+                              coins.SetActive (true);
+                              noCoinsImage.SetActive (false);
+                         } else {
+                              coins.SetActive (false);
+                              noCoinsImage.SetActive (true);
+                         }
                     } else {
                          coins.SetActive (false);
-
                     }
+
                     if (globalData.levelNumber > globalData.maxLevel) {
                          Transform upgrade = coins.transform.FindChild ("Upgrade");
                          if (upgrade != null) {
