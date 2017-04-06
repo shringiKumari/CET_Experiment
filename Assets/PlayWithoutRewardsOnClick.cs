@@ -16,11 +16,11 @@ public class PlayWithoutRewardsOnClick : MonoBehaviour {
      void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           if (backButton.activeSelf) {
-               Debug.Log("back button active");
+               //Debug.Log("back button active");
                gameObject.transform.localPosition = new Vector2(70, -100);
 
           } else {
-               Debug.Log ("back button inactive");
+               //Debug.Log ("back button inactive");
                gameObject.transform.localPosition = new Vector2 (0, -100);
           }
 		

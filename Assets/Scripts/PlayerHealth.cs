@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 	private PlayerControl playerControl;		// Reference to the PlayerControl script.
 	private Animator anim;						// Reference to the Animator on the player
 
+     //public EnemyTopCollision enemyTopCollision;
 
 	void Awake ()
 	{
@@ -31,7 +32,9 @@ public class PlayerHealth : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		// If the colliding gameobject is an Enemy...
+
+
+          // If the colliding gameobject is an Enemy...
 		if(col.gameObject.tag == "Enemy")
 		{
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
@@ -40,9 +43,16 @@ public class PlayerHealth : MonoBehaviour
 				// ... and if the player still has health...
 				if(health > 0f)
 				{
-					// ... take damage and reset the lastHitTime.
-					TakeDamage(col.transform); 
-					lastHitTime = Time.time; 
+                         foreach (ContactPoint2D c in col.contacts)
+                         {
+                              if (c.collider.tag != "EnemyTop") {
+                                   // ... take damage and reset the lastHitTime.
+                                   TakeDamage (col.transform); 
+                                   lastHitTime = Time.time; 
+                              } else {
+                                   Debug.Log ("here");
+                              }
+                         }
 				}
 				// If the player doesn't have health, do some stuff, let him fall into the river to reload the level.
 				else
@@ -85,6 +95,8 @@ public class PlayerHealth : MonoBehaviour
 		//GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
 
 		// Reduce the player's health by 10.
+
+
 		health -= damageAmount;
 
 		// Update what the health bar looks like.
@@ -104,4 +116,8 @@ public class PlayerHealth : MonoBehaviour
 		// Set the scale of the health bar to be proportional to the player's health.
 		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
 	}
+
+     public void NotHurt() {
+          health += damageAmount;
+     }
 }

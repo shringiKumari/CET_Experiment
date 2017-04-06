@@ -39,7 +39,7 @@ public class GoalPosition : MonoBehaviour {
                if (player.transform.position.x >= transform.position.x) {
                     
                     if (!gameWon) {
-                         Debug.Log ("Game Win");
+                         //Debug.Log ("Game Win");
                          StartCoroutine (remover.ReloadGame(true));
                          gameWon = true;
                     }

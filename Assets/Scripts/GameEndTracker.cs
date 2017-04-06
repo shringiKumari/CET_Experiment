@@ -46,7 +46,7 @@ public class GameEndTracker : MonoBehaviour {
 
           //record platform of death or distance travelled before death
           float tempDistance = playerDistance.DistanceTravelled ();
-          Debug.Log (" Distance Travelled " + tempDistance);
+          //Debug.Log (" Distance Travelled " + tempDistance);
           storeAttempt.OnAttempt (win, endTime, tempDistance, previousCompetenceValue.value);
 
           globalData.levelTimeScore = Mathf.FloorToInt(100 - endTime);

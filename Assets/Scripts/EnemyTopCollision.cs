@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyTopCollision : MonoBehaviour {
 
      public Enemy enemy;
+     //public PlayerHealth playerHealth;
 
 
 	// Use this for initialization
@@ -17,11 +18,11 @@ public class EnemyTopCollision : MonoBehaviour {
 
           if (collision2D.gameObject.tag == "Player") {
                enemy.Hurt ();
+               //playerHealth.NotHurt ();
           }
-
-
      }
 	
+
      // Update is called once per frame
 	void Update () {
 		
