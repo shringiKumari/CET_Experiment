@@ -14,23 +14,16 @@ public class GoalPosition : MonoBehaviour {
      // Use this for initialization
 	void Start () {
           Vector2 tempPosition = new Vector2(platformSpawner.GetTotalLength(), GlobalConstants.bankHeight);
-               
           transform.position = tempPosition;		
 	}
 
      void Awake () {
-
-
      }
 	
 	// Update is called once per frame
      public void updateGoalPosition( float goalPositionX) {
-
           Vector2 tempPosition = new Vector2(goalPositionX, GlobalConstants.bankHeight);
-
           transform.position = tempPosition;
-
-          
      }
 
      void Update () {

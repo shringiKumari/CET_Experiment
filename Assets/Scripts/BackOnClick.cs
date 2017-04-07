@@ -7,6 +7,7 @@ public class BackOnClick : MonoBehaviour {
 	// Use this for initialization
 	
      public GameObject thankYouPopup;
+     public RewardsInfoPopupSetup rewardInfoSetup;
 
      void Start () {
 		
@@ -20,7 +21,8 @@ public class BackOnClick : MonoBehaviour {
      public void OnClick() {
 
           Debug.Log ("back click");
-
+          //store that back was clicked
+          rewardInfoSetup.StoreMotivationData(1);
           thankYouPopup.SetActive(true);
      }
 }

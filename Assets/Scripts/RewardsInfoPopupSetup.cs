@@ -9,6 +9,9 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      public GameObject noRewardsImage;
      public GameObject backButton;
      public GameObject thankYouPopup;
+
+     public StoreMotivationData storeMotivationData;
+
      public Text infoText;
      public Text playButtonText;
 
@@ -17,15 +20,16 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
      private int timeInMin;
      private float timeInSec;
      private string timeGap;
+     private string infoStateString;
      // Use this for initialization
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
 
-
+          timeRemaining = globalData.timeNeededToGetCoins;
           if ((globalData.levelNumber >= globalData.firstNoRewardLevel) && (globalData.coins_condition == true)) {
                noRewardsImage.SetActive(true);
                backButton.SetActive(true);
-               timeRemaining = globalData.timeNeededToGetCoins;
+               //timeRemaining = globalData.timeNeededToGetCoins;
 
                playButtonText.text = "Play anyway";
           } else {
@@ -56,6 +60,8 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     timeInSec = Mathf.FloorToInt (timeRemaining % 60);
                     timeRemaining -= Time.unscaledDeltaTime;
                } else {
+                    //store time remaining = global time set - time remaining.
+                    StoreMotivationData(0);
                     SetThankYouPopup ();
                }
 
@@ -67,5 +73,24 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 	}
      public void SetThankYouPopup() {
           thankYouPopup.SetActive (true);
+     }
+
+     public void StoreMotivationData(int infoState) {
+
+          switch (infoState) {
+          case 0:
+               infoStateString = "NoClick";
+               break;
+          case 1:
+               infoStateString = "backClick";
+               break;
+          case 2:
+               infoStateString = "PlayClick";
+               break;
+
+
+          }
+          storeMotivationData.OnProgress(globalData.levelNumber, globalData.coins_experiment, globalData.coins_condition, infoStateString, globalData.timeNeededToGetCoins - timeRemaining);
+
      }
 }

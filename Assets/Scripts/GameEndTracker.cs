@@ -34,30 +34,19 @@ public class GameEndTracker : MonoBehaviour {
 	}
 
      private void GameEnd(bool win) {
-          // all deaths should come via killTrigger(Remover)
-
-
-          //how many times has the game ended so far
 
           //record time from start to death
           endTime = Time.time - startTime;
-          //Debug.Log (" End Time " + endTime);
-          //Debug.Log ("Game has ended"); 
 
           //record platform of death or distance travelled before death
           float tempDistance = playerDistance.DistanceTravelled ();
-          //Debug.Log (" Distance Travelled " + tempDistance);
           storeAttempt.OnAttempt (win, endTime, tempDistance, previousCompetenceValue.value);
 
           globalData.levelTimeScore = Mathf.FloorToInt(100 - endTime);
           globalData.levelHealthScore = Mathf.FloorToInt (playerHealth.health);
-
-
      }
 
      private void OnDestroy(){
           remover.gameEndEvent.RemoveListener (GameEnd);
      }
-
-
 }

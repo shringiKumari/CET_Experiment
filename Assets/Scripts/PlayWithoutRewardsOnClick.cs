@@ -8,6 +8,7 @@ public class PlayWithoutRewardsOnClick : MonoBehaviour {
 	// Use this for initialization
      private GlobalData globalData;
      public Pauser pause;
+     public RewardsInfoPopupSetup rewardInfoSetup;
      public GameObject noRewardsPopup;
      public GameObject levelStart;
      public GameObject backButton;
@@ -32,6 +33,8 @@ public class PlayWithoutRewardsOnClick : MonoBehaviour {
 	}
 
      public void OnClick() {
+          //store play was clicked
+          rewardInfoSetup.StoreMotivationData(2);
           pause.Pause (false);
           levelStart.SetActive (false);
           noRewardsPopup.SetActive (false);
