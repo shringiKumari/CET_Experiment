@@ -34,11 +34,12 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                playButtonText.text = "Play anyway";
           } else {
                noRewardsImage.SetActive(false);
-               if (globalData.levelNumber == 1) {
+               backButton.SetActive (false);
+               /*if (globalData.levelNumber == 1) {
                     backButton.SetActive (false);
                } else {
                     backButton.SetActive (true);
-               }
+               }*/
 
                if (globalData.coins_condition) {
                     infoText.text = "Win coins" + "\n" +  "by reaching the goal speedily and avoiding enemies !";
