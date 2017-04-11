@@ -19,6 +19,8 @@ public class LoadScene : MonoBehaviour {
      [SerializeField] private GameObject noRewardsPopup;
      [SerializeField] private GameObject thankYouPopup;
      [SerializeField] private GameObject noCoinsImage;
+     public Text playButtonText;
+
 
      string[] positiveFeedback = new string[] {"Well Don!", "Good Job!", "Sweeet Score!"};
      string[] neutralFeedback = new string[] {"You Scored", "You Scored", "Complete"};
@@ -41,8 +43,10 @@ public class LoadScene : MonoBehaviour {
                     levelHUDText.SetLevelHUDNumber (globalData.levelNumber);
                     levelStart.SetActive (true);
                     pause.Pause (true);
+                    //Debug.Log (playButtonText.text);
                     if (globalData.coins_condition) {
-                         if (globalData.levelNumber <= globalData.firstNoRewardLevel) {
+                         
+                         if ((globalData.levelNumber <= globalData.firstNoRewardLevel) || (globalData.with_coins)){
                               coins.SetActive (true);
                               noCoinsImage.SetActive (false);
                          } else {

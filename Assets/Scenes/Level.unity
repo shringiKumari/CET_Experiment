@@ -942,6 +942,11 @@ Prefab:
       propertyPath: noCoinsImage
       value: 
       objectReference: {fileID: 277870612}
+    - target: {fileID: 114144158048635604, guid: f444699b78ff648748bb1a8d2f795abf,
+        type: 2}
+      propertyPath: playButtonText
+      value: 
+      objectReference: {fileID: 489369349}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f444699b78ff648748bb1a8d2f795abf, type: 2}
   m_IsPrefabParent: 0
@@ -1890,7 +1895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY ANYWAY
+  m_Text: 
 --- !u!222 &489369350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4341,6 +4346,7 @@ MonoBehaviour:
   storeMotivationData: {fileID: 1359878155}
   infoText: {fileID: 1882819820}
   playButtonText: {fileID: 489369349}
+  playButton: {fileID: 319008331}
 --- !u!114 &1359878155
 MonoBehaviour:
   m_ObjectHideFlags: 0

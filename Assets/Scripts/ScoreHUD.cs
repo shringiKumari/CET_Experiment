@@ -25,7 +25,8 @@ public class ScoreHUD : MonoBehaviour {
           coins.setCoins(totalCoins + globalData.totalCoinsEarned);
           globalData.totalCoinsEarned += totalCoins;
           if (globalData.coins_experiment) {
-               if ((globalData.coins_condition) && (globalData.levelNumber < globalData.firstNoRewardLevel)) {
+               //if ((globalData.coins_condition) && (globalData.levelNumber < globalData.firstNoRewardLevel)) {
+               if(globalData.with_coins) {
                     gameObject.transform.localPosition = new Vector2 (0, 60);
                } else {
                     if (globalData.coins_condition) {
@@ -36,7 +37,8 @@ public class ScoreHUD : MonoBehaviour {
                }
           } else {
                 
-                    gameObject.transform.localPosition = new Vector2 (0, -20);
+               //score alignment for feedback condition     
+               gameObject.transform.localPosition = new Vector2 (0, -20);
           }
 
 	}

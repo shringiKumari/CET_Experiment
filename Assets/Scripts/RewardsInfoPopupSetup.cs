@@ -14,6 +14,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
 
      public Text infoText;
      public Text playButtonText;
+     public Transform playButton;
 
      private float startTime = 0;
      private float timeRemaining;
@@ -31,7 +32,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                backButton.SetActive(true);
                //timeRemaining = globalData.timeNeededToGetCoins;
 
-               playButtonText.text = "Play anyway";
+               //playButtonText.text = "Play anyway";
           } else {
                noRewardsImage.SetActive(false);
                backButton.SetActive (false);
@@ -47,6 +48,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     infoText.text = "Reach the goal as fast you can avoiding wacky enemies on your way !";
                }
                playButtonText.text = "Play";
+               globalData.with_coins = true;
           }
 		
 	}
@@ -60,15 +62,27 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     timeInMin = Mathf.FloorToInt (timeRemaining / 60);
                     timeInSec = Mathf.FloorToInt (timeRemaining % 60);
                     timeRemaining -= Time.unscaledDeltaTime;
+                    playButtonText.text = "Play anyway";
+                    globalData.with_coins = false;
                } else {
                     //store time remaining = global time set - time remaining.
                     StoreMotivationData(0);
-                    SetThankYouPopup ();
+                    //SetThankYouPopup ();
+                    noRewardsImage.SetActive(false);
+                    backButton.SetActive (false);
+                    playButton.GetComponent<Button>().interactable = true;
+                    playButton.localPosition = new Vector2 (0, -100);
+                    playButtonText.text = "Play";
+                    globalData.with_coins = true;
                }
-
-               infoText.text = "No coins for this level now," + "\n" + "To get coins wait for";
                GameObject timerText = infoText.transform.FindChild ("TimerText").gameObject;
-               timerText.GetComponent<Text>().text = timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+               if (globalData.with_coins) {
+                    infoText.text = "Win coins" + "\n" +  "by reaching the goal speedily and avoiding enemies !";
+                    timerText.GetComponent<Text> ().text = " ";
+               } else {
+                    infoText.text = "No coins for this level now," + "\n" + "To get coins wait for";
+                    timerText.GetComponent<Text>().text = timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+               }
           }
 		
 	}
