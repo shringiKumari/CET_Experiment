@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackOnClick : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class BackOnClick : MonoBehaviour {
 	
      public GameObject thankYouPopup;
      public RewardsInfoPopupSetup rewardInfoSetup;
+     public Transform playAnywayButton;
 
      void Start () {
 		
@@ -23,6 +25,8 @@ public class BackOnClick : MonoBehaviour {
           Debug.Log ("back click");
           //store that back was clicked
           rewardInfoSetup.StoreMotivationData(1);
-          thankYouPopup.SetActive(true);
+          playAnywayButton.GetComponent<Button>().interactable = false;
+         
+          //thankYouPopup.SetActive(true);
      }
 }

@@ -1393,7 +1393,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK
+  m_Text: WAIT
 --- !u!222 &347294873
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5172,6 +5172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thankYouPopup: {fileID: 1378885699}
   rewardInfoSetup: {fileID: 1359878154}
+  playAnywayButton: {fileID: 319008331}
 --- !u!1001 &1570560403
 Prefab:
   m_ObjectHideFlags: 0
