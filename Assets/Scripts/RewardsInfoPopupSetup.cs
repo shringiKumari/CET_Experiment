@@ -66,7 +66,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     globalData.with_coins = false;
                } else {
                     //store time remaining = global time set - time remaining.
-                    StoreMotivationData(0);
+                    //StoreMotivationData(0);
                     //SetThankYouPopup ();
                     noRewardsImage.SetActive(false);
                     backButton.SetActive (false);
