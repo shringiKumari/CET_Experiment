@@ -17,7 +17,7 @@ public class OptimalExperience : MonoBehaviour {
 
      private float competenceStep = 0.2f;
      private float minCompetence = 0.1f;
-     private float startCompetence = 0.26f;
+     private float startCompetence = 0.28f;
      private float maxCompetence = 0.9f;
      private float respectableDistanceFactor = 0.7f; // 70% there! Just 30% of the distance away from goal. It increases with each attempt by a factor of 1/20;
     
@@ -37,7 +37,15 @@ public class OptimalExperience : MonoBehaviour {
 
                Attempts.AttemptModel currentModel = allAttempts[currentAttempt];
                if(currentModel.win){
-                    return previousCompetence + 0.15f;
+                    if (previousCompetence <= 0.9) {
+                         if (previousCompetence <= 0.6) {
+                              return previousCompetence + 0.15f;
+                         } else {
+                              return previousCompetence + 0.12f;
+                         }
+                    } else {
+                         return Mathf.Max(previousCompetence, 0.95f);
+                    }
                }
                else{
                    return previousCompetence;

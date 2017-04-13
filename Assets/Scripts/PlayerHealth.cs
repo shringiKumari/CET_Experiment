@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
                                    TakeDamage (col.transform); 
                                    lastHitTime = Time.time; 
                               } else {
-                                   Debug.Log ("here");
+                                   //Debug.Log ("hit enemy top");
                               }
                          }
 				}
