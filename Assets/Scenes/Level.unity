@@ -2389,7 +2389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5000 coins
+  m_Text: 2500 coins
 --- !u!222 &660832929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3017,6 +3017,11 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 1debb068374764196a01e1c69c1f413f, type: 2}
+    - target: {fileID: 61154546429627248, guid: 7651a1a1d51de405d9f53ff856b4d26e,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7651a1a1d51de405d9f53ff856b4d26e, type: 2}
   m_IsPrefabParent: 0
@@ -4548,7 +4553,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 6}
   serializedVersion: 2
-  m_Size: {x: 11, y: 0.4}
+  m_Size: {x: 11.4, y: 0.4}
 --- !u!1 &1450924078
 GameObject:
   m_ObjectHideFlags: 0
