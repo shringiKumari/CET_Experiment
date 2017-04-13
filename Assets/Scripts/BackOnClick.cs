@@ -25,8 +25,7 @@ public class BackOnClick : MonoBehaviour {
           Debug.Log ("back click");
           //store that back was clicked
           rewardInfoSetup.StoreMotivationData(1);
-          playAnywayButton.GetComponent<Button>().interactable = false;
-         
-          //thankYouPopup.SetActive(true);
+          //playAnywayButton.GetComponent<Button>().interactable = false;
+          thankYouPopup.SetActive(true);
      }
 }

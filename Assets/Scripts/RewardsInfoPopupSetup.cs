@@ -36,11 +36,11 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
           } else {
                noRewardsImage.SetActive(false);
                backButton.SetActive (false);
-               /*if (globalData.levelNumber == 1) {
+               if (globalData.levelNumber == 1) {
                     backButton.SetActive (false);
                } else {
                     backButton.SetActive (true);
-               }*/
+               }
 
                if (globalData.coins_condition) {
                     infoText.text = "Win coins" + "\n" +  "by reaching the goal speedily and avoiding enemies !";
@@ -66,12 +66,13 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     globalData.with_coins = false;
                } else {
                     //store time remaining = global time set - time remaining.
-                    //StoreMotivationData(0);
+                    StoreMotivationData(0);
                     //SetThankYouPopup ();
                     noRewardsImage.SetActive(false);
-                    backButton.SetActive (false);
+                    //backButton.SetActive (false);
+                    backButton.SetActive (true);
                     playButton.GetComponent<Button>().interactable = true;
-                    playButton.localPosition = new Vector2 (0, -100);
+                    //playButton.localPosition = new Vector2 (0, -100);
                     playButtonText.text = "Play";
                     globalData.with_coins = true;
                }
