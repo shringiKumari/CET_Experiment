@@ -22,7 +22,7 @@ public class BackOnClick : MonoBehaviour {
 
      public void OnClick() {
 
-          Debug.Log ("back click");
+          //Debug.Log ("back click");
           //store that back was clicked
           rewardInfoSetup.StoreMotivationData(1);
           playAnywayButton.GetComponent<Button>().interactable = false;

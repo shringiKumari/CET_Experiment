@@ -84,7 +84,7 @@ public class LoadScene : MonoBehaviour {
                }
           } else {
                if (globalData.coins_experiment) {
-                    Debug.Log ("coins experiment");
+                    //Debug.Log ("coins experiment");
                     noRewardsPopup.SetActive (true);
                     pause.Pause (true);
                } else {

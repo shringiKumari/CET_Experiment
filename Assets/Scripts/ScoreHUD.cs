@@ -27,14 +27,11 @@ public class ScoreHUD : MonoBehaviour {
           if (globalData.coins_experiment) {
                //if ((globalData.coins_condition) && (globalData.levelNumber < globalData.firstNoRewardLevel)) {
                if((globalData.with_coins) && (globalData.coins_condition)){
-                    Debug.Log ("score here a");
                     gameObject.transform.localPosition = new Vector2 (0, 60);
                } else {
                     if (globalData.coins_condition) {
-                         Debug.Log ("score here b");
                          gameObject.transform.localPosition = new Vector2 (0, -75);
                     } else {
-                         Debug.Log ("score here c");
                          gameObject.transform.localPosition = new Vector2 (0, 0);
                     }
                }
