@@ -229,7 +229,7 @@ MonoBehaviour:
   levelHealthScore: 0
   totalCoinsEarned: 0
   timeNeededToGetCoins: 30
-  firstNoRewardLevel: 3
+  firstNoRewardLevel: 2
   maxLevel: 7
   coins_condition: 1
   coins_experiment: 1
