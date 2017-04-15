@@ -10,7 +10,7 @@ public class CoinsDemandText : MonoBehaviour {
      // Use this for initialization
 	void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
-          coinsDemandText.text = globalData.totalCoinsNeeded.ToString () + "coins";
+          coinsDemandText.text = globalData.totalCoinsNeeded.ToString () + " coins";
 		
 	}
 	
