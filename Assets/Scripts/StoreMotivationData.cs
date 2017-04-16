@@ -10,8 +10,8 @@ public class StoreMotivationData : MonoBehaviour {
 
      public static string dataFileName = "motivation.json";
 
-     public void OnProgress(int levelNumber, bool coin_experiment, bool coin_condition, string infoState, float timeWaitedForCoins) {
-          Motivation.MotivationModel motivation = new Motivation.MotivationModel(levelNumber, coin_experiment, coin_condition, infoState, timeWaitedForCoins);
+     public void OnProgress(int levelNumber, bool coin_experiment, bool coin_condition, string infoState, float timeWaitedForCoins, float totalCoinsEarned) {
+          Motivation.MotivationModel motivation = new Motivation.MotivationModel(levelNumber, coin_experiment, coin_condition, infoState, timeWaitedForCoins, totalCoinsEarned);
 
           FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.OpenOrCreate);
           StreamReader reader = new StreamReader (stream);

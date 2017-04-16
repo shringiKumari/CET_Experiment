@@ -14,13 +14,15 @@ public struct Motivation {
           public bool coin_condition;
           public string infoState;
           public float timeWaitedForCoins;
+          public float totalCoinsEarned;
 
-          public MotivationModel(int levelNumber, bool coin_experiment, bool coin_condition, string infoState, float timeWaitedForCoins) {
+          public MotivationModel(int levelNumber, bool coin_experiment, bool coin_condition, string infoState, float timeWaitedForCoins, float totalCoinsEarned) {
                this.levelNumber = levelNumber;
                this.coin_experiment = coin_experiment;
                this.coin_condition = coin_condition;
                this.infoState = infoState;
                this.timeWaitedForCoins = timeWaitedForCoins;
+               this.totalCoinsEarned = totalCoinsEarned;
           }
      }
      public List<MotivationModel> motivations;
