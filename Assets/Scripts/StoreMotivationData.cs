@@ -8,6 +8,7 @@ using System;
 //data read and write
 public class StoreMotivationData : MonoBehaviour {
 
+     public string motivationJson;
      public static string dataFileName = "motivation.json";
 
      public void OnProgress(int levelNumber, bool coin_experiment, bool coin_condition, string infoState, float timeWaitedForCoins, float totalCoinsEarned) {
@@ -29,6 +30,7 @@ public class StoreMotivationData : MonoBehaviour {
           json = JsonUtility.ToJson(motivations);
           StreamWriter writer = new StreamWriter (stream);
           writer.Write (json);
+          //motivationJson = json;
           writer.Flush ();
           stream.Close ();
      }
@@ -45,13 +47,38 @@ public class StoreMotivationData : MonoBehaviour {
                     reader.Close ();
                     return motivations.motivations;
                }
+
             stream.Close ();
             reader.Close ();
           }
           return null;
      }
 
+     public string GetJsonString(){
+          if (File.Exists (Application.persistentDataPath + "/" + dataFileName)) {
+               FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Open);
+               StreamReader reader = new StreamReader (stream);
+               string json = reader.ReadToEnd ();
+               motivationJson = json;
 
+
+               stream.Close ();
+               reader.Close ();
+
+               if (string.IsNullOrEmpty (json)) {
+                    return null;
+               }
+          }
+
+
+
+          return motivationJson;
+     }
+
+     public void ClearData(){
+          FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
+          stream.Close ();
+     }
 
      private void OnApplicationQuit(){
           //FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);

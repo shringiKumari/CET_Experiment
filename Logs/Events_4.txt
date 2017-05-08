@@ -1,0 +1,30 @@
+0	time	0
+0	Likert Task Begun	
+1	time	2.134269
+1	UI Index Set	1
+2	time	4.435462
+2	UI Index Set	2
+3	Timestamp	21.0778
+3	Index	0
+3	Original Index	2
+3	Question	c
+3	Response	5
+3	c	5
+4	Timestamp	21.0778
+4	Index	1
+4	Original Index	0
+4	Question	a
+4	Response	5
+4	a	5
+5	Timestamp	21.0778
+5	Index	2
+5	Original Index	1
+5	Question	b
+5	Response	5
+5	b	5
+6	Timestamp	21.0778
+6	Likert Task Ended	
+6	Score	0
+6	Time taken	2.151297
+7	time	21.0778
+7	UI Index Set	3

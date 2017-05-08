@@ -15,7 +15,12 @@ public class ThankYouOnClick : MonoBehaviour {
 	}
 
      public void OnClick() {
+     
+
+
           Debug.Log ("Application Quit");
           Application.Quit ();
      }
+
+
 }

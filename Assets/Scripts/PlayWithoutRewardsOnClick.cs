@@ -34,6 +34,9 @@ public class PlayWithoutRewardsOnClick : MonoBehaviour {
 
      public void OnClick() {
           //store play was clicked
+
+          //Analytics.LogCritical ("Score at end of level 1", "10242");
+
           rewardInfoSetup.StoreMotivationData(2);
           pause.Pause (false);
           levelStart.SetActive (false);

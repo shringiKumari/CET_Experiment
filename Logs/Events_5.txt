@@ -1,0 +1,25 @@
+0	time	0
+0	Likert Task Begun	
+1	time	1.157018
+1	UI Index Set	1
+2	time	2.191584
+2	UI Index Set	2
+3	time	2.208232
+3	Questionnaire Task Begun	Demographic
+4	time	22.80355
+4	Index	0
+4	Question	age
+4	Response	18- 24
+5	time	22.80355
+5	Index	1
+5	Question	gender
+5	Response	m
+6	time	22.80355
+6	Index	2
+6	Question	www
+6	Response	hhhhhhhhh
+7	Time	22.80355
+7	Questionnaire Ended	Demographic
+7	Time taken	14.7245
+8	time	22.80355
+8	UI Index Set	3

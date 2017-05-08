@@ -4333,6 +4333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48c55c41992043c7af8509faf77be80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motivationJson: 
 --- !u!1 &1378885699
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5030,7 @@ GameObject:
   - component: {fileID: 1569500214}
   - component: {fileID: 1569500213}
   - component: {fileID: 1569500216}
+  - component: {fileID: 1569500217}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -5151,9 +5153,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9dacb1258f546a1b427b563e39b5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storeMotivationData: {fileID: 1569500217}
   thankYouPopup: {fileID: 1378885699}
   rewardInfoSetup: {fileID: 1359878154}
   playAnywayButton: {fileID: 319008331}
+--- !u!114 &1569500217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1569500211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48c55c41992043c7af8509faf77be80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motivationJson: 
 --- !u!1001 &1570560403
 Prefab:
   m_ObjectHideFlags: 0
