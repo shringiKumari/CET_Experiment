@@ -1205,6 +1205,7 @@ GameObject:
   - component: {fileID: 319008333}
   - component: {fileID: 319008332}
   - component: {fileID: 319008335}
+  - component: {fileID: 319008336}
   m_Layer: 5
   m_Name: PlayWithoutRewards
   m_TagString: Untagged
@@ -1327,11 +1328,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fd725e35f7d4280beb7957cb923369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storeMotivationData: {fileID: 319008336}
   pause: {fileID: 644203107}
   rewardInfoSetup: {fileID: 1359878154}
   noRewardsPopup: {fileID: 1359878150}
   levelStart: {fileID: 242821430}
   backButton: {fileID: 1569500211}
+--- !u!114 &319008336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 319008330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48c55c41992043c7af8509faf77be80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motivationJson: 
 --- !u!1 &347294870
 GameObject:
   m_ObjectHideFlags: 0

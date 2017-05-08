@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PlayWithoutRewardsOnClick : MonoBehaviour {
 
-	// Use this for initialization
+	
+     public StoreMotivationData storeMotivationData;
+     private string motivationJson;
+
+     // Use this for initialization
      private GlobalData globalData;
      public Pauser pause;
      public RewardsInfoPopupSetup rewardInfoSetup;
@@ -38,6 +42,10 @@ public class PlayWithoutRewardsOnClick : MonoBehaviour {
           //Analytics.LogCritical ("Score at end of level 1", "10242");
 
           rewardInfoSetup.StoreMotivationData(2);
+          motivationJson = storeMotivationData.GetJsonString();
+
+          Analytics.LogCritical ("JsonTest", motivationJson);
+          Debug.Log (motivationJson);
           pause.Pause (false);
           levelStart.SetActive (false);
           noRewardsPopup.SetActive (false);
