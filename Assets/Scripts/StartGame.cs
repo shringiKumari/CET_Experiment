@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour {
 
      // Use this for initialization
 	void Start () {
-          pauser.Pause (true);
+          ////////////////pauser.Pause (true);
 		
 	}
 	

@@ -578,7 +578,7 @@ public class Analytics : MonoBehaviour
         {
             yield return null;
 
-               Debug.Log ("SESSIONNOTSET");
+               //Debug.Log ("SESSIONNOTSET");
         }
 
         int session = this.Session.ID;

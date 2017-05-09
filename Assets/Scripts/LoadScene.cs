@@ -42,7 +42,7 @@ public class LoadScene : MonoBehaviour {
                     globalData.levelNumber++;
                     levelHUDText.SetLevelHUDNumber (globalData.levelNumber);
                     levelStart.SetActive (true);
-                    pause.Pause (true);
+                    //////////////pause.Pause (true);
                     //Debug.Log (playButtonText.text);
                     if (globalData.coins_condition) {
                          
@@ -86,7 +86,7 @@ public class LoadScene : MonoBehaviour {
                if (globalData.coins_experiment) {
                     //Debug.Log ("coins experiment");
                     noRewardsPopup.SetActive (true);
-                    pause.Pause (true);
+                    /////////////////pause.Pause (true);
                } else {
                     levelStart.SetActive (false);
                }
@@ -109,12 +109,12 @@ public class LoadScene : MonoBehaviour {
           pause.Pause (false);
           if (globalData.levelNumber > globalData.maxLevel) {
           // show thank you popup
-               pause.Pause (true);
+               //pause.Pause (true);
                thankYouPopup.SetActive(true);
           }
 
           if (globalData.coins_experiment) {
-               pause.Pause (true);
+               //////////////pause.Pause (true);
                noRewardsPopup.SetActive (true);
           } else {
 

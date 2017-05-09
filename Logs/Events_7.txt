@@ -1,0 +1,26 @@
+0	time	0
+0	Likert Task Begun	IMI
+1	Timestamp	9.930381
+1	Index	2
+1	Original Index	0
+1	Question	QWERT
+1	Response	1
+1	QWERT	1
+2	Timestamp	9.930381
+2	Index	0
+2	Original Index	1
+2	Question	ASDFG
+2	Response	1
+2	ASDFG	1
+3	Timestamp	9.930381
+3	Index	1
+3	Original Index	2
+3	Question	XZCVB
+3	Response	1
+3	XZCVB	1
+4	Timestamp	9.930381
+4	Likert Task Ended	IMI
+4	Score	0
+4	Time taken	6.954007
+5	time	9.930381
+5	UI Index Set	1
