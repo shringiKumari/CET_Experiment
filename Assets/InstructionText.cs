@@ -20,8 +20,10 @@ public class InstructionText : MonoBehaviour {
           }
           */
 
-          instructionText.text = "abcdefgh";
-		
+          instructionText.text = 
+               "You will play a basic 2D platformer game and fill a questionnaire about your experience. \n\n" +
+               "The game has fixed number of levels. Cross the red flag to complete the level.\n\n" +
+               "Controls\nLeft Arrow/ ‘A’ - to go left.\nRight Arrow/ ‘D’ - to go right.\nUp Arrow/ Spacebar - to jump.\n\n";
 	}
 	
 	// Update is called once per frame
