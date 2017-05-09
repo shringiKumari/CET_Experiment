@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1255306527
 AudioListener:
   m_ObjectHideFlags: 0
@@ -746,6 +746,10 @@ Prefab:
     - target: {fileID: 22432676, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22332650, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
@@ -959,7 +963,7 @@ Prefab:
     - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
         type: 2}
       propertyPath: Questions.Array.data[2].options.Array.data[3]
-      value: Less often
+      value: Less than once a month
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e5b7c8b5b3577a4aa94badf27685c0d, type: 2}

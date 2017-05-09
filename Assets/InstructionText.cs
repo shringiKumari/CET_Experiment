@@ -12,18 +12,21 @@ public class InstructionText : MonoBehaviour {
      // Use this for initialization
 	void Start () {
 
-          /*globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
+          globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           if (globalData.coins_condition) {
-               instructionText.text = "abcdefgh";
+               instructionText.text = 
+                    "Play a level based 2D platformer game and fill a questionnaire about your experience. \n\n" +
+                    "Earn COINS to UPGRADE hero as the games gets harder every level.\n\n" +
+                    "Controls\nLeft Arrow/ ‘A’ - to go left.\nRight Arrow/ ‘D’ - to go right.\nUp Arrow/ Spacebar - to jump.\n\n";
           } else {
-               instructionText.text = "abcd";
+               instructionText.text = 
+                    "Play a level based 2D platformer game and fill a questionnaire about your experience. \n\n" +
+                    "Controls\nLeft Arrow/ ‘A’ - to go left.\nRight Arrow/ ‘D’ - to go right.\nUp Arrow/ Spacebar - to jump.\n\n";
           }
-          */
 
-          instructionText.text = 
-               "You will play a basic 2D platformer game and fill a questionnaire about your experience. \n\n" +
-               "The game has fixed number of levels. Cross the red flag to complete the level.\n\n" +
-               "Controls\nLeft Arrow/ ‘A’ - to go left.\nRight Arrow/ ‘D’ - to go right.\nUp Arrow/ Spacebar - to jump.\n\n";
+
+
+          
 	}
 	
 	// Update is called once per frame
