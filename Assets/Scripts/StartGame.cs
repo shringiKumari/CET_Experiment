@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour {
 
      // Use this for initialization
 	void Start () {
-          ////////////////pauser.Pause (true);
+          pauser.Pause (true);
 		
 	}
 	
@@ -20,6 +20,8 @@ public class StartGame : MonoBehaviour {
 	}
 
      public void Onclick () {
+
+
          
           SceneManager.LoadScene("Level", LoadSceneMode.Single);
           gameStartScreen.SetActive(false);

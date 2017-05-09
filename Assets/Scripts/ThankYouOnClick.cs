@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 public class ThankYouOnClick : MonoBehaviour {
-
+     [SerializeField] private Pauser pauser;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +18,7 @@ public class ThankYouOnClick : MonoBehaviour {
 
      public void OnClick() {
      
-
+          pauser.Pause (false);
           SceneManager.LoadScene("Questions_End", LoadSceneMode.Single);
 
           //Debug.Log ("Application Quit");
