@@ -44,7 +44,7 @@ public class SliderValue : MonoBehaviour {
           // do it only once in game start 
           // slider.value = UnityEngine.Random.Range (0.1f, 0.9f);
           slider.value = optimalExperience.OptimizeExperience(); 
-          Debug.Log (" competence " + slider.value);
+          //Debug.Log (" competence " + slider.value);
 
      }
 
@@ -86,7 +86,7 @@ public class SliderValue : MonoBehaviour {
 
      public void OnClickApply () {
           
-          Debug.Log ("competence value" + slider.value);
+          //Debug.Log ("competence value" + slider.value);
           if (slider.value != previousSliderValue) {
                GenerateLevel ();
                previousSliderValue = slider.value;

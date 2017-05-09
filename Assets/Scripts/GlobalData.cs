@@ -28,12 +28,26 @@ public class GlobalData : MonoBehaviour {
      public bool rewards_expected;
      public bool with_coins;
 
+     private int randomConditionSelector;
+
      // Use this for initialization
 	void Start () {
-		
+
 	}
 
      void Awake () {
+         
+          randomConditionSelector = UnityEngine.Random.Range (1, 3);
+          switch (randomConditionSelector) {
+          case 1:
+               coins_condition = true;
+               break;
+          case 2:
+               coins_condition = false;
+               break;              
+          }
+          Debug.Log ("condition" + coins_condition);
+
           DontDestroyOnLoad (gameObject);
 
      }

@@ -38,7 +38,7 @@ public class ScoreHUD : MonoBehaviour {
           } else {
                 
                //score alignment for feedback condition   
-               Debug.Log ("score here d");
+               //Debug.Log ("score here d");
                gameObject.transform.localPosition = new Vector2 (0, -20);
           }
 
