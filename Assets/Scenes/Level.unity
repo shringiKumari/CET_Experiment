@@ -3423,10 +3423,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'THANK YOU FOR PARTICIPATING IN THE EXPERIMENT.
+  m_Text: 'THANK YOU FOR PLAYING.
 
 
-    IF YOU WISH TO KNOW FURTHER, PLEASE DROP US  AN EMAIL AT sk1382(at)york.ac.uk'
+    PLEASE PROCEED TO ANSWER SOME QUESTIONS'
 --- !u!222 &1163455278
 CanvasRenderer:
   m_ObjectHideFlags: 0
