@@ -13,7 +13,7 @@ public class Instructions : MonoBehaviour
     void Start()
     {
 
-          Analytics.LogCritical ("test", "testVal");
+          //Analytics.LogCritical ("test", "testVal");
 
         if (AllowNext)
         {
