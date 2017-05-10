@@ -51,6 +51,7 @@ public class GlobalData : MonoBehaviour {
                break;
           case 3:
                coins_condition = false;
+               //coins_wait = false;
                break;              
           }
           Debug.Log ("condition" + coins_condition);

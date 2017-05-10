@@ -115,7 +115,7 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
           }
           storeMotivationData.ClearData ();
 
-          storeMotivationData.OnProgress(globalData.levelNumber, globalData.coins_experiment, globalData.coins_condition, infoStateString, globalData.timeNeededToGetCoins - timeRemaining, globalData.totalCoinsEarned);
+          storeMotivationData.OnProgress(globalData.levelNumber, globalData.coins_experiment, globalData.coins_condition, globalData.coins_wait, infoStateString, globalData.timeNeededToGetCoins - timeRemaining, globalData.totalCoinsEarned);
 
      }
 }
