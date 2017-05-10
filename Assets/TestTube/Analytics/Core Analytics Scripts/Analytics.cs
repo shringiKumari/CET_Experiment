@@ -377,7 +377,7 @@ public class Analytics : MonoBehaviour
         if (Analytics.NotNull())
         {
 
-               //Debug.Log ("LogCriticalNotNull");
+            Debug.Log ("LogCriticalNotNull");
             AddCriticalEvent(new EventData(new Information[] { Information.time, new Information(title, info) }));
         }
 
@@ -533,9 +533,9 @@ public class Analytics : MonoBehaviour
 
     public static void AddCriticalEvent(EventData trace)
     {
-          //Debug.Log ("AddCriticalEventTrace");
+        Debug.Log ("AddCriticalEventTrace");
         INSTANCE.CriticalEvents.Add(trace);
-          //Debug.Log ("" + INSTANCE.CriticalEvents.Count);
+        Debug.Log ("" + INSTANCE.CriticalEvents.Count);
 
     }
 
@@ -618,7 +618,7 @@ public class Analytics : MonoBehaviour
                 form.AddField("info[]", info);
             form.AddField("session", session);
            
-               //Debug.Log ("Coroutine running");
+            Debug.Log ("Coroutine running");
 
             StartCoroutine(PushCriticalEvent(form));
 
@@ -747,7 +747,7 @@ public class Analytics : MonoBehaviour
     {
 
         bool success = false;
-          //Debug.Log ("Pusing critical event");
+        Debug.Log ("Pushing critical event");
         while (!success)
         {
 
@@ -761,7 +761,7 @@ public class Analytics : MonoBehaviour
             if (www.text.Contains("Commit"))
             {
 
-                    //Debug.Log ("Critical event pushed");
+                Debug.Log ("Critical event pushed");
                 success = true;
             }
 
