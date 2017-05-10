@@ -68,20 +68,28 @@ public class RewardsInfoPopupSetup : MonoBehaviour {
                     //store time remaining = global time set - time remaining.
                     //StoreMotivationData(0);
                     //SetThankYouPopup ();
-                    noRewardsImage.SetActive(false);
-                    backButton.SetActive (false);
-                    playButton.GetComponent<Button>().interactable = true;
-                    playButton.localPosition = new Vector2 (0, -100);
-                    playButtonText.text = "Play";
-                    globalData.with_coins = true;
+                    if (globalData.coins_wait) {
+                         noRewardsImage.SetActive (false);
+                         backButton.SetActive (false);
+                         playButton.GetComponent<Button> ().interactable = true;
+                         playButton.localPosition = new Vector2 (0, -100);
+                         playButtonText.text = "Play";
+                         globalData.with_coins = true;
+                    }
                }
                GameObject timerText = infoText.transform.FindChild ("TimerText").gameObject;
                if (globalData.with_coins) {
                     infoText.text = "Win coins" + "\n" +  "by reaching the goal speedily and avoiding enemies !";
                     timerText.GetComponent<Text> ().text = " ";
                } else {
-                    infoText.text = "No coins for this level now," + "\n" + "To get coins wait for";
-                    timerText.GetComponent<Text>().text = timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+
+                    if (globalData.coins_wait) {
+                         infoText.text = "No coins for this level now," + "\n" + "To get coins wait for";
+                         timerText.GetComponent<Text> ().text = timeInMin.ToString () + " min " + timeInSec.ToString () + " sec";
+                    } else {
+                         infoText.text = "No more coins to be earned";
+                         timerText.GetComponent<Text> ().text = " ";
+                    }
                }
           }
 		

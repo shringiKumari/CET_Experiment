@@ -1735,7 +1735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WAIT
+  m_Text: 
 --- !u!222 &347294873
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6476,6 +6476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storeMotivationData: {fileID: 1569500217}
   thankYouPopup: {fileID: 1378885699}
+  quitPopup: {fileID: 2090256365}
+  backButtonText: {fileID: 347294872}
   rewardInfoSetup: {fileID: 1359878154}
   playAnywayButton: {fileID: 319008331}
 --- !u!114 &1569500217

@@ -12,6 +12,10 @@ public class BackOnClick : MonoBehaviour {
      private string motivationJson;
 
      public GameObject thankYouPopup;
+     public GameObject quitPopup;
+
+     public Text backButtonText;
+
      public RewardsInfoPopupSetup rewardInfoSetup;
      public Transform playAnywayButton;
 
@@ -19,6 +23,13 @@ public class BackOnClick : MonoBehaviour {
 
      void Start () {
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
+
+          if (globalData.coins_wait) {
+               backButtonText.text = "Wait";
+
+          }else {
+               backButtonText.text = "Quit";
+          }
 	}
 	
 	// Update is called once per frame
@@ -38,7 +49,15 @@ public class BackOnClick : MonoBehaviour {
           Analytics.LogCritical ("JsonTest", motivationJson);
           Debug.Log (motivationJson);
 
-          playAnywayButton.GetComponent<Button>().interactable = false;
+          //playAnywayButton.GetComponent<Button>().interactable = false;
+
+          if (globalData.coins_wait) {
+               playAnywayButton.GetComponent<Button>().interactable = false;
+
+          }else {
+               
+               quitPopup.SetActive (true);
+          }
          
           //thankYouPopup.SetActive(true);
      }
