@@ -128,7 +128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 416780, guid: 756c4d642f236fc49a7f19654118c5e6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756c4d642f236fc49a7f19654118c5e6, type: 2}
@@ -321,120 +321,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73952909a15796a4689699f2c9132ea4, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &863100970
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: GameNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.0032467532
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: LoggingLocationSet
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: LogToDisk
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: PHPGenerated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: DBHostname
-      value: aa1en9monf18b2a.cr0zaaibyfhg.eu-west-2.rds.amazonaws.com
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: DBUserName
-      value: root
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: DBPassword
-      value: 4m4z0nakr!
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: WizardCompleted
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: BaseDomainURL
-      value: Custom-env.fmvhfgpeqj.eu-west-2.elasticbeanstalk.com/PHP/
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: GameNames.Array.data[0]
-      value: CET_Experiment
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: NewGameName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: GameNames.Array.data[1]
-      value: 'CET_Exp '
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: gameID
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: SelectedGameOption
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: GameNames.Array.data[2]
-      value: New Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: SetSessionFlag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: SessionSet
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-      propertyPath: NumberOfConditions
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1187107790
 Prefab:
   m_ObjectHideFlags: 0
@@ -544,12 +430,12 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: "Thanks for taking part in this experiment! This is being run by Shringi
-        Kumari from the University of York. In this experiment you will play a 2D
-        platformer. \n\nThis should take less than 5 minutes in total.Your data will
-        be completely anonymous.We intend to publish findings based on it but you
-        will never be able to be linked back to the data when it is published.\n \nYou
-        must be 18 or over to take part in this experiment.If you still want to take
-        part click 'Accept' to begin."
+        Kumari from the University of York. In this experiment you will play a platformer.
+        \n\nThis should take less than five minutes in total.Your data will be completely
+        anonymous.We intend to publish findings based on it but you will never be
+        able to be linked back to the data when it is published.\n \nYou must be eighteen
+        or over to take part in this experiment.If you still want to take part click
+        ACCEPT to begin."
       objectReference: {fileID: 0}
     - target: {fileID: 114849925069932002, guid: 427badf62c27f3d41842042c315a2e7d,
         type: 2}
@@ -558,6 +444,96 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 427badf62c27f3d41842042c315a2e7d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1253527548
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: GameNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.0032467532
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: LoggingLocationSet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: LogToDisk
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: DBHostname
+      value: aa1en9monf18b2a.cr0zaaibyfhg.eu-west-2.rds.amazonaws.com
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: DBUserName
+      value: root
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: DBPassword
+      value: 4m4z0nakr!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: PHPGenerated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: WizardCompleted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: BaseDomainURL
+      value: http://Custom-env.fmvhfgpeqj.eu-west-2.elasticbeanstalk.com/PHP/
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: GameNames.Array.data[0]
+      value: 'abcd '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: GameNames.Array.data[1]
+      value: New Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: gameID
+      value: 63
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1255306526
 GameObject:
@@ -705,7 +681,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432676, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22432676, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
       propertyPath: m_AnchoredPosition.x

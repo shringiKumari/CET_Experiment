@@ -76,8 +76,11 @@ public class StoreMotivationData : MonoBehaviour {
      }
 
      public void ClearData(){
-          FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
-          stream.Close ();
+          if (File.Exists (Application.persistentDataPath + "/" + dataFileName)) {
+               FileStream stream = new FileStream (Application.persistentDataPath + "/" + dataFileName, FileMode.Truncate);
+          
+               stream.Close ();
+          }
      }
 
      private void OnApplicationQuit(){

@@ -1,5 +1,5 @@
 <?php
-$hostname = 'new';
+$hostname = 'aa1en9monf18b2a.cr0zaaibyfhg.eu-west-2.rds.amazonaws.com';
 $password = '4m4z0nakr!';
 $username = 'root';
 $port = '3306';
