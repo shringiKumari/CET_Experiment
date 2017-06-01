@@ -10,7 +10,12 @@ public class InstructionText : MonoBehaviour {
      private GlobalData globalData;
 
      // Use this for initialization
-	void Awake () {
+	void Start () {
+
+          globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
+
+          //instructionText.text = "blaaaa";
+       
 
           if (globalData.coins_condition) {
                instructionText.text = 
@@ -22,6 +27,7 @@ public class InstructionText : MonoBehaviour {
                     "Play a level based 2D platformer game and fill a questionnaire about your experience. \n\n" +
                     "Controls\nLeft Arrow/ ‘A’ - to go left.\nRight Arrow/ ‘D’ - to go right.\nUp Arrow/ Spacebar - to jump.\n\n";
           }
+
 
 
 

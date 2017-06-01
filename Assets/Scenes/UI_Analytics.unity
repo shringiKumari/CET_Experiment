@@ -539,6 +539,10 @@ Prefab:
       propertyPath: m_Name
       value: Instructions panel
       objectReference: {fileID: 0}
+    - target: {fileID: 11450900, guid: 3b1d9bcc18af7854e98be5cd9f897fb0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b1d9bcc18af7854e98be5cd9f897fb0, type: 2}
   m_IsPrefabParent: 0
@@ -827,7 +831,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: GameNames.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -895,7 +899,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: GameNames.Array.data[0]
-      value: 'abcd '
+      value: 'cet_version_1.0 '
       objectReference: {fileID: 0}
     - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: GameNames.Array.data[1]
@@ -904,6 +908,10 @@ Prefab:
     - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: gameID
       value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
+      propertyPath: NewGameName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}

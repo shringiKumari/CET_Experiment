@@ -1,7 +1,5 @@
 
-CREATE TEMPORARY TABLE IF NOT EXISTS RelevantSessions AS (Select session_id as "session", ip from GameplaySession where gameID = 
-64
-);
+CREATE TEMPORARY TABLE IF NOT EXISTS RelevantSessions AS (Select session_id as "session", ip from GameplaySession where gameID = 63);
 
 SELECT CONCAT(
 'SELECT `CriticalEvents`.session', GROUP_CONCAT('
