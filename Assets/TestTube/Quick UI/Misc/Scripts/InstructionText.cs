@@ -10,8 +10,9 @@ public class InstructionText : MonoBehaviour {
      private GlobalData globalData;
 
      // Use this for initialization
-	void Start () {
+	void Awake () {
 
+          instructionText.text = "blaaaaa";
           globalData = GameObject.FindGameObjectWithTag("GlobalData").GetComponent<GlobalData>();
           if (globalData.coins_condition) {
                instructionText.text = 

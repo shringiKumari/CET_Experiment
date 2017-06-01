@@ -133,6 +133,325 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 756c4d642f236fc49a7f19654118c5e6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &279692004
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2115314004}
+    m_Modifications:
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[0].options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[1].options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[2].options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[3].options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].options.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].options.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: QuestionnaireTitle
+      value: Consent
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[0].prompt
+      value: I have read and understood the information provided about the experiment
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[0].options.Array.data[0]
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[0].options.Array.data[1]
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[1].prompt
+      value: I can withdraw at any time without giving a reason
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[1].forceCompletion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[1].options.Array.data[0]
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[1].options.Array.data[1]
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[2].prompt
+      value: I voluntarily agree to participate in the study
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[2].forceCompletion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[2].options.Array.data[0]
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[2].options.Array.data[1]
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[3].prompt
+      value: I understand the use of data for the research
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[3].forceCompletion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[3].options.Array.data[0]
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[3].options.Array.data[1]
+      value: ' No'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].prompt
+      value: Age
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].forceCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].options.Array.data[0]
+      value: 18 - 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].options.Array.data[1]
+      value: 25 - 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400034463516492, guid: 0e5b7c8b5b3577a4aa94badf27685c0d, type: 2}
+      propertyPath: m_Name
+      value: Consent
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[0].textbox
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].prompt
+      value: Gender
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].forceCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].options.Array.data[0]
+      value: Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].options.Array.data[1]
+      value: Female
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].prompt
+      value: How often do you play games
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].forceCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.data[0]
+      value: At least once a day
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.data[1]
+      value: At least once a week
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].options.Array.data[2]
+      value: 35 - 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[4].options.Array.data[3]
+      value: 45 or older
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[5].options.Array.data[2]
+      value: Do not want to answer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.data[2]
+      value: At least once a month
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.data[3]
+      value: Less often than once a month
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
+        type: 2}
+      propertyPath: Questions.Array.data[6].options.Array.data[4]
+      value: Do not want to answer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0e5b7c8b5b3577a4aa94badf27685c0d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &299913387
 Prefab:
   m_ObjectHideFlags: 0
@@ -170,7 +489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22421016, guid: 3b1d9bcc18af7854e98be5cd9f897fb0, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22421016, guid: 3b1d9bcc18af7854e98be5cd9f897fb0, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -223,6 +542,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b1d9bcc18af7854e98be5cd9f897fb0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &499595691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 499595692}
+  - component: {fileID: 499595693}
+  m_Layer: 0
+  m_Name: GlobalData
+  m_TagString: GlobalData
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499595692
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499595691}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80, y: 15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &499595693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499595691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6821ba0e96fa45b898788897c26afa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  levelTimeScore: 0
+  levelHealthScore: 0
+  totalCoinsEarned: 0
+  totalCoinsNeeded: 2500
+  timeNeededToGetCoins: 45
+  firstNoRewardLevel: 2
+  maxLevel: 8
+  coins_condition: 0
+  coins_experiment: 1
+  feedbackCondition: 0
+  rewards_expected: 0
+  with_coins: 0
+  coins_wait: 0
 --- !u!1001 &581367856
 Prefab:
   m_ObjectHideFlags: 0
@@ -429,13 +802,13 @@ Prefab:
     - target: {fileID: 114849925069932002, guid: 427badf62c27f3d41842042c315a2e7d,
         type: 2}
       propertyPath: m_Text
-      value: "Thanks for taking part in this experiment! This is being run by Shringi
-        Kumari from the University of York. In this experiment you will play a platformer.
-        \n\nThis should take less than five minutes in total.Your data will be completely
-        anonymous.We intend to publish findings based on it but you will never be
-        able to be linked back to the data when it is published.\n \nYou must be eighteen
-        or over to take part in this experiment.If you still want to take part click
-        ACCEPT to begin."
+      value: "The experiment is being run by Shringi Kumari from the University of
+        York. The participation is completely volunatry and you can withdraw at any
+        point. You will be playing a platformer game.\n\nThis should take less than
+        five minutes in total.Your data will be completely anonymous.We intend to
+        publish findings based on it but you will never be able to be linked back
+        to the data when it is published.\n \nYou must be eighteen or over to take
+        part in this experiment. If you  want to take part click ACCEPT."
       objectReference: {fileID: 0}
     - target: {fileID: 114849925069932002, guid: 427badf62c27f3d41842042c315a2e7d,
         type: 2}
@@ -454,7 +827,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: GameNames.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 423800, guid: 20833ccaa3c8a564fa016dfdd5aabaa5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -640,7 +1013,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1343264331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 798376e77c28f4265b1a3e6449b89274, type: 3}
+  m_Script: {fileID: 11500000, guid: 125148792f97245809b7fcb84e283524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   instructionText: {fileID: 1343264333}
@@ -681,7 +1054,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432676, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22432676, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -733,220 +1106,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7908f4baed7ae748a17fcae44d6dd0e, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &2051071244
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2115314004}
-    m_Modifications:
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].options.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].options.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].options.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611758766595640, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400034463516492, guid: 0e5b7c8b5b3577a4aa94badf27685c0d, type: 2}
-      propertyPath: m_Name
-      value: Demographic
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: QuestionnaireTitle
-      value: Demographic
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].prompt
-      value: Age
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].options.Array.data[0]
-      value: 18 - 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].options.Array.data[1]
-      value: 25 - 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].prompt
-      value: Gender
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].forceCompletion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].options.Array.data[0]
-      value: Male
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].options.Array.data[1]
-      value: Female
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].prompt
-      value: How often do you play?
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].textbox
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].forceCompletion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[1].options.Array.data[2]
-      value: Don't want to answer
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].options.Array.data[2]
-      value: 35 - 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[0].options.Array.data[3]
-      value: 45 or older
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].options.Array.data[0]
-      value: At least once a day
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].options.Array.data[1]
-      value: At least once a week
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].options.Array.data[2]
-      value: At least once a month
-      objectReference: {fileID: 0}
-    - target: {fileID: 114433406897727390, guid: 0e5b7c8b5b3577a4aa94badf27685c0d,
-        type: 2}
-      propertyPath: Questions.Array.data[2].options.Array.data[3]
-      value: Less than once a month
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0e5b7c8b5b3577a4aa94badf27685c0d, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &2115314004 stripped
 RectTransform:
